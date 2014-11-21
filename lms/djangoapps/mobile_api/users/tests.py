@@ -247,7 +247,7 @@ class TestUserApi(ModuleStoreTestCase, APITestCase):
         self.assertEqual(result.status_code, 400)
         self.assertEqual(json_data, errors.ERROR_INVALID_MODIFICATION_DATE)
 
-    def test_course_update_old_modification_date(self):
+    def test_course_update_old_date(self):
         (__, __, unit, other_unit) = self._setup_course_skeleton()
         self.client.login(username=self.username, password=self.password)
         url = self._course_status_url()

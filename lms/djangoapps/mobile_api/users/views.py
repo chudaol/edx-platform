@@ -87,7 +87,6 @@ class UserCourseStatus(views.APIView):
     """
     Endpoints for getting and setting meta data
     about a user's status within a given course.
-    Supports get and post
     """
 
     http_method_names = ["get", "patch"]
@@ -198,13 +197,17 @@ class UserCourseStatus(views.APIView):
 
         **Example request**:
 
-            POST /api/mobile/v0.5/users/{username}/course_status_info/{course_id}
+            PATCH /api/mobile/v0.5/users/{username}/course_status_info/{course_id}
             body:
                 last_visited_module_id={module_id}
+                modification_date={date}
+
+            modification_date is optional. If it is present, the update will only take effect
+            if modification_date is later than the modification_date saved on the server
 
         **Response Values**
 
-        A successful response returns HTTP status code 204 and no content.
+        The same doing a GET on this path
 
         """
         def handle_course(course):

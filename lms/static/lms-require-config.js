@@ -11,6 +11,9 @@ var require = {
         'jquery.cookie':        'js/vendor/jquery.cookie',
         'underscore':           'js/vendor/underscore-min',
         'underscore.string':    'js/vendor/underscore.string.min',
+
+        // Bundles
+        'common':               'js/common'
     },
     shim: {
         'backbone': {

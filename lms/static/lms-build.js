@@ -8,7 +8,15 @@
          * done.
          */
         modules: [
-            { name: "js/student_account/accessApp" }
+            {
+                name: "js/student_account/accessApp",
+                exclude: [
+                    'backbone',
+                    'gettext',
+                    'jquery',
+                    'underscore'
+                ]
+            }
         ],
 
         /**

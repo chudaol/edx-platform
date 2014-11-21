@@ -3,11 +3,11 @@
     'use strict';
 
     require([
-        'jquery',
         'common',
+        'jquery',
         'js/student_account/views/AccessView'
     ],
-    function( $, common, AccessView ) {
+    function( common, $, AccessView ) {
 
         return new AccessView({
             mode: $('#login-and-registration-container').data('initial-mode'),

@@ -4,9 +4,10 @@
 
     require([
         'jquery',
+        'common',
         'js/student_account/views/AccessView'
     ],
-    function( $, AccessView ) {
+    function( $, common, AccessView ) {
 
         return new AccessView({
             mode: $('#login-and-registration-container').data('initial-mode'),

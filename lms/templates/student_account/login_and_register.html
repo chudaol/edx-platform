@@ -7,7 +7,11 @@
 
 <%block name="js_extra">
   <script type="text/javascript" src="${static.url("lms-require-config.js")}"></script>
-  <%static:require_module module='js/common'/>
+
+  <script type="text/javascript">
+    require.paths.common = "${static.url('js/common.js')}";
+  </script>
+
   <%static:require_module module='js/student_account/accessApp'/>
 </%block>
 

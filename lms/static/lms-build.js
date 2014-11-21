@@ -46,7 +46,10 @@
          */
         paths: {
             'gettext': 'empty:',
-            'jquery': 'empty:'
+            'jquery': 'empty:',
+            'underscore': 'empty:',
+            'jquery.cookie': 'empty:',
+            'underscore.string': 'empty:'
         },
 
         /**

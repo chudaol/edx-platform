@@ -45,7 +45,8 @@
          * file should be skipped because it has no dependencies.
          */
         paths: {
-            'gettext': 'empty:'
+            'gettext': 'empty:',
+            'jquery': 'empty:'
         },
 
         /**

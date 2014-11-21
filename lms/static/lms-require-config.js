@@ -27,10 +27,12 @@ var require = {
         },
 
         'underscore': {
+            deps: ['jquery'],
             exports: '_'
         },
 
         'underscore.string': {
+            deps: ['underscore'],
             exports: '_.string'
         }
     }

@@ -69,12 +69,17 @@
   <%static:css group='style-app-extend1'/>
   <%static:css group='style-app-extend2'/>
 
-  % if not enable_require_js:
-    % if disable_courseware_js:
-      <%static:js group='base_vendor'/>
-    % else:
-      <%static:js group='main_vendor'/>
-    % endif
+  % if enable_require_js:
+    <script src="${static.url('js/vendor/jquery.min.js')}"></script>
+    <script src="${static.url('js/vendor/jquery.cookie.js')}"></script>
+    <script src="${static.url('js/vendor/underscore-min.js')}"></script>
+    <script src="${static.url('js/vendor/underscore.string.min.js')}"></script>
+    <script src="${static.url('js/vendor/backbone-min.js')}"></script>
+    <script src="${static.url('js/vendor/url.min.js')}"></script>
+  % elif disable_courseware_js:
+    <%static:js group='base_vendor'/>
+  % else:
+    <%static:js group='main_vendor'/>
   % endif
 
   <%block name="headextra"/>

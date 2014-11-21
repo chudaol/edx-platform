@@ -2,11 +2,9 @@
 Tests for video outline API
 """
 
-
 from courseware import access
 from student.roles import CourseBetaTesterRole
 from student import auth
-
 
 def mobile_available_when_enrolled(course, user):
     """

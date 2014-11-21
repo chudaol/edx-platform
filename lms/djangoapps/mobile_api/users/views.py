@@ -1,13 +1,13 @@
 """
 Views for user API
 """
-import inspect
 
 from courseware.model_data import FieldDataCache
 from courseware.module_render import get_module_for_descriptor
 
-from django.http import HttpResponseForbidden, HttpResponse
+from django.http import HttpResponseForbidden
 from django.shortcuts import redirect
+from django.utils import dateparse
 
 from rest_framework import generics, permissions, views
 from rest_framework.authentication import OAuth2Authentication, SessionAuthentication
@@ -16,8 +16,7 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from courseware import access
-from courseware.views import get_current_child, save_position_from_leaf
+from courseware.views import get_current_child, save_positions_recursively_up
 
 from opaque_keys.edx.keys import CourseKey, UsageKey
 from opaque_keys import InvalidKeyError
@@ -26,13 +25,13 @@ from student.models import CourseEnrollment, User
 
 from mobile_api.utils import mobile_available_when_enrolled
 
+from xblock.fields import Scope
+from xblock.runtime import KeyValueStore
 from xmodule.modulestore.django import modulestore
 
 
 from .serializers import CourseEnrollmentSerializer, UserSerializer
 from mobile_api import errors
-
-STANDARD_HIERARCHY_DEPTH = 2
 
 
 class IsUser(permissions.BasePermission):
@@ -112,7 +111,6 @@ class UserCourseStatus(views.APIView):
 
         return current
 
-
     def _process_arguments(self, request, username, course_id, course_handler):
         """
         Checks and processes the arguments to our endpoint
@@ -133,6 +131,17 @@ class UserCourseStatus(views.APIView):
 
         return course_handler(course)
 
+    def get_course_info(self, request, course):
+        """
+        Returns the course status
+        """
+        current_module = self._last_visited_module_id(request, course)
+        if current_module:
+            return Response({"last_visited_module_id": unicode(current_module.location)})
+        else:
+            # We shouldn't end up in this case, but if we do, return something reasonable
+            return Response({"last_visited_module_id": unicode(course.location)})
+
     def get(self, request, username, course_id):
         """
         **Use Case**
@@ -148,30 +157,36 @@ class UserCourseStatus(views.APIView):
         * last_visited_module_id: The id of the last module visited by the user in the given course
 
         """
-        def handle_course(course):
-            """
-            Returns the course status as Json
-            """
-            current_module = self._last_visited_module_id(request, course)
-            if current_module:
-                return Response({"last_visited_module_id": unicode(current_module.location)})
-            else:
-                # We shouldn't end up in this case, but if we do, return something reasonable
-                return Response({"last_visited_module_id": unicode(course.location)})
 
-        return self._process_arguments(request, username, course_id, handle_course)
+        return self._process_arguments(request, username, course_id, lambda course: self.get_course_info(request, course))
 
-    def _update_last_visited_module_id(self, request, course, module_key):
+    def _update_last_visited_module_id(self, request, course, module_key, modification_date):
         """
-        Saves the module id
+        Saves the module id if the found modification_date is less recent than the passed modification date
         """
         field_data_cache = FieldDataCache.cache_for_descriptor_descendents(
             course.id, request.user, course, depth=2)
-        module = modulestore().get_item(module_key)
-        course_module = get_module_for_descriptor(request.user, request, module, field_data_cache, course.id)
-        if course_module:
-            save_position_from_leaf(request.user, request, field_data_cache, course_module)
-            return HttpResponse(status=204)
+        module_descriptor = modulestore().get_item(module_key)
+        module = get_module_for_descriptor(request.user, request, module_descriptor, field_data_cache, course.id)
+
+        if modification_date:
+            key = KeyValueStore.Key(
+                scope=Scope.user_state,
+                user_id=request.user.id,
+                block_scope_id=course.location,
+                field_name='grade'
+            )
+            student_module = field_data_cache.find(key)
+            if student_module:
+                original_store_date = student_module.modified
+                print "modification_date = {}, original_store_date = {}".format(modification_date.isoformat(), original_store_date.isoformat())
+                if modification_date < original_store_date:
+                    # old modification date so skip update
+                    return self.get_course_info(request, course)
+
+        if module:
+            save_positions_recursively_up(request.user, request, field_data_cache, module)
+            return self.get_course_info(request, course)
         else:
             return Response(errors.ERROR_INVALID_MODULE_ID, status=400)
 
@@ -197,16 +212,23 @@ class UserCourseStatus(views.APIView):
             Updates the course_status once the arguments are checked
             """
             module_id = request.DATA.get("last_visited_module_id")
+            modification_date_string = request.DATA.get("modification_date")
+            modification_date = None
+            if modification_date_string:
+                modification_date = dateparse.parse_datetime(modification_date_string)
+                if not modification_date or not modification_date.tzinfo:
+                    return Response(errors.ERROR_INVALID_MODIFICATION_DATE, status=400)
 
             if module_id:
                 try:
                     module_key = UsageKey.from_string(module_id)
                 except InvalidKeyError:
                     return Response(errors.ERROR_INVALID_MODULE_ID, status=400)
-                return self._update_last_visited_module_id(request, course, module_key)
+
+                return self._update_last_visited_module_id(request, course, module_key, modification_date)
             else:
                 # The arguments are optional, so if there's no argument just succeed
-                return HttpResponse(status=204)
+                return self.get_course_info(request, course)
 
         return self._process_arguments(request, username, course_id, handle_course)
 

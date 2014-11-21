@@ -15,7 +15,8 @@
                     'jquery.cookie',
                     'underscore',
                     'underscore.string',
-                    'backbone'
+                    'backbone',
+                    'text'
                 ]
             }
         ],

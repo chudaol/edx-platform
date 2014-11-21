@@ -239,7 +239,7 @@ class TestUserApi(ModuleStoreTestCase, APITestCase):
             url,
             {
                 "last_visited_module_id": unicode(other_unit.location),
-                "modification_date": past_date.isoformat()  # pylint: disable=no-member
+                "modification_date": past_date.isoformat()  # pylint: disable=maybe-no-member
             },
         )
 

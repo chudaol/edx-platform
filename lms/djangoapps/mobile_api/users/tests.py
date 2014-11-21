@@ -234,12 +234,12 @@ class TestUserApi(ModuleStoreTestCase, APITestCase):
         (__, __, __, other_unit) = self._setup_course_skeleton()
         self.client.login(username=self.username, password=self.password)
         url = self._course_status_url()
-        past_date = datetime.datetime.now() + datetime.timedelta(days=-100)
+        past_date = datetime.datetime.now()
         result = self.client.patch(  # pylint: disable=no-member
             url,
             {
                 "last_visited_module_id": unicode(other_unit.location),
-                "modification_date": past_date.isoformat()
+                "modification_date": past_date.isoformat()  # pylint: disable=no-member
             },
         )
 

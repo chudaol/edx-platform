@@ -6,14 +6,11 @@
 <%block name="pagetitle">${_("Log in or Register")}</%block>
 
 <%block name="js_extra">
-  <script type="text/javascript" src="${static.url("lms-require-config.js")}"></script>
-  <script type="text/javascript">
-    require.paths['backbone'] = "${static.url('js/vendor/backbone-min.js')}";
-    require.paths['jquery'] = "${static.url('js/vendor/jquery.min.js')}";
-    require.paths['jquery.cookie'] = "${static.url('js/vendor/jquery.cookie.js')}";
-    require.paths['underscore'] = "${static.url('js/vendor/underscore-min.js')}";
-    require.paths['underscore.string'] = "${static.url('js/vendor/underscore.string.min.js')}";
-  </script>
+  <script type="text/javascript" src="${static.url('js/vendor/jquery.min.js')}"></script>
+  <script type="text/javascript" src="${static.url('js/vendor/underscore-min.js')}"></script>
+  <script type="text/javascript" src="${static.url('js/vendor/backbone-min.js')}"></script>
+  <script type="text/javascript" src="${static.url('js/vendor/jquery.cookie.js')}"></script>
+  <script type="text/javascript" src="${static.url('js/vendor/underscore.string.min.js')}"></script>
   <%static:require_module module='js/student_account/accessApp'/>
 </%block>
 

@@ -14,7 +14,9 @@
                     'backbone',
                     'gettext',
                     'jquery',
-                    'underscore'
+                    'underscore',
+                    'jquery.cookie',
+                    'underscore.string'
                 ]
             }
         ],

@@ -49,7 +49,8 @@
             'jquery': 'empty:',
             'underscore': 'empty:',
             'jquery.cookie': 'empty:',
-            'underscore.string': 'empty:'
+            'underscore.string': 'empty:',
+            'backbone': 'empty:'
         },
 
         /**

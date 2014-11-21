@@ -1,12 +1,7 @@
 var require = {
     waitSeconds: 60,
     paths: {
-        'backbone':             'js/vendor/backbone-min',
-        'gettext':              '/i18n',
-        'jquery':               'js/vendor/jquery.min',
-        'jquery.cookie':        'js/vendor/jquery.cookie',
-        'underscore':           'js/vendor/underscore-min',
-        'underscore.string':    'js/vendor/underscore.string.min'
+        'gettext': '/i18n'
     },
     shim: {
         'backbone': {
@@ -18,6 +13,10 @@ var require = {
             exports: 'gettext'
         },
 
+        'jquery': {
+            exports: 'jQuery'
+        },
+
         'jquery.cookie': {
             deps: ['jquery'],
             exports: 'jQuery.fn.cookie'
@@ -25,6 +24,6 @@ var require = {
 
         'underscore': {
             exports: '_'
-        }
+        },
     }
 };

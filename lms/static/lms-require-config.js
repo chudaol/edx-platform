@@ -17,10 +17,6 @@ var require = {
             exports: 'gettext'
         },
 
-        'jquery': {
-            exports: 'jQuery'
-        },
-
         'jquery.cookie': {
             deps: ['jquery'],
             exports: 'jQuery.fn.cookie'

@@ -314,7 +314,7 @@
     @extend %t-action3;
     margin-left: $baseline;
 
-    [class^="icon-"] {
+    [class^="fa-"] {
       margin-right: ($baseline/2);
     }
   }

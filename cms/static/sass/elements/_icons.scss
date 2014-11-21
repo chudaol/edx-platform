@@ -5,7 +5,7 @@
 
 }
 
-[class^="icon-"] {
+[class^="fa-"] {
   font-style: normal;
 }
 
@@ -32,7 +32,7 @@
   padding: ($baseline/4) ($baseline/2) ($baseline/4) ($baseline/2);
   text-transform: uppercase;
 
-  * [class^="icon-"] {
+  * [class^="fa-"] {
     margin-right: ($baseline/5);
   }
 

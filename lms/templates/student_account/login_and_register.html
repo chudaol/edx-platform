@@ -7,6 +7,13 @@
 
 <%block name="js_extra">
   <script type="text/javascript" src="${static.url("lms-require-config.js")}"></script>
+  <script type="text/javascript">
+    <%static:require_paths module='jquery' path="js/vendor/jquery.min.js" />
+    <%static:require_paths module='jquery.cookie' path="js/vendor/jquery.cookie.js" />
+    <%static:require_paths module='underscore' path="js/vendor/underscore-min.js" />
+    <%static:require_paths module='underscore.string' path="js/vendor/underscore.string.min.js" />
+    <%static:require_paths module='backbone' path="js/vendor/backbone-min.js" />
+  </script>
   <%static:require_module module='js/student_account/accessApp'/>
 </%block>
 

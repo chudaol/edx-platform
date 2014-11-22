@@ -1,7 +1,7 @@
 <%! from django.utils.translation import ugettext as _ %>
 <%! import json %>
-<%namespace name='static' file='static_content.html'/>
-<%inherit file="main.html" />
+<%namespace name='static' file='/static_content.html'/>
+<%inherit file="/main.html" />
 
 <%block name="pagetitle">${_("Notes")}</%block>
 <%block name="headextra">
@@ -16,6 +16,12 @@
                 <h1>${_('Notes')}</h1>
                 <small>${_("Highlights and personal notes you've made within the course")}</small>
             </header>
+
+            <form method="GET" action="${endpoint}/search">
+                <input name="q" id="search-field" required placeholder="${_('Search Notes for...')}" />
+                <button type="submit">${_('Search')}</button>
+            </form>
+
         % if notes:
             <div class="ui-loading">
                 <p><span class="spin"><i class="icon-refresh"></i></span> <span class="copy">${_("Loading...")}</span></p>

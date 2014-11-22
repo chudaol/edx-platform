@@ -37,4 +37,4 @@ def edxnotes(request, course_id):
         "debug": json.dumps(settings.DEBUG),
     }
 
-    return render_to_response("edxnotes.html", context)
+    return render_to_response("edxnotes/edxnotes.html", context)

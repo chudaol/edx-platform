@@ -2,10 +2,10 @@
     'use strict';
     define(['js/edxnotes/views/subview'],
     function (SubView) {
-        var RecentActivityView = SubView.extend({
-            id: 'edx-notes-page-recent-activity'
+        var SearchResultsView = SubView.extend({
+            id: 'edx-notes-page-search-results'
         });
 
-        return RecentActivityView;
+        return SearchResultsView;
     });
 }).call(this, define || RequireJS.define);

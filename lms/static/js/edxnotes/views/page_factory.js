@@ -18,14 +18,14 @@
             var collection = new NotesCollection(params.notesList, {parse: true});
 
             return new NotesPageView({
-                el: $('.edx-notes-page-wrapper'),
+                el: $('.edx-notes-page-wrapper').get(0),
                 collection: collection,
                 debug: params.debugMode,
                 authToken: params.authToken,
                 user: params.user,
                 courseId: params.courseId,
                 endpoint: params.endpoint
-            }).render();
+            });
         };
     });
 }).call(this, define || RequireJS.define);

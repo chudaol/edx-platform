@@ -171,7 +171,7 @@ class TestUserApi(ModuleStoreTestCase, APITestCase):
         url = reverse('user-course-status', kwargs={'username': self.username, 'course_id': 'a/b/c'})
         response = self.client.get(url)
         json_data = json.loads(response.content)
-        self.assertEqual(response.status_code, 400)
+        self.assertEqual(response.status_code, 404)
         self.assertEqual(json_data, errors.ERROR_INVALID_COURSE_ID)
 
     def test_course_status_wrong_user(self):
@@ -196,7 +196,7 @@ class TestUserApi(ModuleStoreTestCase, APITestCase):
         self.assertEqual(result.status_code, 200)
         self.assertEqual(json_data["last_visited_module_id"], unicode(unit.location))
 
-    def test_course_status_no_args(self):
+    def test_course_update_no_args(self):
         self.client.login(username=self.username, password=self.password)
 
         url = self._course_status_url()
@@ -247,43 +247,50 @@ class TestUserApi(ModuleStoreTestCase, APITestCase):
         self.assertEqual(result.status_code, 400)
         self.assertEqual(json_data, errors.ERROR_INVALID_MODIFICATION_DATE)
 
-    def test_course_update_old_date(self):
-        (__, __, unit, other_unit) = self._setup_course_skeleton()
+    def _test_course_update_date_sync(self, date, initial_unit, update_unit, expected_unit):
         self.client.login(username=self.username, password=self.password)
         url = self._course_status_url()
         # save something so we have an initial date
         self.client.patch(  # pylint: disable=no-member
             url,
-            {"last_visited_module_id": unicode(other_unit.location)}
+            {"last_visited_module_id": unicode(initial_unit.location)}
         )
 
-        # now try to update again but with an old date
-        past_date = timezone.now() + datetime.timedelta(days=-100)
+        # now actually update it
         result = self.client.patch(  # pylint: disable=no-member
             url,
             {
-                "last_visited_module_id": unicode(unit.location),
-                "modification_date": past_date.isoformat()
+                "last_visited_module_id": unicode(update_unit.location),
+                "modification_date": date.isoformat()
             },
         )
 
         json_data = json.loads(result.content)
         self.assertEqual(result.status_code, 200)
-        self.assertEqual(json_data["last_visited_module_id"], unicode(other_unit.location))
+        self.assertEqual(json_data["last_visited_module_id"], unicode(expected_unit.location))
+
+    def test_course_update_old_date(self):
+        (__, __, unit, other_unit) = self._setup_course_skeleton()
+        date = timezone.now() + datetime.timedelta(days=-100)
+        self._test_course_update_date_sync(date, unit, other_unit, unit)
 
     def test_course_update_new_date(self):
-        (__, __, __, other_unit) = self._setup_course_skeleton()
+        (__, __, unit, other_unit) = self._setup_course_skeleton()
+
+        date = timezone.now() + datetime.timedelta(days=100)
+        self._test_course_update_date_sync(date, unit, other_unit, other_unit)
+
+    def test_course_update_no_initial_date(self):
+        (__, __, _, other_unit) = self._setup_course_skeleton()
         self.client.login(username=self.username, password=self.password)
         url = self._course_status_url()
-        past_date = timezone.now()
         result = self.client.patch(  # pylint: disable=no-member
             url,
             {
                 "last_visited_module_id": unicode(other_unit.location),
-                "modification_date": past_date.isoformat()
-            },
+                "modification_date": timezone.now().isoformat()
+            }
         )
-
         json_data = json.loads(result.content)
         self.assertEqual(result.status_code, 200)
         self.assertEqual(json_data["last_visited_module_id"], unicode(other_unit.location))

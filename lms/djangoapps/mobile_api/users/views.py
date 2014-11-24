@@ -5,7 +5,6 @@ Views for user API
 from courseware.model_data import FieldDataCache
 from courseware.module_render import get_module_for_descriptor
 
-from django.http import HttpResponseForbidden
 from django.shortcuts import redirect
 from django.utils import dateparse
 
@@ -117,7 +116,7 @@ class UserCourseStatus(views.APIView):
         does the work specific to the individual case
         """
         if username != request.user.username:
-            return HttpResponseForbidden()
+            return Response(errors.ERROR_INVALID_USER_ID, status=403)
 
         try:
             course_key = CourseKey.from_string(course_id)
@@ -126,7 +125,7 @@ class UserCourseStatus(views.APIView):
 
         course = modulestore().get_course(course_key, depth=None)
         if not course:
-            return Response(errors.ERROR_INVALID_COURSE_ID, status=400)
+            return Response(errors.ERROR_INVALID_COURSE_ID, status=404)
 
         return course_handler(course)
 
@@ -135,11 +134,7 @@ class UserCourseStatus(views.APIView):
         Returns the course status
         """
         current_module = self._last_visited_module_id(request, course)
-        if current_module:
-            return Response({"last_visited_module_id": unicode(current_module.location)})
-        else:
-            # We shouldn't end up in this case, but if we do, return something reasonable
-            return Response({"last_visited_module_id": unicode(course.location)})
+        return Response({"last_visited_module_id": unicode(current_module.location)})
 
     def get(self, request, username, course_id):
         """
@@ -173,12 +168,11 @@ class UserCourseStatus(views.APIView):
                 scope=Scope.user_state,
                 user_id=request.user.id,
                 block_scope_id=course.location,
-                field_name='grade'
+                field_name=None
             )
             student_module = field_data_cache.find(key)
             if student_module:
                 original_store_date = student_module.modified
-                print "modification_date = {}, original_store_date = {}".format(modification_date.isoformat(), original_store_date.isoformat())
                 if modification_date < original_store_date:
                     # old modification date so skip update
                     return self.get_course_info(request, course)
@@ -207,7 +201,7 @@ class UserCourseStatus(views.APIView):
 
         **Response Values**
 
-        The same doing a GET on this path
+        The same as doing a GET on this path
 
         """
         def handle_course(course):

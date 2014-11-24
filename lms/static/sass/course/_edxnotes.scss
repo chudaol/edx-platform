@@ -75,4 +75,21 @@
       font-weight: 600;
     }
   }
+
+  .tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .tab-item {
+      display: inline-block;
+      padding: 10px 5px;
+      margin: 0;
+      &.is-active {
+        border-bottom: 3px solid #000;
+      }
+    }
+  }
+
+
 }

@@ -16,13 +16,11 @@
                 <h1>${_('Notes')}</h1>
                 <small>${_("Highlights and personal notes you've made within the course")}</small>
             </header>
-
+        % if notes:
             <form method="GET" action="${endpoint}/search">
                 <input name="q" id="search-field" required placeholder="${_('Search Notes for...')}" />
                 <button type="submit">${_('Search')}</button>
             </form>
-
-        % if notes:
             <div class="ui-loading">
                 <p><span class="spin"><i class="icon-refresh"></i></span> <span class="copy">${_("Loading...")}</span></p>
             </div>

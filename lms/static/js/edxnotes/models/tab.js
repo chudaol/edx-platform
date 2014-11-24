@@ -6,9 +6,9 @@
                 'name': '',
                 'class_name': '',
                 'is_active': false,
-                'is_hidden': false,
+                'is_closable': false,
                 'close': null,
-                'choose': null
+                'render': null
             }
         });
 

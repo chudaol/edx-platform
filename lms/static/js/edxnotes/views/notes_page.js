@@ -31,31 +31,24 @@ define([
                 error: this.onSearchError
             });
 
+            this.tabsCollection = new TabsCollection([
+                {
+                    name: gettext('Recent Activity'),
+                    class_name: 'tab-recent-activity',
+                    render: this.displayRecentActivity
+                }
+            ]);
+
             this.tabsView = new TabsView({
-                collection: new TabsCollection([
-                    {
-                        name: gettext('Recent Activity'),
-                        class_name: 'tab-recent-activity',
-                        choose: this.displayRecentActivity
-                    },
-                    {
-                        name: gettext('Search Results'),
-                        class_name: 'tab-search-results',
-                        choose: this.displaySearchResults,
-                        close: this.closeSearchResults
-                    }
-                ])
+                collection: this.tabsCollection
             }).render();
 
-            this.tabsView.$el.appendTo(this.$('.course-info'));
-
-            this.displayDefaultView();
+            this.tabsView.$el.prependTo(this.$('.course-info'));
         },
 
         render: function (viewName, collection) {
             var ViewConstructor = this.getViewConstructor(viewName);
 
-            // this.chooseTab(viewName);
             collection = collection || this.collection;
             this.showLoadingIndicator();
 
@@ -64,7 +57,6 @@ define([
                 this.currentView.destroy();
             }
 
-            // this.previousView = this.currentView;
             this.currentView = new ViewConstructor({collection: collection}).render();
             this.$('.course-info').append(this.currentView.$el);
             this.hideLoadingIndicator();
@@ -75,11 +67,16 @@ define([
         },
 
         onSearch: function (collection, total, searchQuery) {
+            if (!this.searchResults) {
+                this.tabsCollection.add(this.getSearchTab());
+            }
+
             this.searchResults = {
                 collection: collection,
                 total: total,
                 searchQuery: searchQuery
             };
+
             this.displaySearchResults();
         },
 
@@ -103,6 +100,16 @@ define([
 
         closeSearchResults: function () {
             this.searchResults = null;
+        },
+
+        getSearchTab: function () {
+            return {
+                name: gettext('Search Results'),
+                class_name: 'tab-search-results',
+                is_closable: true,
+                render: this.displaySearchResults,
+                close: this.closeSearchResults
+            }
         },
 
         /**

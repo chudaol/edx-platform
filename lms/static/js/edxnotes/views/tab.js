@@ -11,7 +11,7 @@ function ($, _, Backbone, NotesCollection) {
             '<a href>',
                 '<%- gettext(name) %>',
             '</a>',
-            '<% if(close){ %><a href class="ico-close">x</a><% } %>',
+            '<% if(is_closable){ %><a href class="ico-close">x</a><% } %>',
         ].join(''),
 
         events: {
@@ -26,13 +26,40 @@ function ($, _, Backbone, NotesCollection) {
             this.$el.addClass(this.model.get('class_name'));
             this.options = options;
 
-            this.model.on('change:is_active', function (model, value) {
+            this.model.on('change:is_active', function (changed_model, value) {
+                var selectHandler;
+
                 if (value) {
+                    changed_model.collection.each(function(model) {
+                        // Unactivate all other models.
+                        if (model !== changed_model) {
+                            model.set('is_active', false);
+                        }
+                    });
+
                     this.$el.addClass(this.activeClassName);
+
+                    selectHandler = this.model.get('render');
+                    if (_.isFunction(selectHandler)) {
+                        selectHandler();
+                    }
                 } else {
                     this.$el.removeClass(this.activeClassName);
                 }
             }.bind(this));
+
+            this.model.on('destroy', function (model) {
+                var closeHandler = model.get('close');
+
+                this.remove();
+                if (_.isFunction(closeHandler)) {
+                    closeHandler();
+                }
+            }.bind(this));
+
+            if (this.model.get('is_active')) {
+                this.select();
+            }
         },
 
         render: function () {
@@ -53,30 +80,11 @@ function ($, _, Backbone, NotesCollection) {
         },
 
         select: function () {
-            var selectHandler = this.model.get('select');
-
-            this.model.collection.each(function(model) {
-                // Mark current model as active and unactivate all other models.
-                if (model == this.model) {
-                    this.model.set('is_active', true);
-                } else {
-                    model.set('is_active', false);
-                }
-            }, this);
-
-            if (_.isFunction(selectHandler)) {
-                selectHandler();
-            }
+            this.model.set('is_active', true);
         },
 
         close: function () {
-            var closeHandler = this.model.get('close');
-
             this.model.destroy();
-            this.remove();
-            if (_.isFunction(closeHandler)) {
-                closeHandler();
-            }
         }
     });
 

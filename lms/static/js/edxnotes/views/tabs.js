@@ -11,25 +11,29 @@ define([
         initialize: function (options) {
             _.bindAll(this);
             this.options = $.extend({}, options);
-            this.collection.on('destroy', function (model, collection) {
-                if (model.get('is_active')) {
-                    collection.at(0).set('is_active', true);
+            this.collection.on({
+                'add': _.bind(function (model) {
+                    this.createTab(model);
+                    model.set('is_active', true);
+                }, this),
+                'destroy': function (model, collection) {
+                    if (model.get('is_active')) {
+                        collection.at(0).set('is_active', true);
+                    }
                 }
             });
-            this.collection.on('add', function (model) {
-                this.createTab(model);
-            }.bind(this));
         },
 
         render: function () {
             this.collection.each(this.createTab);
+            this.collection.at(0).set('is_active', true);
             return this;
         },
 
         createTab: function (model) {
             var tab = new TabView({
-                    model: model
-                });
+                model: model
+            });
             tab.render().$el.appendTo(this.$el);
             return tab;
         }

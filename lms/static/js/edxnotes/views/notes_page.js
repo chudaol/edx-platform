@@ -1,11 +1,10 @@
 ;(function (define, undefined) {
 'use strict';
 define([
-    'backbone',
-    'js/edxnotes/collections/tabs', 'js/edxnotes/views/tabs',
+    'backbone', 'js/edxnotes/collections/tabs', 'js/edxnotes/views/tabs_list',
     'js/edxnotes/views/tabs/recent_activity', 'js/edxnotes/views/tabs/search_results'
 ], function (
-    Backbone, TabsCollection, TabsView, RecentActivityView, SearchResultsView
+    Backbone, TabsCollection, TabsListView, RecentActivityView, SearchResultsView
 ) {
     var NotesPageView = Backbone.View.extend({
         initialize: function (options) {
@@ -14,22 +13,22 @@ define([
 
             this.tabsCollection = new TabsCollection();
 
-            new RecentActivityView({
-                el: $('.edx-notes-page-wrapper').get(0),
+            this.recentActivityView = new RecentActivityView({
+                el: this.el,
                 collection: this.collection,
                 tabsCollection: this.tabsCollection
             });
 
-            new SearchResultsView({
-                el: $('.edx-notes-page-wrapper').get(0),
+            this.searchResultsView = new SearchResultsView({
+                el: this.el,
                 tabsCollection: this.tabsCollection,
-                token: this.options.authToken,
+                token: this.options.token,
                 user: this.options.user,
                 courseId: this.options.courseId,
                 createTabOnInitialization: false
             });
 
-            this.tabsView = new TabsView({collection: this.tabsCollection});
+            this.tabsView = new TabsListView({collection: this.tabsCollection});
             this.tabsView.render().$el.prependTo(this.$('.course-info'));
         }
     });

@@ -1,6 +1,6 @@
-;(function (define, gettext, interpolate, undefined) {
+;(function (define) {
 'use strict';
-define(['jquery', 'backbone', 'date'], function ($, Backbone) {
+define(['backbone'], function (Backbone) {
     var NoteModel = Backbone.Model.extend({
         defaults: {
             'id': null,
@@ -21,4 +21,4 @@ define(['jquery', 'backbone', 'date'], function ($, Backbone) {
 
     return NoteModel;
 });
-}).call(this, define || RequireJS.define, gettext, interpolate);
+}).call(this, define || RequireJS.define);

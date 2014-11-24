@@ -1,17 +1,15 @@
-;(function (define, gettext, interpolate, undefined) {
-    'use strict';
-    define(['jquery', 'backbone'], function ($, Backbone) {
-        var TabModel = Backbone.Model.extend({
-            defaults: {
-                'name': '',
-                'class_name': '',
-                'is_active': false,
-                'is_closable': false,
-                'close': null,
-                'render': null
-            }
-        });
-
-        return TabModel;
+;(function (define, undefined) {
+'use strict';
+define(['backbone'], function (Backbone) {
+    var TabModel = Backbone.Model.extend({
+        defaults: {
+            'name': '',
+            'class_name': '',
+            'is_active': false,
+            'is_closable': false
+        }
     });
-}).call(this, define || RequireJS.define, gettext, interpolate);
+
+    return TabModel;
+});
+}).call(this, define || RequireJS.define);

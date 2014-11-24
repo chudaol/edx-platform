@@ -1,8 +1,8 @@
 ;(function (define, undefined) {
 'use strict';
 define([
-    'jquery', 'underscore', 'backbone', 'js/edxnotes/models/tab'
-], function ($, _, Backbone, TabModel) {
+    'underscore', 'backbone', 'js/edxnotes/models/tab'
+], function (_, Backbone, TabModel) {
     var TabAggregatorView = Backbone.View.extend({
 
         SubViewConstructor: null,
@@ -14,10 +14,11 @@ define([
 
         initialize: function (options) {
             _.bindAll(this);
-            this.options = $.extend(true, {
+            this.options = _.defaults(options, {
                 createTabOnInitialization: true
-            }, options);
+            });
             ;
+
             if (this.options.createTabOnInitialization) {
                 this.createTab();
             }
@@ -64,7 +65,7 @@ define([
         },
 
         getCollection: function () {
-            return null;
+            return this.collection;
         },
 
         onClose: function () { },

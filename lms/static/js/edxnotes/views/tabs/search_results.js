@@ -1,9 +1,9 @@
 ;(function (define, undefined) {
 'use strict';
 define([
-    'jquery', 'underscore', 'backbone', 'js/edxnotes/views/tab_aggregator',
-    'js/edxnotes/views/subview', 'js/edxnotes/views/search'
-], function ($, _, Backbone, TabAggregatorView, SubView, SearchView) {
+    'gettext', 'js/edxnotes/views/tab_aggregator',
+    'js/edxnotes/views/subview', 'js/edxnotes/views/search_box'
+], function (gettext, TabAggregatorView, SubView, SearchBoxView) {
     var SearchResultsView = TabAggregatorView.extend({
 
         SubViewConstructor: SubView.extend({
@@ -13,14 +13,13 @@ define([
         tabInfo: {
             name: gettext('Search Results'),
             class_name: 'tab-search-results',
-            is_closable: true,
-            is_hidden: true
+            is_closable: true
         },
 
         initialize: function (options) {
             TabAggregatorView.prototype.initialize.call(this, options);
             this.searchResults = null;
-            this.searchBox = new SearchView({
+            this.searchBox = new SearchBoxView({
                 el: this.$('form').get(0),
                 token: this.options.token,
                 user: this.options.user,

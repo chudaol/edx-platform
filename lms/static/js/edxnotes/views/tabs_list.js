@@ -1,15 +1,15 @@
 ;(function (define, undefined) {
 'use strict';
 define([
-    'jquery', 'underscore', 'backbone', 'js/edxnotes/views/tab'
-], function ($, _, Backbone, TabView) {
-    var TabsView = Backbone.View.extend({
+    'underscore', 'backbone', 'js/edxnotes/views/tab_item'
+], function (_, Backbone, TabItemView) {
+    var TabsListView = Backbone.View.extend({
         tagName: 'ul',
         className: 'tabs',
 
         initialize: function (options) {
             _.bindAll(this);
-            this.options = $.extend({}, options);
+            this.options = options;
             this.collection.on({
                 'add': this.createTab,
                 'destroy': function (model, collection) {
@@ -27,7 +27,7 @@ define([
         },
 
         createTab: function (model) {
-            var tab = new TabView({
+            var tab = new TabItemView({
                 model: model
             });
             tab.render().$el.appendTo(this.$el);
@@ -35,6 +35,6 @@ define([
         }
     });
 
-    return TabsView;
+    return TabsListView;
 });
 }).call(this, define || RequireJS.define);

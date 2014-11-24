@@ -9,10 +9,11 @@ function ($, _, Backbone, NotesCollection) {
 
         initialize: function (options) {
             _.bindAll(this);
-            this.options = $.extend({
+            this.options = _.defaults(options, {
                 search: function () {},
                 error: function () {},
-            }, options);
+            });
+            this.$el.removeClass('is-hidden');
         },
 
         submitHandler: function (event) {

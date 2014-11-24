@@ -15,10 +15,16 @@
             <header>
                 <h1>${_('Notes')}</h1>
                 <small>${_("Highlights and personal notes you've made within the course")}</small>
+            % if notes:
+                <form method="GET" action="${endpoint}/search" class="is-hidden search-box">
+                    <input name="text" id="search-field" required placeholder="${_('Search Notes for...')}" />
+                    <button type="submit">${_('Search')}</button>
+                </form>
+            % endif
             </header>
         % if notes:
-            <form method="GET" action="${endpoint}/search">
-                <input name="q" id="search-field" required placeholder="${_('Search Notes for...')}" />
+            <form method="GET" action="${endpoint}/search" class="is-hidden">
+                <input name="text" id="search-field" required placeholder="${_('Search Notes for...')}" />
                 <button type="submit">${_('Search')}</button>
             </form>
             <div class="ui-loading">
@@ -47,7 +53,7 @@
             var pageView = new NotesFactory({
                 notesList: ${notes},
                 debugMode: ${debug},
-                authToken: '${token}',
+                token: '${token}',
                 user: '${user.username}',
                 courseId: '${course.id}',
                 endpoint: '${endpoint}'

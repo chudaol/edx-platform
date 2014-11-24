@@ -118,14 +118,13 @@ class UserCourseStatus(views.APIView):
         if username != request.user.username:
             return Response(errors.ERROR_INVALID_USER_ID, status=403)
 
+        course = None
         try:
             course_key = CourseKey.from_string(course_id)
-        except InvalidKeyError:
-            return Response(errors.ERROR_INVALID_COURSE_ID, status=400)
-
-        course = modulestore().get_course(course_key, depth=None)
-        if not course:
-            return Response(errors.ERROR_INVALID_COURSE_ID, status=404)
+            course = modulestore().get_course(course_key, depth=None)
+        finally:
+            if not course:
+                return Response(errors.ERROR_INVALID_COURSE_ID, status=404)
 
         return course_handler(course)
 

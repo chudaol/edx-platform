@@ -16,7 +16,7 @@
                 <h1>${_('Notes')}</h1>
                 <small>${_("Highlights and personal notes you've made within the course")}</small>
             % if notes:
-                <form method="GET" action="${endpoint}/search" class="is-hidden search-box">
+                <form method="GET" action="${search_endpoint}" class="is-hidden search-box">
                     <input name="text" id="search-field" required placeholder="${_('Search Notes for...')}" />
                     <button type="submit">${_('Search')}</button>
                 </form>
@@ -24,10 +24,6 @@
             </header>
             <div class="inline-error is-hidden"></div>
         % if notes:
-            <form method="GET" action="${endpoint}/search" class="is-hidden">
-                <input name="text" id="search-field" required placeholder="${_('Search Notes for...')}" />
-                <button type="submit">${_('Search')}</button>
-            </form>
             <div class="ui-loading">
                 <p><span class="spin"><i class="icon-refresh"></i></span> <span class="copy">${_("Loading...")}</span></p>
             </div>
@@ -56,8 +52,7 @@
                 debugMode: ${debug},
                 token: '${token}',
                 user: '${user.username}',
-                courseId: '${course.id}',
-                endpoint: '${endpoint}'
+                courseId: '${course.id}'
             });
         });
     }).call(this, require || RequireJS.require);

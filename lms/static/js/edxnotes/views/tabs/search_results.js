@@ -24,7 +24,7 @@ define([
                 token: this.options.token,
                 user: this.options.user,
                 courseId: this.options.courseId,
-                search: this.onSearchError,
+                search: this.onSearch,
                 error: this.onSearchError
             });
         },

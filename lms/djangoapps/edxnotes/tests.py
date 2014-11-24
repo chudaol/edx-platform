@@ -189,19 +189,19 @@ class EdxNotesHelpersTest(TestCase):
         """
         # url ends with "/"
         with patch.dict("django.conf.settings.EDXNOTES_INTERFACE", {"url": "http://example.com/"}):
-            self.assertEqual("http://example.com/api/v1", helpers.get_endpoint())
+            self.assertEqual("http://example.com", helpers.get_endpoint())
 
         # url doesn't have "/" at the end
         with patch.dict("django.conf.settings.EDXNOTES_INTERFACE", {"url": "http://example.com"}):
-            self.assertEqual("http://example.com/api/v1", helpers.get_endpoint())
+            self.assertEqual("http://example.com", helpers.get_endpoint())
 
         # url with path that starts with "/"
         with patch.dict("django.conf.settings.EDXNOTES_INTERFACE", {"url": "http://example.com"}):
-            self.assertEqual("http://example.com/api/v1/some_path", helpers.get_endpoint("/some_path"))
+            self.assertEqual("http://example.com/some_path", helpers.get_endpoint("/some_path"))
 
         # url with path without "/"
         with patch.dict("django.conf.settings.EDXNOTES_INTERFACE", {"url": "http://example.com"}):
-            self.assertEqual("http://example.com/api/v1/some_path", helpers.get_endpoint("some_path"))
+            self.assertEqual("http://example.com/some_path", helpers.get_endpoint("some_path"))
 
         # url is not configured
         with patch.dict("django.conf.settings.EDXNOTES_INTERFACE", {"url": None}):

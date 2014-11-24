@@ -76,9 +76,6 @@ function ($, _, Backbone, NotesCollection) {
                 url: this.el.action,
                 type: this.el.method,
                 dataType: 'json',
-                headers: {
-                    'x-annotator-auth-token': this.options.token
-                },
                 data: {
                     user: this.options.user,
                     course_id: this.options.courseId,

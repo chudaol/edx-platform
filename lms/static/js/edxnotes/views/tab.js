@@ -26,9 +26,7 @@ function ($, _, Backbone, NotesCollection) {
             this.$el.addClass(this.model.get('class_name'));
             this.options = options;
 
-            this.model.on('change:is_active', function (changed_model, value) {
-                var selectHandler;
-
+            this.model.on('change:is_active', _.bind(function (changed_model, value) {
                 if (value) {
                     changed_model.collection.each(function(model) {
                         // Unactivate all other models.
@@ -38,24 +36,12 @@ function ($, _, Backbone, NotesCollection) {
                     });
 
                     this.$el.addClass(this.activeClassName);
-
-                    selectHandler = this.model.get('render');
-                    if (_.isFunction(selectHandler)) {
-                        selectHandler();
-                    }
                 } else {
                     this.$el.removeClass(this.activeClassName);
                 }
-            }.bind(this));
+            }, this));
 
-            this.model.on('destroy', function (model) {
-                var closeHandler = model.get('close');
-
-                this.remove();
-                if (_.isFunction(closeHandler)) {
-                    closeHandler();
-                }
-            }.bind(this));
+            this.model.on('destroy', this.remove);
 
             if (this.model.get('is_active')) {
                 this.select();

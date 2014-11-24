@@ -1,9 +1,8 @@
 ;(function (define, undefined) {
 'use strict';
 define([
-    'jquery', 'underscore', 'backbone',
-    'js/edxnotes/models/tab', 'js/edxnotes/views/tab',
-], function ($, _, Backbone, TabModel, TabView) {
+    'jquery', 'underscore', 'backbone', 'js/edxnotes/views/tab'
+], function ($, _, Backbone, TabView) {
     var TabsView = Backbone.View.extend({
         tagName: 'ul',
         className: 'tabs',
@@ -12,10 +11,7 @@ define([
             _.bindAll(this);
             this.options = $.extend({}, options);
             this.collection.on({
-                'add': _.bind(function (model) {
-                    this.createTab(model);
-                    model.set('is_active', true);
-                }, this),
+                'add': this.createTab,
                 'destroy': function (model, collection) {
                     if (model.get('is_active')) {
                         collection.at(0).set('is_active', true);

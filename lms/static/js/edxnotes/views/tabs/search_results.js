@@ -24,7 +24,7 @@ define([
                 token: this.options.token,
                 user: this.options.user,
                 courseId: this.options.courseId,
-                search: this.onSearch,
+                search: this.onSearchError,
                 error: this.onSearchError
             });
         },
@@ -42,6 +42,8 @@ define([
         },
 
         onSearch: function (collection, total, searchQuery) {
+            this.hideErrorMessage();
+
             this.searchResults = {
                 collection: collection,
                 total: total,
@@ -61,7 +63,7 @@ define([
         },
 
         onSearchError: function (statusText) {
-            console.log(statusText);
+            this.showErrorMessage(statusText);
         }
     });
 

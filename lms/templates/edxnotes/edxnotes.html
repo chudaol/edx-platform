@@ -22,6 +22,7 @@
                 </form>
             % endif
             </header>
+            <div class="inline-error is-hidden"></div>
         % if notes:
             <form method="GET" action="${endpoint}/search" class="is-hidden">
                 <input name="text" id="search-field" required placeholder="${_('Search Notes for...')}" />

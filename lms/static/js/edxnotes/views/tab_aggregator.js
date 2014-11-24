@@ -17,13 +17,15 @@ define([
             this.options = _.defaults(options, {
                 createTabOnInitialization: true
             });
-            ;
 
             if (this.options.createTabOnInitialization) {
                 this.createTab();
             }
         },
 
+        /**
+         * Creates a tab for the view.
+         */
         createTab: function () {
             this.tabModel = new TabModel(this.tabInfo);
             this.options.tabsCollection.add(this.tabModel);
@@ -48,40 +50,68 @@ define([
             });
         },
 
+        /**
+         * Renders content for the view.
+         */
         renderContent: function () {
             var collection = this.getCollection();
             if (collection) {
                 this.showLoadingIndicator();
+                // If the view is already rendered, destroy it.
                 if (this.contentView) {
                     this.contentView.destroy();
                 }
-
                 this.contentView = new this.SubViewConstructor({collection: collection});
-
                 this.$('.course-info').append(this.contentView.render().$el);
                 this.hideLoadingIndicator();
             }
             return this;
         },
 
+        /**
+         * Returns collection for the view.
+         * @return {Backbone.Collection}
+         */
         getCollection: function () {
             return this.collection;
         },
 
+        /**
+         * Callback that is called on closing the tab.
+         */
         onClose: function () { },
 
         /**
-         * Show the page's loading indicator.
+         * Shows the page's loading indicator.
          */
         showLoadingIndicator: function() {
             this.$('.ui-loading').removeClass('is-hidden');
         },
 
         /**
-         * Hide the page's loading indicator.
+         * Hides the page's loading indicator.
          */
         hideLoadingIndicator: function() {
             this.$('.ui-loading').addClass('is-hidden');
+        },
+
+
+        /**
+         * Shows error message.
+         */
+        showErrorMessage: function (message) {
+            this.$('.inline-error')
+                .html(message)
+                .removeClass('is-hidden');
+        },
+
+        /**
+         * Hides error message.
+         */
+        hideErrorMessage: function () {
+            this.$('.inline-error')
+                .html('')
+                .addClass('is-hidden');
         }
     });
 

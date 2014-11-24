@@ -21,6 +21,11 @@ function ($, _, Backbone, NotesCollection) {
             this.search();
         },
 
+        /**
+         * Prepares server response to appropriate structure.
+         * @param  {Object} data The response form the server.
+         * @return {Array}
+         */
         prepareData: function (data) {
             var collection;
 
@@ -32,13 +37,21 @@ function ($, _, Backbone, NotesCollection) {
             return [collection, data.total, this.searchQuery];
         },
 
+        /**
+         * Returns search text.
+         * @return {String}
+         */
         gerSearchQuery: function () {
             return this.$el.find('#search-field').val();
         },
 
+        /**
+         * Starts search.
+         * @return {jQuery.Deferred}
+         */
         search: function () {
             this.searchQuery = this.gerSearchQuery();
-            this.sendRequest(this.searchQuery)
+            return this.sendRequest(this.searchQuery)
                 .done(this.onSuccess)
                 .fail(this.onError);
         },
@@ -53,6 +66,11 @@ function ($, _, Backbone, NotesCollection) {
             this.options.error(statusText, searchQuery);
         },
 
+        /**
+         * Send request with appropriate configurations.
+         * @param  {String} text Search query.
+         * @return {jQuery.Deferred}
+         */
         sendRequest: function (text) {
             return $.ajax({
                 url: this.el.action,

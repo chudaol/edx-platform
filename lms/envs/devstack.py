@@ -30,7 +30,8 @@ for pkg_name in ['track.contexts', 'track.middleware', 'dd.dogapi']:
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 FEATURES['ENABLE_INSTRUCTOR_EMAIL'] = True     # Enable email for all Studio courses
 FEATURES['REQUIRE_COURSE_EMAIL_AUTH'] = False  # Give all courses email (don't require django-admin perms)
-
+#FEATURES['USE_CUSTOM_THEME'] = True
+#THEME_NAME = "default"
 
 ########################## ANALYTICS TESTING ########################
 
@@ -81,13 +82,19 @@ PIPELINE_SASS_ARGUMENTS = '--debug-info --require {proj_dir}/static/sass/bourbon
 FEATURES['AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING'] = True
 FEATURES['ENABLE_PAYMENT_FAKE'] = True
 
-CC_PROCESSOR_NAME = 'CyberSource2'
+CC_PROCESSOR_NAME = 'LiqPay'
 CC_PROCESSOR = {
     'CyberSource2': {
         "PURCHASE_ENDPOINT": '/shoppingcart/payment_fake/',
         "SECRET_KEY": 'abcd123',
         "ACCESS_KEY": 'abcd123',
         "PROFILE_ID": 'edx',
+    },
+    'LiqPay': {
+         "PURCHASE_ENDPOINT": '/shoppingcart/payment_fake/',
+        "SECRET_KEY": 'abcd123',
+        "ACCESS_KEY": 'abcd123',
+        "PROFILE_ID": 'edx'
     }
 }
 

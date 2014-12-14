@@ -23,6 +23,7 @@
 # Natalia, 2013
 # Natalia, 2013-2014
 # Cristian Salamea <ovnicraft@gmail.com>, 2013
+# Valeria Freire <valtodopds@hotmail.com>, 2014
 # #-#-#-#-#  djangojs-studio.po (edx-platform)  #-#-#-#-#
 # edX translation file.
 # Copyright (C) 2014 EdX
@@ -48,6 +49,8 @@
 # Translators:
 # Cristian Salamea <ovnicraft@gmail.com>, 2014
 # Juan Camilo Montoya Franco <juan.montoya@hmltda.com>, 2014
+# Nuri Plans Toral <nplans@gmail.com>, 2014
+# Valeria Freire <valtodopds@hotmail.com>, 2014
 # #-#-#-#-#  underscore-studio.po (edx-platform)  #-#-#-#-#
 # edX translation file
 # Copyright (C) 2014 edX
@@ -62,8 +65,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-12-01 11:35-0500\n"
-"PO-Revision-Date: 2014-10-08 18:08+0000\n"
+"POT-Creation-Date: 2014-12-11 18:32+0000\n"
+"PO-Revision-Date: 2014-12-11 18:31+0000\n"
 "Last-Translator: Sarina Canelake <sarina@edx.org>\n"
 "Language-Team: Spanish (Latin America) (http://www.transifex.com/projects/p/edx-platform/language/es_419/)\n"
 "MIME-Version: 1.0\n"
@@ -144,6 +147,10 @@ msgstr "Borrar"
 #: cms/templates/js/asset-library.underscore
 msgid "Name"
 msgstr "Nombre"
+
+#: cms/static/js/views/metadata.js lms/static/js/views/file_uploader.js
+msgid "Upload File"
+msgstr "Subir archivo"
 
 #. #-#-#-#-#  djangojs-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a message from the raw HTML editor displayed in the
@@ -2259,33 +2266,6 @@ msgstr "Cerrar Calculadora"
 msgid "Post body"
 msgstr "Cuerpo de la publicación"
 
-#. Translators: "Distribution" refers to a grade distribution. This error
-#. message appears when there is an error getting the data on grade
-#. distribution.;
-#: lms/static/coffee/src/instructor_dashboard/analytics.js
-msgid "Error fetching distribution."
-msgstr "Error al generar la distribución."
-
-#: lms/static/coffee/src/instructor_dashboard/analytics.js
-#: lms/static/coffee/src/instructor_dashboard/instructor_analytics.js
-msgid "Unavailable metric display."
-msgstr "Métrica no disponible para visualización"
-
-#: lms/static/coffee/src/instructor_dashboard/analytics.js
-#: lms/static/coffee/src/instructor_dashboard/instructor_analytics.js
-msgid "Error fetching grade distributions."
-msgstr "Error al generar las distribuciones de calificaciones."
-
-#: lms/static/coffee/src/instructor_dashboard/analytics.js
-#: lms/static/coffee/src/instructor_dashboard/instructor_analytics.js
-msgid "Last Updated: <%= timestamp %>"
-msgstr "Última actualización: <%= timestamp %>"
-
-#: lms/static/coffee/src/instructor_dashboard/analytics.js
-#: lms/static/coffee/src/instructor_dashboard/instructor_analytics.js
-msgid "<%= num_students %> students scored."
-msgstr "<%= num_students %> estudiantes calificados."
-
 #: lms/static/coffee/src/instructor_dashboard/data_download.js
 msgid "Error generating student profile information. Please try again."
 msgstr ""
@@ -2321,6 +2301,22 @@ msgstr ""
 "Los vínculos se generan por demanda y expiran en los siguientes 5 minutos "
 "dado a la naturaleza sensible de la información de calificaciones de "
 "estudiantes."
+
+#: lms/static/coffee/src/instructor_dashboard/instructor_analytics.js
+msgid "Unavailable metric display."
+msgstr "Métrica no disponible para visualización"
+
+#: lms/static/coffee/src/instructor_dashboard/instructor_analytics.js
+msgid "Error fetching grade distributions."
+msgstr "Error al generar las distribuciones de calificaciones."
+
+#: lms/static/coffee/src/instructor_dashboard/instructor_analytics.js
+msgid "Last Updated: <%= timestamp %>"
+msgstr "Última actualización: <%= timestamp %>"
+
+#: lms/static/coffee/src/instructor_dashboard/instructor_analytics.js
+msgid "<%= num_students %> students scored."
+msgstr "<%= num_students %> estudiantes calificados."
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "Username"
@@ -2372,7 +2368,7 @@ msgstr "Error: No puede eliminarse a usted mismo del grupo de instructores!"
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "Errors"
-msgstr ""
+msgstr "Errores"
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "The following errors were generated:"
@@ -2380,7 +2376,7 @@ msgstr "Se generaron los siguientes errores:"
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "Warnings"
-msgstr ""
+msgstr "Advertencias"
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "The following warnings were generated:"
@@ -2388,7 +2384,7 @@ msgstr "Se generaron las siguientes advertencias:"
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "Success"
-msgstr ""
+msgstr "Finalización exitosa"
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "All accounts were created successfully."
@@ -3170,6 +3166,36 @@ msgstr ""
 msgid "Please enter a name for your new cohort group."
 msgstr "Por favor ingrese un nombre para su nuevo grupo de cohorte."
 
+#: lms/static/js/views/cohorts.js
+msgid "Assign students to cohort groups by uploading a CSV file."
+msgstr ""
+
+#: lms/static/js/views/cohorts.js
+msgid "Choose a .csv file"
+msgstr ""
+
+#: lms/static/js/views/cohorts.js
+msgid "Only properly formatted .csv files will be accepted."
+msgstr ""
+
+#: lms/static/js/views/cohorts.js
+msgid "Upload File and Assign Students"
+msgstr ""
+
+#: lms/static/js/views/cohorts.js
+msgid ""
+"Your file '{file}' has been uploaded. Please allow a few minutes for "
+"processing."
+msgstr ""
+
+#: lms/static/js/views/file_uploader.js
+msgid "Your upload of '{file}' succeeded."
+msgstr ""
+
+#: lms/static/js/views/file_uploader.js
+msgid "Your upload of '{file}' failed."
+msgstr ""
+
 #: lms/templates/class_dashboard/all_section_metrics.js
 #: lms/templates/class_dashboard/all_section_metrics.js
 msgid "Unable to retrieve data, please try again later."
@@ -3645,10 +3671,6 @@ msgstr ""
 "Formato de archivo no soportado. Por favor cargue un archivo con extensión "
 "<code>tar.gz</code>."
 
-#: cms/static/js/views/metadata.js
-msgid "Upload File"
-msgstr "Subir archivo"
-
 #: cms/static/js/views/overview.js
 msgid "Collapse All Sections"
 msgstr "Colapsar todas las secciones"
@@ -4116,6 +4138,10 @@ msgid "Cohort Management"
 msgstr "Administración de cohortes"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
+msgid "Assign students to cohort groups manually"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
 msgid "Select a cohort group to manage"
 msgstr "Seleccione un grupo de cohorte"
 
@@ -4124,36 +4150,42 @@ msgid "View Cohort Group"
 msgstr "Ver grupo de cohorte"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
-msgid ""
-"To review all student cohort group assignments, download course profile "
-"information on %(link_start)s the Data Download page. %(link_end)s"
+msgid "Assign students to cohort groups by uploading a CSV file"
 msgstr ""
-"Para revisar todas las asignaciones de estudiantes a los grupos de cohorte, "
-"descargue la información de perfiles del curso en la %(link_start)s página "
-"de descarga de datos.%(link_end)s"
+
+#: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
+msgid ""
+"To review student cohort group assignments or see the results of uploading a"
+" CSV file, download course profile information or cohort results on "
+"%(link_start)s the Data Download page. %(link_end)s"
+msgstr ""
 
 #: lms/templates/student_account/access.underscore
 msgid "Welcome!"
-msgstr ""
+msgstr "¡Bienvenido!"
 
 #: lms/templates/student_account/access.underscore
 msgid "Log in or register to take courses from the world's best universities."
 msgstr ""
+"Inicia sesión o regístrate para tomar cursos de las mejores universidades "
+"del mundo."
 
 #: lms/templates/student_account/access.underscore
 msgid ""
 "Sorry, we're having some technical problems. Wait a few minutes and try "
 "again."
 msgstr ""
+"Lo sentimos, tenemos algunos problemas técnicos. Espera unos minutos e "
+"intenta de nuevo."
 
 #: lms/templates/student_account/access.underscore
 #: lms/templates/student_account/access.underscore
 msgid "I am a new user"
-msgstr ""
+msgstr "Soy un nuevo usuario."
 
 #: lms/templates/student_account/access.underscore
 msgid "I am a returning user"
-msgstr ""
+msgstr "Soy un usuario recurrente"
 
 #: lms/templates/student_account/account.underscore
 msgid "New Address"
@@ -4174,7 +4206,7 @@ msgstr "Restablecer Contraseña"
 
 #: lms/templates/student_account/form_field.underscore
 msgid "Forgot password?"
-msgstr ""
+msgstr "¿Olvidaste tu contraseña?"
 
 #: lms/templates/student_account/login.underscore
 msgid ""
@@ -4182,68 +4214,78 @@ msgid ""
 "%(currentProvider)s account isn't linked with an %(platformName)s account. "
 "To link your accounts, go to your %(platformName)s dashboard."
 msgstr ""
+"Haz iniciado sesión exitosamente en %(currentProvider)s, pero tu cuenta de "
+"%(currentProvider)s no está vinculada con una cuenta %(platformName)s. Para "
+"vincular tus cuentas, visita tu panel de control en %(platformName)s."
 
 #: lms/templates/student_account/login.underscore
 msgid "We couldn't log you in."
-msgstr ""
+msgstr "No se ha podido iniciar tu sesión."
 
 #: lms/templates/student_account/login.underscore
 msgid "Log in"
-msgstr ""
+msgstr "Inicia sesión"
 
 #: lms/templates/student_account/login.underscore
 msgid "Log in using %(name)s"
-msgstr ""
+msgstr "Inicia sesión utilizando %(name)s"
 
 #: lms/templates/student_account/password_reset.underscore
 msgid ""
 "Enter the email address you used to create your account. We'll send you a "
 "link you can use to reset your password."
 msgstr ""
+"Introduce la dirección de correo electrónico que utilizaste para crear tu "
+"cuenta. Te enviaremos un enlace que puedes utilizar para restablecer tu "
+"contraseña."
 
 #: lms/templates/student_account/password_reset.underscore
 msgid "An error occurred."
-msgstr ""
+msgstr "Ha ocurrido un error."
 
 #: lms/templates/student_account/password_reset.underscore
 msgid "Reset password"
-msgstr ""
+msgstr "Restablecer mi contraseña"
 
 #: lms/templates/student_account/password_reset.underscore
 msgid "Password Reset Email Sent"
-msgstr ""
+msgstr "El correo para restablecer contraseña ha sido enviado."
 
 #: lms/templates/student_account/password_reset.underscore
 msgid ""
 "We've sent instructions for resetting your password to the email address you"
 " provided."
 msgstr ""
+"Te hemos enviado las instrucciones para restablecer la contraseña a la "
+"dirección de correo electrónico que has proporcionado."
 
 #: lms/templates/student_account/register.underscore
 msgid "You've successfully logged into %(currentProvider)s."
-msgstr ""
+msgstr "Has iniciado sesión exitosamente con %(currentProvider)s."
 
 #: lms/templates/student_account/register.underscore
 msgid ""
 "We just need a little more information before you start learning with "
 "%(platformName)s."
 msgstr ""
+"Necesitamos un poco mas de información antes de comiences a aprender con "
+"%(platformName)s."
 
 #: lms/templates/student_account/register.underscore
 msgid "Register using %(name)s"
-msgstr ""
+msgstr "Regístrate usando %(name)s"
 
 #: lms/templates/student_account/register.underscore
 msgid "We couldn't complete your registration."
-msgstr ""
+msgstr "No pudimos completar tu registro."
 
 #: lms/templates/student_account/register.underscore
 msgid "Register"
-msgstr ""
+msgstr "Registrarse"
 
 #: lms/templates/student_account/register.underscore
 msgid "Required field"
-msgstr ""
+msgstr "Campo requerido"
 
 #: lms/templates/student_profile/profile.underscore
 msgid "Full Name"

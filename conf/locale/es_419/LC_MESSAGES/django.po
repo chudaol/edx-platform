@@ -130,7 +130,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-12-11 18:33+0000\n"
+"POT-Creation-Date: 2014-12-15 18:26+0000\n"
 "PO-Revision-Date: 2014-10-27 15:11+0000\n"
 "Last-Translator: Cristian Salamea <ovnicraft@gmail.com>\n"
 "Language-Team: Spanish (Latin America) (http://www.transifex.com/projects/p/edx-platform/language/es_419/)\n"
@@ -3067,7 +3067,8 @@ msgstr ""
 msgid "Content Experiment"
 msgstr "Experimento de contenido"
 
-#: common/lib/xmodule/xmodule/split_test_module.py lms/lib/xblock/mixin.py
+#: common/lib/xmodule/xmodule/split_test_module.py
+#: lms/djangoapps/lms_xblock/mixin.py
 msgid ""
 "The list of group configurations for partitioning students in content "
 "experiments."
@@ -3301,7 +3302,7 @@ msgid "Enter the default date by which problems are due."
 msgstr "Ingrese la fecha límite por defecto para la entrega de los problemas."
 
 #: common/lib/xmodule/xmodule/modulestore/inheritance.py
-#: lms/lib/xblock/mixin.py
+#: lms/djangoapps/lms_xblock/mixin.py
 msgid "If true, can be seen only by course staff, regardless of start date."
 msgstr ""
 "Si es verdadero, sólo puede ser visto por el personal del curso, sin "
@@ -5247,6 +5248,66 @@ msgstr ""
 msgid "Add to profile"
 msgstr "Añadir al perfil"
 
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Courseware Chrome"
+msgstr "Chrome para el curso"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter the chrome, or navigation tools, to use for the XBlock in the LMS. Valid values are: \n"
+"\"chromeless\" -- to not use tabs or the accordion; \n"
+"\"tabs\" -- to use tabs only; \n"
+"\"accordion\" -- to use the accordion only; or \n"
+"\"tabs,accordion\" -- to use tabs and the accordion."
+msgstr ""
+"Ingrese las heramientas de chrome o de navegación para user con el XBlock dentro del LMS. Las opciones válidas son:\n"
+"\"chromeless\" -- No utilizar las pestañas o el acordeón; \n"
+"\"tabs\" -- Solo utilizar las pestañas; \n"
+"\"accordion\" -- Solo utilizar el acordeón o \n"
+"\"tabs,accordion\" -- Utilizar las pestañas y el acordeón."
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Default Tab"
+msgstr "Pestaña por defecto"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter the tab that is selected in the XBlock. If not set, the Courseware tab"
+" is selected."
+msgstr ""
+"Ingrese la pestaña que estará seleccionada en el XBlock. Si no se configura,"
+" se seleccionará la pestaña de contenidos del curso."
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "LaTeX Source File Name"
+msgstr "Nombre del archivo fuente LaTeX"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Enter the source file name for LaTeX."
+msgstr "Ingrese el nombre del archivo fuente de LaTeX."
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Course Is Public"
+msgstr "El curso es público"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter true or false. If true, the course is open to the public. If false, "
+"the course is open only to admins."
+msgstr ""
+"Ingrese true o false. Si ingresa true, el curso estará abierto al público. "
+"De los contrario, estará abierto solo para los usuarios administradores del "
+"mismo."
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"This xblock refers to a deleted or invalid content group configuration."
+msgstr ""
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "This xblock refers to a deleted or invalid content group."
+msgstr ""
+
 #: lms/djangoapps/open_ended_grading/staff_grading_service.py
 msgid ""
 "Could not contact the external grading server. Please contact the "
@@ -6310,66 +6371,6 @@ msgstr ""
 msgid "Taiwan"
 msgstr "Taiwan"
 
-#: lms/lib/xblock/mixin.py
-msgid "Courseware Chrome"
-msgstr "Chrome para el curso"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter the chrome, or navigation tools, to use for the XBlock in the LMS. Valid values are: \n"
-"\"chromeless\" -- to not use tabs or the accordion; \n"
-"\"tabs\" -- to use tabs only; \n"
-"\"accordion\" -- to use the accordion only; or \n"
-"\"tabs,accordion\" -- to use tabs and the accordion."
-msgstr ""
-"Ingrese las heramientas de chrome o de navegación para user con el XBlock dentro del LMS. Las opciones válidas son:\n"
-"\"chromeless\" -- No utilizar las pestañas o el acordeón; \n"
-"\"tabs\" -- Solo utilizar las pestañas; \n"
-"\"accordion\" -- Solo utilizar el acordeón o \n"
-"\"tabs,accordion\" -- Utilizar las pestañas y el acordeón."
-
-#: lms/lib/xblock/mixin.py
-msgid "Default Tab"
-msgstr "Pestaña por defecto"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter the tab that is selected in the XBlock. If not set, the Courseware tab"
-" is selected."
-msgstr ""
-"Ingrese la pestaña que estará seleccionada en el XBlock. Si no se configura,"
-" se seleccionará la pestaña de contenidos del curso."
-
-#: lms/lib/xblock/mixin.py
-msgid "LaTeX Source File Name"
-msgstr "Nombre del archivo fuente LaTeX"
-
-#: lms/lib/xblock/mixin.py
-msgid "Enter the source file name for LaTeX."
-msgstr "Ingrese el nombre del archivo fuente de LaTeX."
-
-#: lms/lib/xblock/mixin.py
-msgid "Course Is Public"
-msgstr "El curso es público"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter true or false. If true, the course is open to the public. If false, "
-"the course is open only to admins."
-msgstr ""
-"Ingrese true o false. Si ingresa true, el curso estará abierto al público. "
-"De los contrario, estará abierto solo para los usuarios administradores del "
-"mismo."
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"This xblock refers to a deleted or invalid content group configuration."
-msgstr ""
-
-#: lms/lib/xblock/mixin.py
-msgid "This xblock refers to a deleted or invalid content group."
-msgstr ""
-
 #: lms/templates/main_django.html cms/templates/base.html
 #: lms/templates/main.html
 msgid "Skip to this view's content"
@@ -7076,9 +7077,6 @@ msgid ""
 "It looks like {email_address} and {username} belong to an existing account. "
 "Try again with a different email address and username."
 msgstr ""
-"Parece que el {email_address} y {nombre de usuario} pertenecer a una cuenta "
-"existente. Inténtalo de nuevo con una dirección de correo electrónico y "
-"nombre de usuario diferente."
 
 #: openedx/core/djangoapps/user_api/views.py
 msgid ""
@@ -7292,6 +7290,13 @@ msgid ""
 msgstr ""
 "Tome el curso especificado e intente exportarlo a un repositorio de git\n"
 ". El directorio del curso ya debe ser un repositorio de git. El comando a utilizar es:  git_export <course_loc> <git_url>"
+
+#: cms/djangoapps/contentstore/views/assets.py
+msgid ""
+"File {filename} exceeds maximum size of {size_mb} MB. Please follow the "
+"instructions here to upload a file elsewhere and link to it instead: "
+"{faq_url}"
+msgstr ""
 
 #: cms/djangoapps/contentstore/views/assets.py
 msgid "Upload completed"
@@ -15454,20 +15459,15 @@ msgstr "La activación de su cuenta es inválida"
 #: cms/templates/activation_invalid.html
 msgid ""
 "We're sorry. Something went wrong with your activation. Check to make sure "
-"the URL you went to was correct &mdash; e-mail programs will sometimes split"
+"the URL you went to was correct \\u2014 e-mail programs will sometimes split"
 " it into two lines."
 msgstr ""
-"Lo sentimos. Ocurrió un error con la activación de su cuenta. Revise la URL "
-"para asegurarse que sea correcta. Los programas de correo electrónico "
-"algunas veces separan las direcciones url en dos líneas."
 
 #: cms/templates/activation_invalid.html
 msgid ""
-"If you still have issues, contact edX Support. In the meatime, you can also "
-"return to"
+"If you still have issues, contact edX Support. In the meantime, you can also"
+" return to {link_start}the Studio homepage.{link_end}"
 msgstr ""
-"Si continúa experimentando problemas, por favor contacte al equipo de "
-"soporte. Entre tanto, puede retornar a"
 
 #: cms/templates/activation_invalid.html
 msgid "Contact edX Support"
@@ -15563,6 +15563,10 @@ msgstr ""
 #: cms/templates/asset_index.html
 msgid "Learn more about managing files"
 msgstr "Aprenda más sobre el manejo de archivos"
+
+#: cms/templates/asset_index.html
+msgid "Max per-file size: {max_filesize}MB"
+msgstr ""
 
 #: cms/templates/asset_index.html
 msgid "Choose File"

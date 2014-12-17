@@ -32,6 +32,7 @@
 # Alexander L. <alexander.lohberg@paluno.uni-due.de>, 2014
 # andreas.frey <andreas.frey@liip.ch>, 2014
 # Arno <transifex@senlogik.de>, 2013
+# Ettore Atalan <atalanttore@googlemail.com>, 2014
 # s6lidaem <linda.daemmer@web.de>, 2014
 # Maximilian Kindshofer <maximilian@kindshofer.net>, 2014
 # Maximilian Kindshofer <maximilian@kindshofer.net>, 2014
@@ -111,7 +112,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-12-11 18:33+0000\n"
+"POT-Creation-Date: 2014-12-15 18:26+0000\n"
 "PO-Revision-Date: 2014-10-27 15:11+0000\n"
 "Last-Translator: Alexander L. <alexander.lohberg@paluno.uni-due.de>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/edx-platform/language/de_DE/)\n"
@@ -3059,7 +3060,8 @@ msgstr ""
 msgid "Content Experiment"
 msgstr "Inhaltsexperiment"
 
-#: common/lib/xmodule/xmodule/split_test_module.py lms/lib/xblock/mixin.py
+#: common/lib/xmodule/xmodule/split_test_module.py
+#: lms/djangoapps/lms_xblock/mixin.py
 msgid ""
 "The list of group configurations for partitioning students in content "
 "experiments."
@@ -3292,7 +3294,7 @@ msgstr ""
 "bearbeiten sind."
 
 #: common/lib/xmodule/xmodule/modulestore/inheritance.py
-#: lms/lib/xblock/mixin.py
+#: lms/djangoapps/lms_xblock/mixin.py
 msgid "If true, can be seen only by course staff, regardless of start date."
 msgstr ""
 "Falls \"Wahr\", kann es nur von Kursmitarbeitern gesehen werden, unabhängig "
@@ -5243,6 +5245,66 @@ msgstr ""
 msgid "Add to profile"
 msgstr "Zum Profil hinzufügen"
 
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Courseware Chrome"
+msgstr "Kursinhalte-Chrome"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter the chrome, or navigation tools, to use for the XBlock in the LMS. Valid values are: \n"
+"\"chromeless\" -- to not use tabs or the accordion; \n"
+"\"tabs\" -- to use tabs only; \n"
+"\"accordion\" -- to use the accordion only; or \n"
+"\"tabs,accordion\" -- to use tabs and the accordion."
+msgstr ""
+"Geben Sie die Chrome- oder Navigations-Werkzeuge ein, die für XBlock im LMS verwendet werden sollen. Zulässige Werte sind:\n"
+"\"chromeless\" – um weder Reiter noch das Akkordeon zu verwenden;\n"
+"\"tabs\" – um nur Reiter zu verwenden;\n"
+"\"accordion\" – um nur das Akkordeon zu verwenden; oder\n"
+"\"tabs,accordion\" – um Reiter und das Akkordeon zu verwenden."
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Default Tab"
+msgstr "Standardreiter"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter the tab that is selected in the XBlock. If not set, the Courseware tab"
+" is selected."
+msgstr ""
+"Gib den Reiter an der im XBlock ausgewählt ist. Falls nicht gesetzt, wird "
+"die Kursinhaltsübersicht ausgewählt."
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "LaTeX Source File Name"
+msgstr "LaTeX Quelldateiname"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Enter the source file name for LaTeX."
+msgstr "Quelldateiname für LaTeX angeben."
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Course Is Public"
+msgstr "Kurs ist öffentlich"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter true or false. If true, the course is open to the public. If false, "
+"the course is open only to admins."
+msgstr ""
+"Gib \"Wahr\" oder \"Falsch\" ein. Falls \"Wahr\", ist der Kurs für die "
+"Öffentlichkeit zugäglich. Falls \"Falsch\", steht der Kurs nur "
+"Administratoren offen."
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"This xblock refers to a deleted or invalid content group configuration."
+msgstr ""
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "This xblock refers to a deleted or invalid content group."
+msgstr ""
+
 #: lms/djangoapps/open_ended_grading/staff_grading_service.py
 msgid ""
 "Could not contact the external grading server. Please contact the "
@@ -6240,66 +6302,6 @@ msgstr ""
 msgid "Taiwan"
 msgstr "Taiwan"
 
-#: lms/lib/xblock/mixin.py
-msgid "Courseware Chrome"
-msgstr "Kursinhalte-Chrome"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter the chrome, or navigation tools, to use for the XBlock in the LMS. Valid values are: \n"
-"\"chromeless\" -- to not use tabs or the accordion; \n"
-"\"tabs\" -- to use tabs only; \n"
-"\"accordion\" -- to use the accordion only; or \n"
-"\"tabs,accordion\" -- to use tabs and the accordion."
-msgstr ""
-"Geben Sie die Chrome- oder Navigations-Werkzeuge ein, die für XBlock im LMS verwendet werden sollen. Zulässige Werte sind:\n"
-"\"chromeless\" – um weder Reiter noch das Akkordeon zu verwenden;\n"
-"\"tabs\" – um nur Reiter zu verwenden;\n"
-"\"accordion\" – um nur das Akkordeon zu verwenden; oder\n"
-"\"tabs,accordion\" – um Reiter und das Akkordeon zu verwenden."
-
-#: lms/lib/xblock/mixin.py
-msgid "Default Tab"
-msgstr "Standardreiter"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter the tab that is selected in the XBlock. If not set, the Courseware tab"
-" is selected."
-msgstr ""
-"Gib den Reiter an der im XBlock ausgewählt ist. Falls nicht gesetzt, wird "
-"die Kursinhaltsübersicht ausgewählt."
-
-#: lms/lib/xblock/mixin.py
-msgid "LaTeX Source File Name"
-msgstr "LaTeX Quelldateiname"
-
-#: lms/lib/xblock/mixin.py
-msgid "Enter the source file name for LaTeX."
-msgstr "Quelldateiname für LaTeX angeben."
-
-#: lms/lib/xblock/mixin.py
-msgid "Course Is Public"
-msgstr "Kurs ist öffentlich"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter true or false. If true, the course is open to the public. If false, "
-"the course is open only to admins."
-msgstr ""
-"Gib \"Wahr\" oder \"Falsch\" ein. Falls \"Wahr\", ist der Kurs für die "
-"Öffentlichkeit zugäglich. Falls \"Falsch\", steht der Kurs nur "
-"Administratoren offen."
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"This xblock refers to a deleted or invalid content group configuration."
-msgstr ""
-
-#: lms/lib/xblock/mixin.py
-msgid "This xblock refers to a deleted or invalid content group."
-msgstr ""
-
 #: lms/templates/main_django.html cms/templates/base.html
 #: lms/templates/main.html
 msgid "Skip to this view's content"
@@ -7124,7 +7126,7 @@ msgstr "Nutzungsbedingungen"
 #: cms/djangoapps/contentstore/course_info_model.py
 #: cms/djangoapps/contentstore/course_info_model.py
 msgid "Invalid course update id."
-msgstr "Ungültige Kursaktualisierungs-ID."
+msgstr "Ungültige Kursaktualisierungskennung."
 
 #: cms/djangoapps/contentstore/course_info_model.py
 msgid "Course update not found."
@@ -7206,6 +7208,13 @@ msgid ""
 msgstr ""
 "Nehmen Sie den ausgewählten Kurs und versuchen Sie ihn in ein git-Repository zu exportieren.\n"
 "Das Kursverzeichnis muss hierfür bereits ein git-Repository sein. Verwendung:  git_export <course_loc> <git_url>"
+
+#: cms/djangoapps/contentstore/views/assets.py
+msgid ""
+"File {filename} exceeds maximum size of {size_mb} MB. Please follow the "
+"instructions here to upload a file elsewhere and link to it instead: "
+"{faq_url}"
+msgstr ""
 
 #: cms/djangoapps/contentstore/views/assets.py
 msgid "Upload completed"
@@ -15265,20 +15274,15 @@ msgstr "Ihre Kontoaktivierung ist ungültig"
 #: cms/templates/activation_invalid.html
 msgid ""
 "We're sorry. Something went wrong with your activation. Check to make sure "
-"the URL you went to was correct &mdash; e-mail programs will sometimes split"
+"the URL you went to was correct \\u2014 e-mail programs will sometimes split"
 " it into two lines."
 msgstr ""
-"Entschuldigung, mit ihrer Aktivierung ist etwas schief gegangen. Prüfen sie "
-"ob die eingegebene URL richtig ist &mdash; E-Mail Programme teilen den Link "
-"manchmal in zwei Teile"
 
 #: cms/templates/activation_invalid.html
 msgid ""
-"If you still have issues, contact edX Support. In the meatime, you can also "
-"return to"
+"If you still have issues, contact edX Support. In the meantime, you can also"
+" return to {link_start}the Studio homepage.{link_end}"
 msgstr ""
-"Wenn Sie weiterhin Probleme haben, kontaktieren sie bitte den Support. In "
-"der Zwischenzeit können sie zurückkehren auf"
 
 #: cms/templates/activation_invalid.html
 msgid "Contact edX Support"
@@ -15365,6 +15369,10 @@ msgstr ""
 
 #: cms/templates/asset_index.html
 msgid "Learn more about managing files"
+msgstr ""
+
+#: cms/templates/asset_index.html
+msgid "Max per-file size: {max_filesize}MB"
 msgstr ""
 
 #: cms/templates/asset_index.html

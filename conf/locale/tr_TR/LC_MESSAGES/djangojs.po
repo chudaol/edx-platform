@@ -54,7 +54,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-12-11 18:32+0000\n"
+"POT-Creation-Date: 2014-12-15 18:24+0000\n"
 "PO-Revision-Date: 2014-12-11 18:31+0000\n"
 "Last-Translator: Sarina Canelake <sarina@edx.org>\n"
 "Language-Team: Turkish (Turkey) (http://www.transifex.com/projects/p/edx-platform/language/tr_TR/)\n"
@@ -2427,6 +2427,12 @@ msgid "Your message cannot be blank."
 msgstr "Mesajınız boş olamaz."
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
+msgid ""
+"There are invalid keywords in your email. Please check the following "
+"keywords and try again:"
+msgstr ""
+
+#: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "Your email was successfully queued for sending."
 msgstr "E-postanız gönderme kuyruğuna başarıyla eklendi"
 
@@ -3426,8 +3432,26 @@ msgid "Date Added"
 msgstr "Tarih Eklendi"
 
 #: cms/static/js/views/assets.js
-msgid "Uploading…"
-msgstr "Yükleniyor..."
+msgid "File {filename} exceeds maximum size of {maxFileSizeInMBs} MB"
+msgstr ""
+
+#: cms/static/js/views/assets.js
+msgid ""
+"Please follow the instructions here to upload a file elsewhere and link to "
+"it: {maxFileSizeRedirectUrl}"
+msgstr ""
+
+#: cms/static/js/views/assets.js
+msgid "Your file could not be uploaded"
+msgstr ""
+
+#: cms/static/js/views/assets.js
+msgid "Max file size exceeded"
+msgstr ""
+
+#: cms/static/js/views/assets.js
+msgid "Uploading"
+msgstr "Yüklüyor"
 
 #: cms/static/js/views/assets.js
 #: cms/templates/js/asset-upload-modal.underscore
@@ -3439,7 +3463,7 @@ msgstr ""
 "#-#-#-#-#  underscore-studio.po (edx-platform)  #-#-#-#-#\n"
 "Dosyayı Seç"
 
-#: cms/static/js/views/assets.js
+#: cms/static/js/views/assets.js cms/static/js/views/assets.js.c
 #: cms/templates/js/asset-upload-modal.underscore
 #, fuzzy
 msgid "Upload New File"
@@ -3449,7 +3473,7 @@ msgstr ""
 "#-#-#-#-#  underscore-studio.po (edx-platform)  #-#-#-#-#\n"
 "Yeni dosya yükle"
 
-#: cms/static/js/views/assets.js
+#: cms/static/js/views/assets.js cms/static/js/views/assets.js.c
 msgid "Load Another File"
 msgstr "Başka Bir Dosya Yükle"
 

@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-12-11 18:32+0000\n"
+"POT-Creation-Date: 2014-12-15 18:24+0000\n"
 "PO-Revision-Date: 2014-10-08 18:08+0000\n"
 "Last-Translator: Sarina Canelake <sarina@edx.org>\n"
 "Language-Team: Malayalam (http://www.transifex.com/projects/p/edx-platform/language/ml/)\n"
@@ -2474,6 +2474,12 @@ msgid "Your message cannot be blank."
 msgstr "താങ്കളുടെ സന്ദേശം ശൂന്യമാകാന്‍ പാടില്ല."
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
+msgid ""
+"There are invalid keywords in your email. Please check the following "
+"keywords and try again:"
+msgstr ""
+
+#: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "Your email was successfully queued for sending."
 msgstr ""
 "താങ്കളുടെ ഈമെയില്‍ അയക്കുവാനായുള്ള വരിയില്‍ വിജയകരമായി ചേര്‍ത്തിരിക്കുന്നു."
@@ -3476,20 +3482,38 @@ msgid "Date Added"
 msgstr ""
 
 #: cms/static/js/views/assets.js
-msgid "Uploading…"
-msgstr "അപ്‌ലോഡ്‌  ചെയ്തുകൊണ്ടിരിക്കുന്നു..."
+msgid "File {filename} exceeds maximum size of {maxFileSizeInMBs} MB"
+msgstr ""
+
+#: cms/static/js/views/assets.js
+msgid ""
+"Please follow the instructions here to upload a file elsewhere and link to "
+"it: {maxFileSizeRedirectUrl}"
+msgstr ""
+
+#: cms/static/js/views/assets.js
+msgid "Your file could not be uploaded"
+msgstr ""
+
+#: cms/static/js/views/assets.js
+msgid "Max file size exceeded"
+msgstr ""
+
+#: cms/static/js/views/assets.js
+msgid "Uploading"
+msgstr ""
 
 #: cms/static/js/views/assets.js
 #: cms/templates/js/asset-upload-modal.underscore
 msgid "Choose File"
 msgstr "ഫയൽ തിരഞ്ഞെടുക്കുക"
 
-#: cms/static/js/views/assets.js
+#: cms/static/js/views/assets.js cms/static/js/views/assets.js.c
 #: cms/templates/js/asset-upload-modal.underscore
 msgid "Upload New File"
 msgstr "പുതിയ ഫയൽ അപ്‌ലോഡ്‌ ചെയ്യുക "
 
-#: cms/static/js/views/assets.js
+#: cms/static/js/views/assets.js cms/static/js/views/assets.js.c
 msgid "Load Another File"
 msgstr "പുതിയ ഫയൽ ലോഡ്‌  ചെയ്യുക "
 

@@ -70,7 +70,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-12-11 18:33+0000\n"
+"POT-Creation-Date: 2014-12-15 18:26+0000\n"
 "PO-Revision-Date: 2014-11-18 12:31+0000\n"
 "Last-Translator: Nicole <dlruddk1112@gmail.com>\n"
 "Language-Team: Korean (Korea) (http://www.transifex.com/projects/p/edx-platform/language/ko_KR/)\n"
@@ -2711,7 +2711,8 @@ msgstr ""
 msgid "Content Experiment"
 msgstr ""
 
-#: common/lib/xmodule/xmodule/split_test_module.py lms/lib/xblock/mixin.py
+#: common/lib/xmodule/xmodule/split_test_module.py
+#: lms/djangoapps/lms_xblock/mixin.py
 msgid ""
 "The list of group configurations for partitioning students in content "
 "experiments."
@@ -2920,7 +2921,7 @@ msgid "Enter the default date by which problems are due."
 msgstr ""
 
 #: common/lib/xmodule/xmodule/modulestore/inheritance.py
-#: lms/lib/xblock/mixin.py
+#: lms/djangoapps/lms_xblock/mixin.py
 msgid "If true, can be seen only by course staff, regardless of start date."
 msgstr ""
 
@@ -4690,6 +4691,60 @@ msgstr ""
 msgid "Add to profile"
 msgstr ""
 
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Courseware Chrome"
+msgstr ""
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter the chrome, or navigation tools, to use for the XBlock in the LMS. Valid values are: \n"
+"\"chromeless\" -- to not use tabs or the accordion; \n"
+"\"tabs\" -- to use tabs only; \n"
+"\"accordion\" -- to use the accordion only; or \n"
+"\"tabs,accordion\" -- to use tabs and the accordion."
+msgstr ""
+"LMS에서 XBlock를 사용하기 위해 chrome 또는 탐색 도구를 입력합니다. 유효한 값 : \"chromeless\" -- "
+"tab이나 accordion을 사용하지 않습니다; \"tab\" -- tab만 사용합니다; \"accordion\" -- "
+"accordion만 사용합니다; \"tabs,accordion\" -- tab, accordion 모두 사용합니다."
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Default Tab"
+msgstr ""
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter the tab that is selected in the XBlock. If not set, the Courseware tab"
+" is selected."
+msgstr "XBlock안에 선택한 tab을 입력합니다. 만약 설정하지 않으면 courseware tab이 선택됩니다."
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "LaTeX Source File Name"
+msgstr ""
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Enter the source file name for LaTeX."
+msgstr ""
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Course Is Public"
+msgstr "강의 모두에게 공개하기"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter true or false. If true, the course is open to the public. If false, "
+"the course is open only to admins."
+msgstr ""
+"true 또는 false를 입력하세요. 강의는 모든 사람에게 공개됩니다. 만약 false로 설정하면, 강의는 관리자에게만 공개됩니다."
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"This xblock refers to a deleted or invalid content group configuration."
+msgstr ""
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "This xblock refers to a deleted or invalid content group."
+msgstr ""
+
 #: lms/djangoapps/open_ended_grading/staff_grading_service.py
 msgid ""
 "Could not contact the external grading server. Please contact the "
@@ -5543,60 +5598,6 @@ msgstr "가격을 선택하지 않았거나 선택된 가격이 최소값이하�
 msgid "Taiwan"
 msgstr ""
 
-#: lms/lib/xblock/mixin.py
-msgid "Courseware Chrome"
-msgstr ""
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter the chrome, or navigation tools, to use for the XBlock in the LMS. Valid values are: \n"
-"\"chromeless\" -- to not use tabs or the accordion; \n"
-"\"tabs\" -- to use tabs only; \n"
-"\"accordion\" -- to use the accordion only; or \n"
-"\"tabs,accordion\" -- to use tabs and the accordion."
-msgstr ""
-"LMS에서 XBlock를 사용하기 위해 chrome 또는 탐색 도구를 입력합니다. 유효한 값 : \"chromeless\" -- "
-"tab이나 accordion을 사용하지 않습니다; \"tab\" -- tab만 사용합니다; \"accordion\" -- "
-"accordion만 사용합니다; \"tabs,accordion\" -- tab, accordion 모두 사용합니다."
-
-#: lms/lib/xblock/mixin.py
-msgid "Default Tab"
-msgstr ""
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter the tab that is selected in the XBlock. If not set, the Courseware tab"
-" is selected."
-msgstr "XBlock안에 선택한 tab을 입력합니다. 만약 설정하지 않으면 courseware tab이 선택됩니다."
-
-#: lms/lib/xblock/mixin.py
-msgid "LaTeX Source File Name"
-msgstr ""
-
-#: lms/lib/xblock/mixin.py
-msgid "Enter the source file name for LaTeX."
-msgstr ""
-
-#: lms/lib/xblock/mixin.py
-msgid "Course Is Public"
-msgstr "강의 모두에게 공개하기"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter true or false. If true, the course is open to the public. If false, "
-"the course is open only to admins."
-msgstr ""
-"true 또는 false를 입력하세요. 강의는 모든 사람에게 공개됩니다. 만약 false로 설정하면, 강의는 관리자에게만 공개됩니다."
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"This xblock refers to a deleted or invalid content group configuration."
-msgstr ""
-
-#: lms/lib/xblock/mixin.py
-msgid "This xblock refers to a deleted or invalid content group."
-msgstr ""
-
 #: lms/templates/main_django.html cms/templates/base.html
 #: lms/templates/main.html
 msgid "Skip to this view's content"
@@ -6444,6 +6445,13 @@ msgid ""
 msgstr ""
 "특정한 코스를 선택해서 그것을 지트보관소에 내보내기 해보세요. 코스디렉토리가 지트보관소에 있을 것입니다. 사용법:git_export "
 "<course_loc> <git_url>"
+
+#: cms/djangoapps/contentstore/views/assets.py
+msgid ""
+"File {filename} exceeds maximum size of {size_mb} MB. Please follow the "
+"instructions here to upload a file elsewhere and link to it instead: "
+"{faq_url}"
+msgstr ""
 
 #: cms/djangoapps/contentstore/views/assets.py
 msgid "Upload completed"
@@ -13893,17 +13901,15 @@ msgstr "계정 활성화가 무효합니다"
 #: cms/templates/activation_invalid.html
 msgid ""
 "We're sorry. Something went wrong with your activation. Check to make sure "
-"the URL you went to was correct &mdash; e-mail programs will sometimes split"
+"the URL you went to was correct \\u2014 e-mail programs will sometimes split"
 " it into two lines."
 msgstr ""
-"죄송합니다. 활성화에 문제가 발생했습니다. 방문한 URL이 정확 있는지 확인해 보십시요 - 이메일 프로그램은 가끔 두 줄로 나누어 질 "
-"때가 있습니다."
 
 #: cms/templates/activation_invalid.html
 msgid ""
-"If you still have issues, contact edX Support. In the meatime, you can also "
-"return to"
-msgstr "그래도 문제가 있다면, edX 지원 센터에 문의하십시오. 그동안 다음으로 되돌아 올수 있습니다:"
+"If you still have issues, contact edX Support. In the meantime, you can also"
+" return to {link_start}the Studio homepage.{link_end}"
+msgstr ""
 
 #: cms/templates/activation_invalid.html
 msgid "Contact edX Support"
@@ -13990,6 +13996,10 @@ msgstr "Embed URL 또는 Embed URL 열을 클릭하여 복사하여 값을 선�
 #: cms/templates/asset_index.html
 msgid "Learn more about managing files"
 msgstr "파일을 관리하는 방법에 대해 자세히 알아보기"
+
+#: cms/templates/asset_index.html
+msgid "Max per-file size: {max_filesize}MB"
+msgstr ""
 
 #: cms/templates/asset_index.html
 msgid "Choose File"

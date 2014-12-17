@@ -144,7 +144,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-12-11 18:33+0000\n"
+"POT-Creation-Date: 2014-12-15 18:26+0000\n"
 "PO-Revision-Date: 2014-10-27 15:11+0000\n"
 "Last-Translator: Weyedide <weyedide@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/edx-platform/language/ru/)\n"
@@ -3034,7 +3034,8 @@ msgstr ""
 msgid "Content Experiment"
 msgstr "Экспериментальный материал"
 
-#: common/lib/xmodule/xmodule/split_test_module.py lms/lib/xblock/mixin.py
+#: common/lib/xmodule/xmodule/split_test_module.py
+#: lms/djangoapps/lms_xblock/mixin.py
 msgid ""
 "The list of group configurations for partitioning students in content "
 "experiments."
@@ -3268,7 +3269,7 @@ msgstr ""
 "Введите срок сдачи заданий, который будет использоваться по умолчанию."
 
 #: common/lib/xmodule/xmodule/modulestore/inheritance.py
-#: lms/lib/xblock/mixin.py
+#: lms/djangoapps/lms_xblock/mixin.py
 msgid "If true, can be seen only by course staff, regardless of start date."
 msgstr ""
 
@@ -5152,6 +5153,56 @@ msgstr ""
 msgid "Add to profile"
 msgstr "Добавить в профиль"
 
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Courseware Chrome"
+msgstr "Содержание курса в Chrome"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter the chrome, or navigation tools, to use for the XBlock in the LMS. Valid values are: \n"
+"\"chromeless\" -- to not use tabs or the accordion; \n"
+"\"tabs\" -- to use tabs only; \n"
+"\"accordion\" -- to use the accordion only; or \n"
+"\"tabs,accordion\" -- to use tabs and the accordion."
+msgstr ""
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Default Tab"
+msgstr "Вкладка по умолчанию"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter the tab that is selected in the XBlock. If not set, the Courseware tab"
+" is selected."
+msgstr ""
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "LaTeX Source File Name"
+msgstr "Название исходного файла LaTeX"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Enter the source file name for LaTeX."
+msgstr ""
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Course Is Public"
+msgstr "Курс доступен"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter true or false. If true, the course is open to the public. If false, "
+"the course is open only to admins."
+msgstr ""
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"This xblock refers to a deleted or invalid content group configuration."
+msgstr ""
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "This xblock refers to a deleted or invalid content group."
+msgstr ""
+
 #: lms/djangoapps/open_ended_grading/staff_grading_service.py
 msgid ""
 "Could not contact the external grading server. Please contact the "
@@ -6108,56 +6159,6 @@ msgstr "Не выбрана цена или выбранная цена ниже
 msgid "Taiwan"
 msgstr ""
 
-#: lms/lib/xblock/mixin.py
-msgid "Courseware Chrome"
-msgstr "Содержание курса в Chrome"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter the chrome, or navigation tools, to use for the XBlock in the LMS. Valid values are: \n"
-"\"chromeless\" -- to not use tabs or the accordion; \n"
-"\"tabs\" -- to use tabs only; \n"
-"\"accordion\" -- to use the accordion only; or \n"
-"\"tabs,accordion\" -- to use tabs and the accordion."
-msgstr ""
-
-#: lms/lib/xblock/mixin.py
-msgid "Default Tab"
-msgstr "Вкладка по умолчанию"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter the tab that is selected in the XBlock. If not set, the Courseware tab"
-" is selected."
-msgstr ""
-
-#: lms/lib/xblock/mixin.py
-msgid "LaTeX Source File Name"
-msgstr "Название исходного файла LaTeX"
-
-#: lms/lib/xblock/mixin.py
-msgid "Enter the source file name for LaTeX."
-msgstr ""
-
-#: lms/lib/xblock/mixin.py
-msgid "Course Is Public"
-msgstr "Курс доступен"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter true or false. If true, the course is open to the public. If false, "
-"the course is open only to admins."
-msgstr ""
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"This xblock refers to a deleted or invalid content group configuration."
-msgstr ""
-
-#: lms/lib/xblock/mixin.py
-msgid "This xblock refers to a deleted or invalid content group."
-msgstr ""
-
 #: lms/templates/main_django.html cms/templates/base.html
 #: lms/templates/main.html
 msgid "Skip to this view's content"
@@ -7062,6 +7063,13 @@ msgid ""
 msgstr ""
 "Взять указанный учебный курс и попытаться експортировать его в хранилище git\n"
 ". Каталог с учебным курсом должен уже существовать в хранилище git. Использование:  git_export <course_loc> <git_url>"
+
+#: cms/djangoapps/contentstore/views/assets.py
+msgid ""
+"File {filename} exceeds maximum size of {size_mb} MB. Please follow the "
+"instructions here to upload a file elsewhere and link to it instead: "
+"{faq_url}"
+msgstr ""
 
 #: cms/djangoapps/contentstore/views/assets.py
 msgid "Upload completed"
@@ -11270,7 +11278,7 @@ msgstr ""
 
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Dear [[Name]]"
-msgstr "Уважаемый/ая [[Name]]"
+msgstr "Уважаемый/ая [[Имя]]"
 
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid ""
@@ -11281,6 +11289,8 @@ msgstr ""
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "Your redeem url is: [[Enter Redeem URL here from the attached CSV]]"
 msgstr ""
+"Ваш URL для получения компенсации: [[Введите URL для получения компенсации "
+"из вложения в формате CSV]]"
 
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "(1) Register for an account at {site_name}"
@@ -11314,7 +11324,7 @@ msgstr "(5) Содержимое курса будет недоступно до
 
 #: lms/templates/emails/business_order_confirmation_email.txt
 msgid "<p>Sincerely,</p><p>[[Your Signature]]</p>"
-msgstr ""
+msgstr "<p>С уважением,</p><p>[[Ваша подпись]]</p>"
 
 #: lms/templates/emails/confirm_email_change.txt
 msgid ""
@@ -11495,7 +11505,7 @@ msgstr ""
 
 #: lms/templates/emails/registration_codes_sale_email.txt
 msgid "Dear [[Name]]:"
-msgstr "Уважаемый/ая [[Name]]:"
+msgstr "Уважаемый/ая [[Имя]]:"
 
 #: lms/templates/emails/registration_codes_sale_email.txt
 msgid ""
@@ -11508,7 +11518,8 @@ msgstr ""
 #: lms/templates/emails/registration_codes_sale_email.txt
 msgid "Your redeem code is: [[Enter Redeem Code here from the attached CSV]]"
 msgstr ""
-"Ваш компенсационный код: [[Enter Redeem Code here from the attached CSV]]"
+"Ваш компенсационный код: [[Введите Компенсационный Код из вложения в формате"
+" CSV]]"
 
 #: lms/templates/emails/registration_codes_sale_email.txt
 msgid "(1) Register for an account at {site_name}."
@@ -11545,7 +11556,7 @@ msgstr "(7) Содержимое курса будет недоступно до
 
 #: lms/templates/emails/registration_codes_sale_email.txt
 msgid "Sincerely,[[Your Signature]]"
-msgstr ""
+msgstr "С уважением,[[Ваша подпись]]"
 
 #: lms/templates/emails/registration_codes_sale_invoice_attachment.txt
 msgid "INVOICE"
@@ -15086,20 +15097,15 @@ msgstr "Недействительная активация для вашей у
 #: cms/templates/activation_invalid.html
 msgid ""
 "We're sorry. Something went wrong with your activation. Check to make sure "
-"the URL you went to was correct &mdash; e-mail programs will sometimes split"
+"the URL you went to was correct \\u2014 e-mail programs will sometimes split"
 " it into two lines."
 msgstr ""
-"Нам очень жаль, но что-то пошло не так с активацией. Проверьте, что ссылка, "
-"по которой вы перешли, была корректной (почтовые программы иногда разделяют "
-"ссылки на две части)."
 
 #: cms/templates/activation_invalid.html
 msgid ""
-"If you still have issues, contact edX Support. In the meatime, you can also "
-"return to"
+"If you still have issues, contact edX Support. In the meantime, you can also"
+" return to {link_start}the Studio homepage.{link_end}"
 msgstr ""
-"Если у вас всё ещё остались вопросы, свяжитесь с техподдержкой edX. Пока же "
-"вы можете заодно вернуться к"
 
 #: cms/templates/activation_invalid.html
 msgid "Contact edX Support"
@@ -15192,6 +15198,10 @@ msgstr ""
 #: cms/templates/asset_index.html
 msgid "Learn more about managing files"
 msgstr "Узнать больше об управлении файлами"
+
+#: cms/templates/asset_index.html
+msgid "Max per-file size: {max_filesize}MB"
+msgstr ""
 
 #: cms/templates/asset_index.html
 msgid "Choose File"

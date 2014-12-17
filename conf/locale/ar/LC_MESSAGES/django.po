@@ -25,6 +25,7 @@
 # Nabeel El-Dughailib <nabeel@qordoba.com>, 2014
 # Najwan Al Rousan <najwanrousan@gmail.com>, 2013
 # Najwan Al Rousan <najwanrousan@gmail.com>, 2013
+# omarithawi <oithawi@qrf.org>, 2014
 # Osama M. Mneina <o.mneina@gmail.com>, 2014
 # RaghadG <raghad_g@yahoo.com>, 2014
 # SiddigSami <siddigsami@live.com>, 2014
@@ -118,7 +119,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-12-11 18:33+0000\n"
+"POT-Creation-Date: 2014-12-15 18:26+0000\n"
 "PO-Revision-Date: 2014-11-26 23:51+0000\n"
 "Last-Translator: Nabeel El-Dughailib <nabeel@qordoba.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/edx-platform/language/ar/)\n"
@@ -227,8 +228,8 @@ msgid ""
 "Your account has been disabled. If you believe this was done in error, "
 "please contact us at {support_email}"
 msgstr ""
-"عذرًا، لقد جرى تعطيل حسابك. إذا كنت تعتقد بأنّ هذا حصل عن طريق الخطأ، يُرجى "
-"الاتصال بنا على العنوان {SUPPORT_EMAIL}"
+"عذرًا، لقد جرى تعطيل حسابك. إذا كنت تعتقد بأنّ هذا حصل بطريق الخطأ، يُرجى "
+"الاتصال بنا على العنوان {support_email}"
 
 #: common/djangoapps/student/middleware.py
 msgid "Disabled Account"
@@ -3037,7 +3038,8 @@ msgstr "يستخدم هذا الإسم لتنظيم محتوى المساق ال
 msgid "Content Experiment"
 msgstr "اختبار المحتوى"
 
-#: common/lib/xmodule/xmodule/split_test_module.py lms/lib/xblock/mixin.py
+#: common/lib/xmodule/xmodule/split_test_module.py
+#: lms/djangoapps/lms_xblock/mixin.py
 msgid ""
 "The list of group configurations for partitioning students in content "
 "experiments."
@@ -3263,7 +3265,7 @@ msgid "Enter the default date by which problems are due."
 msgstr "إدخال تاريخ الاستحقاق الافتراضي لحلّ المسائل."
 
 #: common/lib/xmodule/xmodule/modulestore/inheritance.py
-#: lms/lib/xblock/mixin.py
+#: lms/djangoapps/lms_xblock/mixin.py
 msgid "If true, can be seen only by course staff, regardless of start date."
 msgstr ""
 "عند اختيار صواب، يمكن رؤيته فقط من قبل طاقم المساق، بغض النظر عن تاريخ "
@@ -5216,6 +5218,64 @@ msgstr ""
 msgid "Add to profile"
 msgstr "الإضافة إلى الملف الشخصي"
 
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Courseware Chrome"
+msgstr "منهاج المساق في متصفّح كروم"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter the chrome, or navigation tools, to use for the XBlock in the LMS. Valid values are: \n"
+"\"chromeless\" -- to not use tabs or the accordion; \n"
+"\"tabs\" -- to use tabs only; \n"
+"\"accordion\" -- to use the accordion only; or \n"
+"\"tabs,accordion\" -- to use tabs and the accordion."
+msgstr ""
+"إدخال كروم، أو أدوات التصفّح، لاستخدام  XBlock في نظام إدارة التعلّم. تكون القيم الصحيحة\n"
+"\"chromeless\" - عدم استخدام علامات التبويب أو الأكورديون؛\n"
+"\"علامات التبويب\" - استخدام الأكورديون فقط؛ أو \n"
+"\"علامات التبويب،الأكورديون\" - لاستخدام علامات التبويب والأكورديون."
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Default Tab"
+msgstr "شريط الأدوات الافتراضي"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter the tab that is selected in the XBlock. If not set, the Courseware tab"
+" is selected."
+msgstr ""
+"إدخال علامة التبويب التي تمّ اختيارها في  XBlock. إذا لم يتم ضبطها، الرجاء "
+"اختيار علامة التبويب \"منهاج المساق\"."
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "LaTeX Source File Name"
+msgstr "إسم ملف مصدر لاتكس"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Enter the source file name for LaTeX."
+msgstr "إدخال اسم الملف للمحوّل البرمجي لاتكس"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Course Is Public"
+msgstr "إنّ المساق ظاهر للعموم"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter true or false. If true, the course is open to the public. If false, "
+"the course is open only to admins."
+msgstr ""
+"الرجاء إدخال  صواب أو خطأ. عند اختيار  صواب، يصبح المساق مفتوحاً للعموم. إذا"
+" تمّ اختيار خاطئ، يكون المساق مفتوحاً فقط للمشرفين."
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"This xblock refers to a deleted or invalid content group configuration."
+msgstr ""
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "This xblock refers to a deleted or invalid content group."
+msgstr ""
+
 #: lms/djangoapps/open_ended_grading/staff_grading_service.py
 msgid ""
 "Could not contact the external grading server. Please contact the "
@@ -6241,64 +6301,6 @@ msgstr "لم يتم اختيار سعر أو أن السعر الذي تم اخ�
 msgid "Taiwan"
 msgstr "تايوان"
 
-#: lms/lib/xblock/mixin.py
-msgid "Courseware Chrome"
-msgstr "منهاج المساق في متصفّح كروم"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter the chrome, or navigation tools, to use for the XBlock in the LMS. Valid values are: \n"
-"\"chromeless\" -- to not use tabs or the accordion; \n"
-"\"tabs\" -- to use tabs only; \n"
-"\"accordion\" -- to use the accordion only; or \n"
-"\"tabs,accordion\" -- to use tabs and the accordion."
-msgstr ""
-"إدخال كروم، أو أدوات التصفّح، لاستخدام  XBlock في نظام إدارة التعلّم. تكون القيم الصحيحة\n"
-"\"chromeless\" - عدم استخدام علامات التبويب أو الأكورديون؛\n"
-"\"علامات التبويب\" - استخدام الأكورديون فقط؛ أو \n"
-"\"علامات التبويب،الأكورديون\" - لاستخدام علامات التبويب والأكورديون."
-
-#: lms/lib/xblock/mixin.py
-msgid "Default Tab"
-msgstr "شريط الأدوات الافتراضي"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter the tab that is selected in the XBlock. If not set, the Courseware tab"
-" is selected."
-msgstr ""
-"إدخال علامة التبويب التي تمّ اختيارها في  XBlock. إذا لم يتم ضبطها، الرجاء "
-"اختيار علامة التبويب \"منهاج المساق\"."
-
-#: lms/lib/xblock/mixin.py
-msgid "LaTeX Source File Name"
-msgstr "إسم ملف مصدر لاتكس"
-
-#: lms/lib/xblock/mixin.py
-msgid "Enter the source file name for LaTeX."
-msgstr "إدخال اسم الملف للمحوّل البرمجي لاتكس"
-
-#: lms/lib/xblock/mixin.py
-msgid "Course Is Public"
-msgstr "إنّ المساق ظاهر للعموم"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter true or false. If true, the course is open to the public. If false, "
-"the course is open only to admins."
-msgstr ""
-"الرجاء إدخال  صواب أو خطأ. عند اختيار  صواب، يصبح المساق مفتوحاً للعموم. إذا"
-" تمّ اختيار خاطئ، يكون المساق مفتوحاً فقط للمشرفين."
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"This xblock refers to a deleted or invalid content group configuration."
-msgstr ""
-
-#: lms/lib/xblock/mixin.py
-msgid "This xblock refers to a deleted or invalid content group."
-msgstr ""
-
 #: lms/templates/main_django.html cms/templates/base.html
 #: lms/templates/main.html
 msgid "Skip to this view's content"
@@ -7009,7 +7011,7 @@ msgid ""
 "It looks like {email_address} and {username} belong to an existing account. "
 "Try again with a different email address and username."
 msgstr ""
-"يبدو أنّ العنوان {EMAIL_ADDRESS} والاسم {username} يخصّان حسابًا قائمًا. "
+"يبدو أنّ العنوان {email_address} والاسم {username} يخصّان حسابًا قائمًا. "
 "يُرجى إعادة المحاولة بعنوان بريد إلكتروني واسم مستخدم مختلفين."
 
 #: openedx/core/djangoapps/user_api/views.py
@@ -7017,7 +7019,7 @@ msgid ""
 "It looks like {email_address} belongs to an existing account. Try again with"
 " a different email address."
 msgstr ""
-"يبدو أنّ العنوان {EMAIL_ADDRESS} يخصّ حسابًا قائمًا. يُرجى إعادة المحاولة "
+"يبدو أنّ العنوان {email_address} يخصّ حسابًا قائمًا. يُرجى إعادة المحاولة "
 "بعنوان بريد إلكتروني مختلف."
 
 #: openedx/core/djangoapps/user_api/views.py
@@ -7222,6 +7224,13 @@ msgid ""
 msgstr ""
 "خذ المساق المحدّد وحاول أن تصدّره إلى مستودع git\n"
 ". يجب أن يكون دليل المساق هو أصلًا مستودع git. الاستخدام: git_export <course_loc> <git_url>"
+
+#: cms/djangoapps/contentstore/views/assets.py
+msgid ""
+"File {filename} exceeds maximum size of {size_mb} MB. Please follow the "
+"instructions here to upload a file elsewhere and link to it instead: "
+"{faq_url}"
+msgstr ""
 
 #: cms/djangoapps/contentstore/views/assets.py
 msgid "Upload completed"
@@ -15217,19 +15226,15 @@ msgstr "عذرًا، إنّ عملية تفعيل حسابك غير صحيحة."
 #: cms/templates/activation_invalid.html
 msgid ""
 "We're sorry. Something went wrong with your activation. Check to make sure "
-"the URL you went to was correct &mdash; e-mail programs will sometimes split"
+"the URL you went to was correct \\u2014 e-mail programs will sometimes split"
 " it into two lines."
 msgstr ""
-"نأسف لحدوث خطأ أثناء عملية تفعيل حسابك. يُرجى التحقّق من صحّة الرابط الذي "
-"ضغطت عليه &mdash;، حيث أنّ برامج البريد الإلكتروني تقسمه أحيانًا على سطرين. "
 
 #: cms/templates/activation_invalid.html
 msgid ""
-"If you still have issues, contact edX Support. In the meatime, you can also "
-"return to"
+"If you still have issues, contact edX Support. In the meantime, you can also"
+" return to {link_start}the Studio homepage.{link_end}"
 msgstr ""
-"في حال استمرّت المشكلة، يُرجى الاتصال بفريق الدعم لدى edX. ويمكنك أيضًا في "
-"هذه الأثناء أن تعود إلى"
 
 #: cms/templates/activation_invalid.html
 msgid "Contact edX Support"
@@ -15322,6 +15327,10 @@ msgstr ""
 #: cms/templates/asset_index.html
 msgid "Learn more about managing files"
 msgstr "تعلّم المزيد عن كيفية إدارة الملفّات"
+
+#: cms/templates/asset_index.html
+msgid "Max per-file size: {max_filesize}MB"
+msgstr ""
 
 #: cms/templates/asset_index.html
 msgid "Choose File"

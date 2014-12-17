@@ -84,7 +84,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-12-11 18:32+0000\n"
+"POT-Creation-Date: 2014-12-15 18:24+0000\n"
 "PO-Revision-Date: 2014-12-11 18:31+0000\n"
 "Last-Translator: Sarina Canelake <sarina@edx.org>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/edx-platform/language/fr/)\n"
@@ -2554,6 +2554,12 @@ msgid "Your message cannot be blank."
 msgstr "Votre message ne peut pas être vide."
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
+msgid ""
+"There are invalid keywords in your email. Please check the following "
+"keywords and try again:"
+msgstr ""
+
+#: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "Your email was successfully queued for sending."
 msgstr "Votre e-mail est en attente d’envoi."
 
@@ -3215,7 +3221,7 @@ msgstr ""
 
 #: lms/static/js/views/cohorts.js
 msgid "Choose a .csv file"
-msgstr ""
+msgstr "Choisir un fichier .csv"
 
 #: lms/static/js/views/cohorts.js
 msgid "Only properly formatted .csv files will be accepted."
@@ -3611,15 +3617,33 @@ msgid "Date Added"
 msgstr "Date ajoutée"
 
 #: cms/static/js/views/assets.js
-msgid "Uploading…"
-msgstr "Envoi en cours..."
+msgid "File {filename} exceeds maximum size of {maxFileSizeInMBs} MB"
+msgstr ""
+
+#: cms/static/js/views/assets.js
+msgid ""
+"Please follow the instructions here to upload a file elsewhere and link to "
+"it: {maxFileSizeRedirectUrl}"
+msgstr ""
+
+#: cms/static/js/views/assets.js
+msgid "Your file could not be uploaded"
+msgstr ""
+
+#: cms/static/js/views/assets.js
+msgid "Max file size exceeded"
+msgstr ""
+
+#: cms/static/js/views/assets.js
+msgid "Uploading"
+msgstr "Upload en cours"
 
 #: cms/static/js/views/assets.js
 #: cms/templates/js/asset-upload-modal.underscore
 msgid "Choose File"
 msgstr "Choisir le fichier"
 
-#: cms/static/js/views/assets.js
+#: cms/static/js/views/assets.js cms/static/js/views/assets.js.c
 #: cms/templates/js/asset-upload-modal.underscore
 #, fuzzy
 msgid "Upload New File"
@@ -3629,7 +3653,7 @@ msgstr ""
 "#-#-#-#-#  underscore-studio.po (edx-platform)  #-#-#-#-#\n"
 "Téléversez un nouveau fichier"
 
-#: cms/static/js/views/assets.js
+#: cms/static/js/views/assets.js cms/static/js/views/assets.js.c
 msgid "Load Another File"
 msgstr "Envoyer un autre fichier"
 

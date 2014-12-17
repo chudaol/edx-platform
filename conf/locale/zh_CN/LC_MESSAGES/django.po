@@ -209,7 +209,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2014-12-11 18:33+0000\n"
+"POT-Creation-Date: 2014-12-15 18:26+0000\n"
 "PO-Revision-Date: 2014-10-27 15:11+0000\n"
 "Last-Translator: wuqiong <wuqiong417@gmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/edx-platform/language/zh_CN/)\n"
@@ -2823,7 +2823,8 @@ msgstr "这个名字用来组织你的课程内容，但是不会展示给学生
 msgid "Content Experiment"
 msgstr "实验内容"
 
-#: common/lib/xmodule/xmodule/split_test_module.py lms/lib/xblock/mixin.py
+#: common/lib/xmodule/xmodule/split_test_module.py
+#: lms/djangoapps/lms_xblock/mixin.py
 msgid ""
 "The list of group configurations for partitioning students in content "
 "experiments."
@@ -3037,7 +3038,7 @@ msgid "Enter the default date by which problems are due."
 msgstr "输入问题的默认截止日期。"
 
 #: common/lib/xmodule/xmodule/modulestore/inheritance.py
-#: lms/lib/xblock/mixin.py
+#: lms/djangoapps/lms_xblock/mixin.py
 msgid "If true, can be seen only by course staff, regardless of start date."
 msgstr "如果为真，则无论开始日期为何时都只能被课程员工看到。"
 
@@ -4806,6 +4807,61 @@ msgstr ""
 msgid "Add to profile"
 msgstr "添加到配置文件"
 
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Courseware Chrome"
+msgstr "课件镶边"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter the chrome, or navigation tools, to use for the XBlock in the LMS. Valid values are: \n"
+"\"chromeless\" -- to not use tabs or the accordion; \n"
+"\"tabs\" -- to use tabs only; \n"
+"\"accordion\" -- to use the accordion only; or \n"
+"\"tabs,accordion\" -- to use tabs and the accordion."
+msgstr ""
+"输入在 LMS 的 XBlock 中要使用的镶边（导航工具条）。允许的取值有：\n"
+"“chromeless”——不使用选项卡及风琴栏；\n"
+"“tabs”——只使用选项卡；\n"
+"“accordion”——只使用风琴栏；\n"
+"“tabs,accordion”——既使用选项卡也使用风琴栏。"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Default Tab"
+msgstr "默认页面"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter the tab that is selected in the XBlock. If not set, the Courseware tab"
+" is selected."
+msgstr "输入在 XBlock 中默认选中的选项卡。如未设置，则默认选中课件选项卡。"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "LaTeX Source File Name"
+msgstr "LaTex 源文件名"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Enter the source file name for LaTeX."
+msgstr "输入 LaTex 源文件名。"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "Course Is Public"
+msgstr "公开课程"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"Enter true or false. If true, the course is open to the public. If false, "
+"the course is open only to admins."
+msgstr "输入 true 或者 false。如果为 true，课程对公众开放；否则课程只对管理员开放。"
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid ""
+"This xblock refers to a deleted or invalid content group configuration."
+msgstr ""
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "This xblock refers to a deleted or invalid content group."
+msgstr ""
+
 #: lms/djangoapps/open_ended_grading/staff_grading_service.py
 msgid ""
 "Could not contact the external grading server. Please contact the "
@@ -5712,61 +5768,6 @@ msgstr "未选择价格或选择的价格低于最低价。"
 msgid "Taiwan"
 msgstr ""
 
-#: lms/lib/xblock/mixin.py
-msgid "Courseware Chrome"
-msgstr "课件镶边"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter the chrome, or navigation tools, to use for the XBlock in the LMS. Valid values are: \n"
-"\"chromeless\" -- to not use tabs or the accordion; \n"
-"\"tabs\" -- to use tabs only; \n"
-"\"accordion\" -- to use the accordion only; or \n"
-"\"tabs,accordion\" -- to use tabs and the accordion."
-msgstr ""
-"输入在 LMS 的 XBlock 中要使用的镶边（导航工具条）。允许的取值有：\n"
-"“chromeless”——不使用选项卡及风琴栏；\n"
-"“tabs”——只使用选项卡；\n"
-"“accordion”——只使用风琴栏；\n"
-"“tabs,accordion”——既使用选项卡也使用风琴栏。"
-
-#: lms/lib/xblock/mixin.py
-msgid "Default Tab"
-msgstr "默认页面"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter the tab that is selected in the XBlock. If not set, the Courseware tab"
-" is selected."
-msgstr "输入在 XBlock 中默认选中的选项卡。如未设置，则默认选中课件选项卡。"
-
-#: lms/lib/xblock/mixin.py
-msgid "LaTeX Source File Name"
-msgstr "LaTex 源文件名"
-
-#: lms/lib/xblock/mixin.py
-msgid "Enter the source file name for LaTeX."
-msgstr "输入 LaTex 源文件名。"
-
-#: lms/lib/xblock/mixin.py
-msgid "Course Is Public"
-msgstr "公开课程"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"Enter true or false. If true, the course is open to the public. If false, "
-"the course is open only to admins."
-msgstr "输入 true 或者 false。如果为 true，课程对公众开放；否则课程只对管理员开放。"
-
-#: lms/lib/xblock/mixin.py
-msgid ""
-"This xblock refers to a deleted or invalid content group configuration."
-msgstr ""
-
-#: lms/lib/xblock/mixin.py
-msgid "This xblock refers to a deleted or invalid content group."
-msgstr ""
-
 #: lms/templates/main_django.html cms/templates/base.html
 #: lms/templates/main.html
 msgid "Skip to this view's content"
@@ -6628,6 +6629,13 @@ msgid ""
 msgstr ""
 "取得指定的课程然后尝试将其导出到一个Git源。\n"
 "课程目录必须已经是一个Git源。用法： git_export <course_loc> <git_url>"
+
+#: cms/djangoapps/contentstore/views/assets.py
+msgid ""
+"File {filename} exceeds maximum size of {size_mb} MB. Please follow the "
+"instructions here to upload a file elsewhere and link to it instead: "
+"{faq_url}"
+msgstr ""
 
 #: cms/djangoapps/contentstore/views/assets.py
 msgid "Upload completed"
@@ -14042,15 +14050,15 @@ msgstr "您的账户激活是无效的"
 #: cms/templates/activation_invalid.html
 msgid ""
 "We're sorry. Something went wrong with your activation. Check to make sure "
-"the URL you went to was correct &mdash; e-mail programs will sometimes split"
+"the URL you went to was correct \\u2014 e-mail programs will sometimes split"
 " it into two lines."
-msgstr "很抱歉，您的激活出现了一些错误。请核对确保您进入的网址是正确的 &mdash；邮箱程序有时候会将链接分割成两行。"
+msgstr ""
 
 #: cms/templates/activation_invalid.html
 msgid ""
-"If you still have issues, contact edX Support. In the meatime, you can also "
-"return to"
-msgstr "如果您还有问题，请联系edX技术支持。同时，您也可以返回至"
+"If you still have issues, contact edX Support. In the meantime, you can also"
+" return to {link_start}the Studio homepage.{link_end}"
+msgstr ""
 
 #: cms/templates/activation_invalid.html
 msgid "Contact edX Support"
@@ -14133,6 +14141,10 @@ msgstr "点击内嵌 URL 或外部 URL 栏以选择内容，并复制。"
 #: cms/templates/asset_index.html
 msgid "Learn more about managing files"
 msgstr "学习更多关于管理文件"
+
+#: cms/templates/asset_index.html
+msgid "Max per-file size: {max_filesize}MB"
+msgstr ""
 
 #: cms/templates/asset_index.html
 msgid "Choose File"

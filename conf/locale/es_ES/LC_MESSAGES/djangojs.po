@@ -20,6 +20,7 @@
 # luistrenado <inactive+luistrenado@transifex.com>, 2014
 # mercefan <mercefan@gmail.com>, 2014
 # Miguel Angel Cordova <miguel.angel.cordova.uned@gmail.com>, 2014
+# Rosa Sanchez Hernandez <rosa@db.uc3m.es>, 2014
 # Susan Webster <susan@db.uc3m.es>, 2014
 # UAMx <uamx.dev@gmail.com>, 2014
 # valenciaupv <valenciaupv@gmail.com>, 2014
@@ -2525,6 +2526,8 @@ msgid ""
 "There are invalid keywords in your email. Please check the following "
 "keywords and try again:"
 msgstr ""
+"Hay palabras clave erróneas en su correo electrónico. Por favor, consulte "
+"las siguientes palabras clave y vuelva a intentarlo:"
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "Your email was successfully queued for sending."
@@ -3576,20 +3579,24 @@ msgstr "Fecha de adición"
 #: cms/static/js/views/assets.js
 msgid "File {filename} exceeds maximum size of {maxFileSizeInMBs} MB"
 msgstr ""
+"El fichero {nombre del fichero} supera el tamano máximo de "
+"{maxFicheroTamañoen MBs} MB"
 
 #: cms/static/js/views/assets.js
 msgid ""
 "Please follow the instructions here to upload a file elsewhere and link to "
 "it: {maxFileSizeRedirectUrl}"
 msgstr ""
+"Por favor, siga las instrucciones para cargar y enlazar un archivo "
+"{maxFileSizeRedirectUrl}"
 
 #: cms/static/js/views/assets.js
 msgid "Your file could not be uploaded"
-msgstr ""
+msgstr "El archivo no se ha podido grabar"
 
 #: cms/static/js/views/assets.js
 msgid "Max file size exceeded"
-msgstr ""
+msgstr "El fichero excede el tamaño máximo"
 
 #: cms/static/js/views/assets.js
 msgid "Uploading"

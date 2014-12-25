@@ -61,6 +61,7 @@
 # Jerome Huang <canni3269@gmail.com>, 2014
 # jsgang <jsgang9@gmail.com>, 2014
 # 刘洋 <liuyang2011@tsinghua.edu.cn>, 2013
+# Na Liu <nanamadier@gmail.com>, 2014
 # pku9104038 <pku9104038@hotmail.com>, 2014
 # louyihua <supermouselyh@hotmail.com>, 2014
 # Jianfei Wang <me@thinxer.com>, 2013
@@ -79,6 +80,7 @@
 # 
 # Translators:
 # jsgang <jsgang9@gmail.com>, 2014
+# Lionel Chen <chenlinchuan@me.com>, 2014
 # louyihua <supermouselyh@hotmail.com>, 2014
 # 张逸涵 <jeanzhang970128@gmail.com>, 2014
 # 胡超威 <chadennishu@gmail.com>, 2014
@@ -3391,21 +3393,21 @@ msgstr "添加日期"
 
 #: cms/static/js/views/assets.js
 msgid "File {filename} exceeds maximum size of {maxFileSizeInMBs} MB"
-msgstr ""
+msgstr "文件 {文件名}超出最长限度 {maxFileSizeInMBs} MB"
 
 #: cms/static/js/views/assets.js
 msgid ""
 "Please follow the instructions here to upload a file elsewhere and link to "
 "it: {maxFileSizeRedirectUrl}"
-msgstr ""
+msgstr "请按照这里的说明上传文件到别处并把它链接到：{maxFileSizeRedirectUrl}"
 
 #: cms/static/js/views/assets.js
 msgid "Your file could not be uploaded"
-msgstr ""
+msgstr "你的文件无法上传。"
 
 #: cms/static/js/views/assets.js
 msgid "Max file size exceeded"
-msgstr ""
+msgstr "文件容量超出最大限度"
 
 #: cms/static/js/views/assets.js
 msgid "Uploading"
@@ -3946,7 +3948,7 @@ msgstr "群组管理"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
 msgid "Assign students to cohort groups manually"
-msgstr ""
+msgstr "将学生加入这个群组中"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
 msgid "Select a cohort group to manage"
@@ -3973,7 +3975,7 @@ msgstr "欢迎！"
 
 #: lms/templates/student_account/access.underscore
 msgid "Log in or register to take courses from the world's best universities."
-msgstr ""
+msgstr "登录或者注册以获取来自世界上最好的大学的课程。"
 
 #: lms/templates/student_account/access.underscore
 msgid ""
@@ -3988,7 +3990,7 @@ msgstr "我是新手"
 
 #: lms/templates/student_account/access.underscore
 msgid "I am a returning user"
-msgstr ""
+msgstr "我是老用户"
 
 #: lms/templates/student_account/account.underscore
 msgid "New Address"
@@ -4017,6 +4019,8 @@ msgid ""
 "%(currentProvider)s account isn't linked with an %(platformName)s account. "
 "To link your accounts, go to your %(platformName)s dashboard."
 msgstr ""
+"你已经成功地被记入 %(currentProvider)s，但是你的 %(currentProvider)s 帐号没有与一个 "
+"%(platformName)s 相关联。前往你的 %(platformName)s 管理面板关联帐号。"
 
 #: lms/templates/student_account/login.underscore
 msgid "We couldn't log you in."

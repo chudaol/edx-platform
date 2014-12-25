@@ -32,6 +32,7 @@
 # Translators:
 # IvanPrimachenko <jastudent1@gmail.com>, 2014
 # olexiim <olexiim@gmail.com>, 2014
+# Olga Filipova <chudaol@gmail.com>, 2014
 # Tetiana Korshun, 2014
 # #-#-#-#-#  underscore-studio.po (edx-platform)  #-#-#-#-#
 # edX translation file
@@ -3952,11 +3953,11 @@ msgstr ""
 
 #: common/templates/js/discussion/thread-show.underscore
 msgid "This post is visible to everyone."
-msgstr ""
+msgstr "Цей пост видно всім."
 
 #: common/templates/js/discussion/thread-show.underscore
 msgid "%(post_type)s posted %(time_ago)s by %(author)s"
-msgstr ""
+msgstr "%(post_type)s виставлено %(time_ago)s автором %(author)s"
 
 #: common/templates/js/discussion/thread-show.underscore
 msgid "Pinned"

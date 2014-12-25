@@ -163,6 +163,8 @@ msgid ""
 "Your account has been disabled. If you believe this was done in error, "
 "please contact us at {support_email}"
 msgstr ""
+"A fiók le lett tiltva. Ha úgy gondolod, hogy ez egy hiba következménye, "
+"akkor írj az alábbi címünkre: {support_email}"
 
 #: common/djangoapps/student/middleware.py
 msgid "Disabled Account"
@@ -245,6 +247,8 @@ msgid ""
 "You've successfully logged into your {provider_name} account, but this "
 "account isn't linked with an {platform_name} account yet."
 msgstr ""
+"Sikeresen bejelentkeztél a {provider_name} fiókoddal, de ez a fiók nincs még"
+" összekapcsolva az {platform_name} rendszerben egyetlen fiókkal sem."
 
 #: common/djangoapps/student/views.py
 msgid ""
@@ -252,6 +256,9 @@ msgid ""
 "below, and then link your {platform_name} account with {provider_name} from "
 "your dashboard."
 msgstr ""
+"Használd az {platform_name} felhasználói nevedet és jelszavadat, az "
+"{platform_name} rendszerbe történő bejelentkezéshez, majd a műszerfalon "
+"kapcsold össze az {platform_name} fiókodat a {provider_name} fiókoddal."
 
 #: common/djangoapps/student/views.py
 msgid ""
@@ -272,6 +279,8 @@ msgid ""
 "This account has been temporarily locked due to excessive login failures. "
 "Try again later."
 msgstr ""
+"Ez a fiók ideiglenesen zárolva van, mert túl sokszor próbáltál sikertelenül "
+"bejelentkezni. Próbálkozz később."
 
 #: common/djangoapps/student/views.py
 msgid ""
@@ -279,6 +288,10 @@ msgid ""
 "reset your password before you can log in again. Please click the \"Forgot "
 "Password\" link on this page to reset your password before logging in again."
 msgstr ""
+"A jelszóra vonatkozó előírások értelmében lejárt a jelszavad. Alaphelyzetbe "
+"kell állítanod a jelszavad, hogy újból be tudj jelentkezni. Kérlek kattints "
+"az \"Elfelejtettem a jelszavam\" linkre ezen az oldalon, hogy alaphelyzetbe "
+"állítsd a jelszavad mielőtt újra bejelentkezel."
 
 #: common/djangoapps/student/views.py
 msgid "Too many failed login attempts. Try again later."
@@ -438,7 +451,11 @@ msgid_plural ""
 "You are re-using a password that you have used recently. You must have {num}"
 " distinct passwords before reusing a previous password."
 msgstr[0] ""
+"Azt a jelszót akarod ismét használni, amit legutóbb is használtál. {num} "
+"alkalommal kell eltérő jelszót használnod, mielőtt visszatérsz az előzőhöz."
 msgstr[1] ""
+"Azt a jelszót akarod ismét használni, amit legutóbb is használtál. {num} "
+"alkalommal kell eltérő jelszót használnod, mielőtt visszatérsz az előzőhöz."
 
 #: common/djangoapps/student/views.py
 msgid ""
@@ -448,7 +465,11 @@ msgid_plural ""
 "You are resetting passwords too frequently. Due to security policies, {num} "
 "days must elapse between password resets."
 msgstr[0] ""
+"Túl sűrűn állítod helyre a jelszavad. A biztonsági előírások szerint {num} "
+"napnak el kell telnie a jelszó alaphelyzetbe állításai között."
 msgstr[1] ""
+"Túl sűrűn állítod helyre a jelszavad. A biztonsági előírások szerint {num} "
+"napnak el kell telnie a jelszó alaphelyzetbe állításai között."
 
 #: common/djangoapps/student/views.py
 msgid "Password reset unsuccessful"
@@ -845,12 +866,12 @@ msgstr "december"
 msgid "The file must end with the extension '{file_types}'."
 msgid_plural ""
 "The file must end with one of the following extensions: '{file_types}'."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "A következő kiterjesztésű fájlok a megfelelőek: '{file_types}'."
+msgstr[1] "A következő kiterjesztésű fájlok a megfelelőek: '{file_types}'."
 
 #: common/djangoapps/util/file.py
 msgid "Maximum upload file size is {file_size} bytes."
-msgstr ""
+msgstr "Feltölthető fájl maximális mérete  {file_size} byte."
 
 #: common/djangoapps/util/password_policy_validators.py
 msgid "Invalid Length ({0})"
@@ -932,7 +953,7 @@ msgstr "A válasz fogadva."
 #. Translators: '<choice>' is a tag name and should not be translated.
 #: common/lib/capa/capa/inputtypes.py
 msgid "Expected a <choice> tag; got {given_tag} instead"
-msgstr ""
+msgstr "<choice> címkét vártuk, de helyette a {given_tag} címkét írtad"
 
 #: common/lib/capa/capa/inputtypes.py
 msgid ""
@@ -1842,13 +1863,15 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Allow Anonymous Discussion Posts"
-msgstr ""
+msgstr "Névtelen hozzászólás engedélyezése a vita fórumban"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
 "Enter true or false. If true, students can create discussion posts that are "
 "anonymous to all users."
 msgstr ""
+"Írj be igaz vagy hamis értéket. Ha igaz, akkor a tanulók írhatnak a többi "
+"tanuló számára névtelen hozzászólást."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Allow Anonymous Discussion Posts to Peers"
@@ -1994,6 +2017,8 @@ msgid ""
 "Delete Sections, Subsections, or Units you don't need anymore. Be careful, "
 "as there is no Undo function."
 msgstr ""
+"Olyan fejezet, alfejezet, vagy lecke törlése, melyre már nincs többé "
+"szükséged. Legyél óvatos, mert nincs lehetőség visszavonásra."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Add an Instructor-Only Section to Your Outline"
@@ -2183,7 +2208,7 @@ msgstr "Tanúsítvány neve (hosszú név)"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "CSS Class for Course Reruns"
-msgstr ""
+msgstr "CSS osztály a kurzus újraindításához"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
@@ -2233,7 +2258,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Course Maximum Student Enrollment"
-msgstr ""
+msgstr "A kurzusra feliratkozó tanulók maximális száma"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
@@ -2462,7 +2487,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/library_root_xblock.py
 msgid "Library Display Name"
-msgstr ""
+msgstr "Könyvtár megjelenítési neve"
 
 #: common/lib/xmodule/xmodule/library_root_xblock.py
 msgid "Enter the names of the advanced components to use in your library."
@@ -4408,7 +4433,7 @@ msgstr "edX email"
 
 #: lms/djangoapps/instructor/views/legacy.py
 msgid "Enrollment of students"
-msgstr ""
+msgstr "Feliratkozott tanulók"
 
 #: lms/djangoapps/instructor/views/legacy.py
 msgid "Un-enrollment of students"

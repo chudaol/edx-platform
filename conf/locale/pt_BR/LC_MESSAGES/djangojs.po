@@ -61,6 +61,7 @@
 # RenataBarboza, 2013
 # Renata Barboza-Murray, 2014
 # Sarina Canelake <sarina@edx.org>, 2014
+# Thiago Perrotta <thiagoperrotta95@gmail.com>, 2014
 # #-#-#-#-#  underscore.po (edx-platform)  #-#-#-#-#
 # edX translation file
 # Copyright (C) 2014 edX
@@ -72,6 +73,7 @@
 # G <glaucogm@ufpr.br>, 2014
 # Leonardo Flores Zambaldi <fzleonardo@gmail.com>, 2014
 # lukassem <lucas_sem@hotmail.com>, 2014
+# Thiago Perrotta <thiagoperrotta95@gmail.com>, 2014
 # Vitor Silva Martins Costa <costa.vsm@gmail.com>, 2014
 # #-#-#-#-#  underscore-studio.po (edx-platform)  #-#-#-#-#
 # edX translation file
@@ -3576,21 +3578,23 @@ msgstr ""
 
 #: cms/static/js/views/assets.js
 msgid "File {filename} exceeds maximum size of {maxFileSizeInMBs} MB"
-msgstr ""
+msgstr "O arquivo {filename} excede o tamanho máximo de {maxFileSizeInMBs} MB"
 
 #: cms/static/js/views/assets.js
 msgid ""
 "Please follow the instructions here to upload a file elsewhere and link to "
 "it: {maxFileSizeRedirectUrl}"
 msgstr ""
+"Por favor siga as instruções daqui para submeter um arquivo em outro lugar e"
+" criar um link para ele: {maxFileSizeRedirectUrl}"
 
 #: cms/static/js/views/assets.js
 msgid "Your file could not be uploaded"
-msgstr ""
+msgstr "Seu arquivo não pôde ser submetido."
 
 #: cms/static/js/views/assets.js
 msgid "Max file size exceeded"
-msgstr ""
+msgstr "Tamanho máximo de arquivo excedido."
 
 #: cms/static/js/views/assets.js
 msgid "Uploading"
@@ -4102,7 +4106,7 @@ msgstr "Adicionar um novo Grupo"
 
 #: lms/templates/instructor/instructor_dashboard_2/add-cohort-form.underscore
 msgid "New Cohort Name"
-msgstr "Nome Novo Grupo"
+msgstr "Nome para o Novo Grupo"
 
 #: lms/templates/instructor/instructor_dashboard_2/add-cohort-form.underscore
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
@@ -4130,7 +4134,7 @@ msgstr ""
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid "What does this mean?"
-msgstr "O que isto significa?"
+msgstr "O que isso significa?"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohort-editor.underscore
 msgid "Students are added to this group automatically."
@@ -4190,7 +4194,7 @@ msgstr "Gerenciamento de Grupo"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
 msgid "Assign students to cohort groups manually"
-msgstr ""
+msgstr "Atribua manualmente estudantes para os grupos"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
 msgid "Select a cohort group to manage"
@@ -4202,7 +4206,7 @@ msgstr "Visualizar Grupo"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
 msgid "Assign students to cohort groups by uploading a CSV file"
-msgstr ""
+msgstr "Atribua estudandas para os grupos submetendo um arquivo CSV"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
 msgid ""

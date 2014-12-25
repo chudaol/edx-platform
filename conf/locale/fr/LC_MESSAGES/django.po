@@ -7,6 +7,7 @@
 # anaseha <anaselhadjamor@gmail.com>, 2014
 # Bertrand Marron <bertrand.marron@gmail.com>, 2014
 # Christopher Castermane <christopher.castermane@student.uclouvain.be>, 2014
+# Daniel Le Berre, 2014
 # Encolpe Degoute <inactive+encolpe@transifex.com>, 2013
 # Eric Fortin, 2014
 # francoisedocq, 2014
@@ -117,6 +118,7 @@
 # Translators:
 # Bertrand Marron <bertrand.marron@gmail.com>, 2013-2014
 # Christopher Castermane <christopher.castermane@student.uclouvain.be>, 2014
+# Daniel Le Berre, 2014
 # Encolpe Degoute <inactive+encolpe@transifex.com>, 2013
 # Eric Fortin, 2014
 # Françoise Docq, 2014
@@ -980,8 +982,10 @@ msgstr "décembre"
 msgid "The file must end with the extension '{file_types}'."
 msgid_plural ""
 "The file must end with one of the following extensions: '{file_types}'."
-msgstr[0] ""
+msgstr[0] "Le nom du fichier dans se terminer par l'extension '{file_types}'"
 msgstr[1] ""
+"Le nom du fichier dans se terminer par l'une des extensions suivantes : "
+"'{file_types}'"
 
 #: common/djangoapps/util/file.py
 msgid "Maximum upload file size is {file_size} bytes."
@@ -3524,6 +3528,8 @@ msgstr "Configuration des groupes."
 msgid ""
 "Enter the configurations that govern how students are grouped together."
 msgstr ""
+"Entrez les configurations qui régissent la façon dont les étudiants sont "
+"regroupés."
 
 #: common/lib/xmodule/xmodule/modulestore/inheritance.py
 msgid "Enable video caching system"
@@ -4196,12 +4202,12 @@ msgstr "Visitez le wiki d'un cours pour ajouter un article."
 #. MIT, and Dartmouth).
 #: lms/djangoapps/courseware/views.py
 msgid "{first_institutions}, and {last_institution}"
-msgstr ""
+msgstr "{first_institutions}, et {last_institution}"
 
 #. Translators: The join of two institution names (e.g., Harvard and MIT).
 #: lms/djangoapps/courseware/views.py
 msgid "{first_institution} and {second_institution}"
-msgstr ""
+msgstr "{first_institution} et {second_institution}"
 
 #: lms/djangoapps/courseware/views.py
 msgid ""
@@ -4211,7 +4217,11 @@ msgid_plural ""
 "I would like to receive email from {institution_series} and learn about "
 "their other programs."
 msgstr[0] ""
+"Je souhaite recevoir des courriels de {institution_series} et en apprendre "
+"plus sur ses autres programmes."
 msgstr[1] ""
+"Je souhaite recevoir des courriels de {institution_series} et en apprendre "
+"plus sur leurs autres programmes."
 
 #: lms/djangoapps/courseware/views.py
 msgid "Invalid location."
@@ -5407,10 +5417,11 @@ msgstr ""
 msgid ""
 "This xblock refers to a deleted or invalid content group configuration."
 msgstr ""
+"Cet xblock fait référence à une configuration de groupe effacée ou invalide."
 
 #: lms/djangoapps/lms_xblock/mixin.py
 msgid "This xblock refers to a deleted or invalid content group."
-msgstr ""
+msgstr "Cet xblock fait référence à un contenu de groupe effacé ou invalide."
 
 #: lms/djangoapps/open_ended_grading/staff_grading_service.py
 msgid ""
@@ -9942,23 +9953,23 @@ msgstr ""
 
 #: lms/templates/courseware/courseware.html
 msgid "Tips"
-msgstr ""
+msgstr "Conseils"
 
 #: lms/templates/courseware/courseware.html
 msgid "To Use"
-msgstr ""
+msgstr "pour utiliser"
 
 #: lms/templates/courseware/courseware.html
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: lms/templates/courseware/courseware.html
 msgid "Examples"
-msgstr ""
+msgstr "Exemples"
 
 #: lms/templates/courseware/courseware.html
 msgid "Numbers"
-msgstr ""
+msgstr "Nombres"
 
 #: lms/templates/courseware/courseware.html
 msgid "Operators"
@@ -9966,7 +9977,7 @@ msgstr "Opérateurs"
 
 #: lms/templates/courseware/courseware.html
 msgid "Greek letters"
-msgstr ""
+msgstr "Lettres grecques"
 
 #: lms/templates/courseware/courseware.html
 msgid "Constants"
@@ -9978,11 +9989,11 @@ msgstr ""
 
 #: lms/templates/courseware/courseware.html
 msgid "Basic functions"
-msgstr ""
+msgstr "Fonctions de base"
 
 #: lms/templates/courseware/courseware.html
 msgid "Trigonometric functions"
-msgstr ""
+msgstr "Fonctions trigonométriques"
 
 #: lms/templates/courseware/courseware.html
 msgid "Scientific notation"
@@ -10639,7 +10650,7 @@ msgstr ""
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Thanks for your patience as we process your request."
-msgstr ""
+msgstr "Merci pour votre patience pendant que nous traitons votre demande."
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Your verification status is good until {date}."
@@ -16104,7 +16115,7 @@ msgid ""
 "subsection, or unit, then select {em_start}Hide from students{em_end}."
 msgstr ""
 "Pour masquer le contenu aux étudiants, sélectionnez l'icône Configurer pour "
-"un section, une sous-section, ou une unité, puis sélectionnez "
+"une section, une sous-section, ou une unité, puis sélectionnez "
 "{em_start}Cacher aux étudiants{em_end}."
 
 #: cms/templates/course_outline.html

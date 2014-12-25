@@ -1564,7 +1564,7 @@ msgstr "這個問題的狀態，因為您載入這個頁面已經改變。請重
 
 #: common/lib/xmodule/xmodule/combined_open_ended_module.py
 msgid "Open Response Assessment"
-msgstr "開放式評價"
+msgstr "開放式問題評分"
 
 #: common/lib/xmodule/xmodule/combined_open_ended_module.py
 msgid "Current task that the student is on."
@@ -4560,7 +4560,7 @@ msgstr ""
 #. messages as {action}.
 #: lms/djangoapps/instructor_task/tasks.py
 msgid "emailed"
-msgstr "電子郵件已寄出"
+msgstr "已寄出"
 
 #. Translators: This is a past-tense verb that is inserted into task progress
 #. messages as {action}.
@@ -4677,7 +4677,7 @@ msgstr "任何 {attempted} 學生的信息沒有得到 {action} "
 #. {attempted} is a count.
 #: lms/djangoapps/instructor_task/views.py
 msgid "Message successfully {action} for {attempted} recipients"
-msgstr " {attempted} 學生信息成功得到{action}"
+msgstr "給{attempted}位使用者的電子郵件{action}"
 
 #. Translators: {action} is a past-tense verb that is localized separately.
 #. {succeeded} and {attempted} are counts.
@@ -7175,7 +7175,7 @@ msgstr "當前課程"
 
 #: lms/templates/dashboard.html lms/templates/dashboard.html
 msgid "Looks like you haven't enrolled in any courses yet."
-msgstr "似乎您尚未加入任何課程。"
+msgstr "看起來您似乎尚未加入任何課程。"
 
 #: lms/templates/dashboard.html
 msgid "Find courses now!"
@@ -10092,7 +10092,7 @@ msgstr "By:工作人員"
 
 #: lms/templates/discussion/_underscore_templates.html
 msgid "By: Community TA"
-msgstr "By:社區助教"
+msgstr "By:社群助教"
 
 #: lms/templates/discussion/_underscore_templates.html
 msgid "%(votes_up_count)s%(span_sr_open)s votes %(span_close)s"
@@ -10423,8 +10423,8 @@ msgid ""
 " any more email from us. Please do not reply to this e-mail; if you require "
 "assistance, check the help section of the {platform_name} website."
 msgstr ""
-"如果你沒發出過該請求，你不需要做任何事情；你將不會收到其他任何電子郵件。請不要回複此電子郵件；如果你需要幫助，請訪問{platform_name} "
-"網站。"
+"如果您沒發出過該請求，則您不需要做任何事情；您將不會再收到任何來自我們的電子郵件。請不要回覆此電子郵件，如果您需要幫助，請訪問{platform_name}"
+" 網站。"
 
 #: lms/templates/emails/activation_email_subject.txt
 msgid "Activate Your {platform_name} Account"
@@ -11799,7 +11799,7 @@ msgstr "添加版主"
 
 #: lms/templates/instructor/instructor_dashboard_2/membership.html
 msgid "Discussion Community TAs"
-msgstr "討論社區助教"
+msgstr "討論社群助教"
 
 #: lms/templates/instructor/instructor_dashboard_2/membership.html
 msgid ""
@@ -16181,7 +16181,7 @@ msgstr "工作人員已拒絕您的課程開設權限申請。如果您覺得有
 msgid ""
 "Your request for course creation rights to edX Studio have been granted. To "
 "create your first course, visit:"
-msgstr "您對於創建課程的許可權的申請已被接受。如果您想創建您的第一門課程，請瀏覽："
+msgstr "管理者已同意您對於創建課程的申請，如果您想創建您的第一門課程，請瀏覽："
 
 #: cms/templates/emails/course_creator_revoked.txt
 msgid ""
@@ -16191,7 +16191,7 @@ msgstr "您對於創建課程的許可權的申請已經撤銷。如果您覺得
 
 #: cms/templates/emails/course_creator_subject.txt
 msgid "Your course creator status for edX Studio"
-msgstr "您edX Studio的課程創建狀態："
+msgstr "您於edX Studio的課程創建申請狀態"
 
 #: cms/templates/registration/activation_complete.html
 msgid "You can now {link_start}login{link_end}."

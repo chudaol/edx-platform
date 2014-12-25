@@ -3602,7 +3602,7 @@ msgstr ""
 #: lms/djangoapps/class_dashboard/dashboard_data.py
 #: lms/templates/instructor/instructor_dashboard_2/metrics.html
 msgid "Percent"
-msgstr ""
+msgstr "प्रतिशत"
 
 #: lms/djangoapps/class_dashboard/dashboard_data.py
 msgid "Opened by this number of students"

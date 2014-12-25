@@ -16,6 +16,7 @@
 # Elisabeth Georgiado <almanean@yahoo.gr>, 2014
 # JohnMantas <mad._g@hotmail.com>, 2014
 # Nick Gikopoulos <ngick1@gmail.com>, 2014
+# Nick Mantas <nmantas.archery@gmail.com>, 2014
 # STERGIOU IOANNIS <stergiou_john@yahoo.gr>, 2014
 # Theofilos Chamalis <theofxam@gmail.com>, 2014
 # #-#-#-#-#  underscore.po (edx-platform)  #-#-#-#-#
@@ -3109,7 +3110,7 @@ msgstr ""
 #. Group B, ..., Group AA, etc.
 #: cms/static/js/collections/group.js
 msgid "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-msgstr ""
+msgstr "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ"
 
 #: cms/static/js/factories/export.js
 msgid "There has been an error while exporting."
@@ -3122,14 +3123,18 @@ msgid ""
 "attempting another export. Please check that all components on the page are "
 "valid and do not display any error messages."
 msgstr ""
+"Υπήρξε αποτυχία εξαγωγής στο XML από τουάχιστον ένα συστατικό. Συνίσταται να"
+" επιστρέψετε στην σελίδα σύνταξης και να διορθώσετε το σφάλμα πριν πριν "
+"επιχειρήσετε άλλη εξαγωγή. Παρακαλώ ελέγξτε οτι όλα τα στοιχεία της σελίδας "
+"ειναι έγκυρα και ότι δεν εμφανίζουν κανένα μήνυμα σφάλματος."
 
 #: cms/static/js/factories/export.js
 msgid "Correct failed component"
-msgstr ""
+msgstr "Διορθώστε το λανθασμένο συστατικό"
 
 #: cms/static/js/factories/export.js
 msgid "Return to Export"
-msgstr ""
+msgstr "Επιστροφή στην Εξαγωγή"
 
 #: cms/static/js/factories/export.js
 msgid ""
@@ -3138,22 +3143,26 @@ msgid ""
 " component. It is recommended that you inspect your courseware to identify "
 "any components in error and try again."
 msgstr ""
+"Υπήρξε αποτυχία εξαγωγής του μαθηματός σας στο XML. Δυστυχώς δεν  έχουμε "
+"επαρκείς πληροφορίες για νας βοηθήσουμε  να προσδιορίσετε το εσφαλμένο "
+"συστατικό. Συνίσταται να ελέγξετε τη σειρά μαθημάτων σας για να "
+"προσδιορίσετε τυχόν εσφαλμένα συστατικά και προσπαθήστε ξανά"
 
 #: cms/static/js/factories/export.js
 msgid "The raw error message is:"
-msgstr ""
+msgstr "Το ανεπεξέργαστο μήνυμα λάθους είναι :"
 
 #: cms/static/js/factories/export.js
 msgid "There has been an error with your export."
-msgstr ""
+msgstr "Υπήρξε αποτυχία με την εξαγωγή σας"
 
 #: cms/static/js/factories/export.js
 msgid "Yes, take me to the main course page"
-msgstr ""
+msgstr "Ναί, πηγαινέ με στην σελιδα του κυρίους μαθήματος"
 
 #: cms/static/js/factories/import.js
 msgid "There was an error during the upload process."
-msgstr "Παρουσιάστηκε σφάλμα κατά την μεταφόρτωση."
+msgstr "Υπήρξε σφάλμα κατα τη διαδικασία μεταφόρτωσης"
 
 #: cms/static/js/factories/import.js
 msgid "There was an error while unpacking the file."
@@ -3607,7 +3616,7 @@ msgstr "Ρυθμίσεις"
 
 #: cms/static/js/views/xblock_outline.js
 msgid "New %(component_type)s"
-msgstr ""
+msgstr "Νέο %(component_type)s"
 
 #. Translators: This message will be added to the front of messages of type
 #. warning,

@@ -160,21 +160,21 @@ msgstr "Compte desactivat"
 
 #: common/djangoapps/student/models.py
 msgid "Male"
-msgstr ""
+msgstr "Home"
 
 #: common/djangoapps/student/models.py
 msgid "Female"
-msgstr ""
+msgstr "Dona"
 
 #. Translators: 'Other' refers to the student's gender
 #. Translators: 'Other' refers to the student's level of education
 #: common/djangoapps/student/models.py common/djangoapps/student/models.py
 msgid "Other"
-msgstr ""
+msgstr "Altres"
 
 #: common/djangoapps/student/models.py
 msgid "Doctorate"
-msgstr ""
+msgstr "Doctorat"
 
 #: common/djangoapps/student/models.py
 msgid "Master's or professional degree"
@@ -204,7 +204,7 @@ msgstr ""
 #: common/djangoapps/student/models.py
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "None"
-msgstr ""
+msgstr "Cap"
 
 #: common/djangoapps/student/views.py
 msgid "Course id not specified"
@@ -2273,7 +2273,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #. Translators: TBD stands for 'To Be Determined' and is used when a course
 #. does not yet have an announced start date.
@@ -9093,7 +9093,7 @@ msgstr ""
 #: lms/templates/shoppingcart/receipt.html
 #: lms/templates/shoppingcart/receipt.html
 msgid "Students"
-msgstr ""
+msgstr "Estudiants"
 
 #: lms/templates/courseware/legacy_instructor_dashboard.html
 msgid "Score distribution for problems"
@@ -10780,7 +10780,7 @@ msgstr ""
 #: lms/templates/instructor/instructor_dashboard_2/e-commerce.html
 #: lms/templates/instructor/instructor_dashboard_2/edit_coupon_modal.html
 msgid "Code"
-msgstr ""
+msgstr "Codi"
 
 #: lms/templates/instructor/instructor_dashboard_2/add_coupon_modal.html
 #: lms/templates/instructor/instructor_dashboard_2/edit_coupon_modal.html
@@ -15946,7 +15946,7 @@ msgstr ""
 #: cms/templates/widgets/problem-edit.html
 #: cms/templates/widgets/problem-edit.html
 msgid "Heading 1"
-msgstr ""
+msgstr "Títol 1"
 
 #: cms/templates/widgets/problem-edit.html
 #: cms/templates/widgets/problem-edit.html

@@ -59,14 +59,15 @@
 # 
 # Translators:
 # anna.ghetti <anna.ghetti@student.unife.it>, 2014
+# nicolacois <nicolacois@hotmail.com>, 2014
 # Pietro Lombardo <pietrolombardo1979@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
 "POT-Creation-Date: 2014-12-15 18:24+0000\n"
-"PO-Revision-Date: 2014-12-15 19:01+0000\n"
-"Last-Translator: Pietro Lombardo <pietrolombardo1979@gmail.com>\n"
+"PO-Revision-Date: 2014-12-18 14:20+0000\n"
+"Last-Translator: nicolacois <nicolacois@hotmail.com>\n"
 "Language-Team: Italian (Italy) (http://www.transifex.com/projects/p/edx-platform/language/it_IT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2352,7 +2353,7 @@ msgstr "Errore: Non puoi rimoverti dall gruppo Istruttori."
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "Errors"
-msgstr ""
+msgstr "Errori"
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "The following errors were generated:"
@@ -2360,7 +2361,7 @@ msgstr "Sono stati generati i seguenti errori:"
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "Warnings"
-msgstr ""
+msgstr "Problemi"
 
 #: lms/static/coffee/src/instructor_dashboard/membership.js
 msgid "The following warnings were generated:"
@@ -2496,6 +2497,8 @@ msgid ""
 "There are invalid keywords in your email. Please check the following "
 "keywords and try again:"
 msgstr ""
+"Ci sono lettere non valide nella tua email, Per favore controlla le seguenti"
+" lettere e prova di nuovo:"
 
 #: lms/static/coffee/src/instructor_dashboard/send_email.js
 msgid "Your email was successfully queued for sending."
@@ -4214,7 +4217,7 @@ msgstr "Aggiungi nuovo componente"
 
 #: cms/templates/js/advanced_entry.underscore
 msgid "Deprecated"
-msgstr ""
+msgstr "Obsoleta"
 
 #: cms/templates/js/asset-library.underscore
 msgid "List of uploaded files and assets in this course"

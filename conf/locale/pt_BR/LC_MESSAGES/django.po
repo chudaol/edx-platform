@@ -111,6 +111,7 @@
 # RODRIGOR77 <rodrigo_magalhaes_rodrigues_alve@yahoo.com.br>, 2014
 # danielnora <sandaephon@gmail.com>, 2014
 # Sarina Canelake <sarina@edx.org>, 2014
+# Thiago Perrotta <thiagoperrotta95@gmail.com>, 2014
 # Thiago Vieira <thipvieira@gmail.com>, 2014
 # Tulio Simoes Martins Padilha <tuliouel@gmail.com>, 2014
 # Vitor Silva Martins Costa <costa.vsm@gmail.com>, 2014
@@ -9892,23 +9893,23 @@ msgstr ""
 
 #: lms/templates/courseware/courseware.html
 msgid "Tips"
-msgstr ""
+msgstr "Dicas"
 
 #: lms/templates/courseware/courseware.html
 msgid "To Use"
-msgstr ""
+msgstr "Para usar"
 
 #: lms/templates/courseware/courseware.html
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #: lms/templates/courseware/courseware.html
 msgid "Examples"
-msgstr ""
+msgstr "Exemplos"
 
 #: lms/templates/courseware/courseware.html
 msgid "Numbers"
-msgstr ""
+msgstr "Números"
 
 #: lms/templates/courseware/courseware.html
 msgid "Operators"
@@ -9916,7 +9917,7 @@ msgstr "Operadores"
 
 #: lms/templates/courseware/courseware.html
 msgid "Greek letters"
-msgstr ""
+msgstr "Letras gregas"
 
 #: lms/templates/courseware/courseware.html
 msgid "Constants"
@@ -9924,15 +9925,15 @@ msgstr "Constantes"
 
 #: lms/templates/courseware/courseware.html
 msgid "Affixes"
-msgstr ""
+msgstr "Afixos"
 
 #: lms/templates/courseware/courseware.html
 msgid "Basic functions"
-msgstr ""
+msgstr "Funções básicas"
 
 #: lms/templates/courseware/courseware.html
 msgid "Trigonometric functions"
-msgstr ""
+msgstr "Funções trigonométricas"
 
 #: lms/templates/courseware/courseware.html
 msgid "Scientific notation"
@@ -9940,7 +9941,7 @@ msgstr "Notação científica"
 
 #: lms/templates/courseware/courseware.html
 msgid "e notation"
-msgstr ""
+msgstr "Notação científica"
 
 #: lms/templates/courseware/courseware.html
 msgid "Calculate"
@@ -10077,6 +10078,9 @@ msgid ""
 "To download student grades and view the grading configuration for your "
 "course, visit the Data Download section of the Instructor Dashboard."
 msgstr ""
+"Para baixar as notas de estudante e visualizar a configuração das notas para"
+" o seu curso, visite a seção de Downloads de Dados no Dashboard do "
+"Instrutor."
 
 #: lms/templates/courseware/legacy_instructor_dashboard.html
 msgid ""
@@ -10117,6 +10121,8 @@ msgid ""
 "To perform these actions, visit the Student Admin section of the Instructor "
 "Dashboard."
 msgstr ""
+"Para realizar essas ações, visite a seção de Administração do Estudante no "
+"Dashboard do Instrutor."
 
 #: lms/templates/courseware/legacy_instructor_dashboard.html
 msgid "Student-specific grade inspection and adjustment"
@@ -10131,6 +10137,8 @@ msgid ""
 "To add or remove course staff or instructors, visit the Membership section "
 "of the Instructor Dashboard."
 msgstr ""
+"Para adicionar ou remover a equipe do curso ou instrutores, visite a seção "
+"de Membros do Painel de Controle do Instrutor."
 
 #: lms/templates/courseware/legacy_instructor_dashboard.html
 msgid ""
@@ -10573,28 +10581,28 @@ msgstr ""
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Almost there!"
-msgstr ""
+msgstr "Quase lá!"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "You still need to verify for this course."
-msgstr ""
+msgstr "Você ainda precisa fazer uma nova verficação para esse curso."
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Verify Now"
-msgstr ""
+msgstr "Verifique agora"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "You have already verified your ID!"
-msgstr ""
+msgstr "Você já verificou a sua identificação"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Thanks for your patience as we process your request."
-msgstr ""
+msgstr "Obrigado pela sua paciência enquanto processamos o seu pedido"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Your verification status is good until {date}."
-msgstr ""
+msgstr "Seu status de verificação é válido até {date}"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Challenge Yourself!"

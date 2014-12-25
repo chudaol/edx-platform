@@ -38,6 +38,7 @@
 # Nikita <nikita.gritsenko@gmail.com>, 2014
 # Oleksandr Pylypenko <lex.pilipenko@gmail.com>, 2014
 # olexiim <olexiim@gmail.com>, 2014
+# Olga Filipova <chudaol@gmail.com>, 2014
 # Tetiana Korshun, 2014
 # #-#-#-#-#  mako-studio.po (edx-platform)  #-#-#-#-#
 # edX translation file
@@ -10459,7 +10460,7 @@ msgstr "Оновити коментар"
 
 #: lms/templates/discussion/_underscore_templates.html
 msgid "discussion"
-msgstr ""
+msgstr "обговорення"
 
 #: lms/templates/discussion/_underscore_templates.html
 msgid "answered question"

@@ -40,7 +40,7 @@
 # Translators:
 # Pope, 2014
 # bossnm11 <bossnm11@gmail.com>, 2014
-# choemh <choemh@nate.com>, 2014
+# KimKyudong <choemh@nate.com>, 2014
 # Jong-Dae Park <jdpark7@gmail.com>, 2013
 # jeon <bluerespect@nate.com>, 2014
 # chans <kcsgoodboy@gmail.com>, 2014

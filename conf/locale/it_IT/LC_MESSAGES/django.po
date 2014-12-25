@@ -14,6 +14,7 @@
 # maurimonti <maurimonti@msn.com>, 2014
 # Monica Maria Crapanzano <m.crapanzano@estartup.it>, 2013
 # Monica Maria Crapanzano <m.crapanzano@estartup.it>, 2013
+# nicolacois <nicolacois@hotmail.com>, 2014
 # Pietro Lombardo <pietrolombardo1979@gmail.com>, 2014
 # #-#-#-#-#  django-studio.po (edx-platform)  #-#-#-#-#
 # edX translation file.
@@ -25,6 +26,7 @@
 # gianmarco <gianmarco.bonavolonta@tlc.uniroma3.it>, 2014
 # Giulio Gratta, 2014
 # Monica Maria Crapanzano <m.crapanzano@estartup.it>, 2013
+# nicolacois <nicolacois@hotmail.com>, 2014
 # Pietro Lombardo <pietrolombardo1979@gmail.com>, 2014
 # #-#-#-#-#  mako.po (edx-platform)  #-#-#-#-#
 # edX translation file
@@ -33,6 +35,7 @@
 # 
 # Translators:
 # anna.ghetti <anna.ghetti@student.unife.it>, 2014
+# Butta Tutto <butta.tutto@gmail.com>, 2014
 # CarlaGratta <Carla.gratta@gmail.com>, 2014
 # LILLITH, 2014
 # LILLITH, 2014
@@ -47,6 +50,7 @@
 # Monica Maria Crapanzano <m.crapanzano@estartup.it>, 2013
 # marcore <mrc.re@tiscali.it>, 2014
 # Nicola Moretto <nmoretto-transifex@yahoo.it>, 2014
+# nicolacois <nicolacois@hotmail.com>, 2014
 # Pietro Lombardo <pietrolombardo1979@gmail.com>, 2014
 # Silvia, 2013
 # #-#-#-#-#  mako-studio.po (edx-platform)  #-#-#-#-#
@@ -105,7 +109,7 @@ msgstr ""
 #. needs to grade
 #: cms/djangoapps/contentstore/utils.py common/lib/xmodule/xmodule/tabs.py
 msgid "Open Ended Panel"
-msgstr ""
+msgstr "Le tue segnalazioni"
 
 #. #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: "Discussion" is the title of the course forum page
@@ -5562,7 +5566,7 @@ msgstr ""
 #: lms/templates/main_django.html cms/templates/base.html
 #: lms/templates/main.html
 msgid "Skip to this view's content"
-msgstr ""
+msgstr "Passa al contenuto di questa vista"
 
 #: lms/templates/dashboard/_dashboard_refund.html
 #: lms/templates/dashboard/support.html
@@ -6354,13 +6358,15 @@ msgstr ""
 
 #: cms/djangoapps/contentstore/course_info_model.py
 msgid "Course update not found."
-msgstr ""
+msgstr "Aggiornamento del Corso non trovato."
 
 #: cms/djangoapps/contentstore/git_export_utils.py
 msgid ""
 "GIT_REPO_EXPORT_DIR not set or path {0} doesn't exist, please create it, or "
 "configure a different path with GIT_REPO_EXPORT_DIR"
 msgstr ""
+"GIT_REPO_EXPORT_DIR non configurato, o il percorso {0} non esiste: occorre "
+"crearlo o configurare un diverso percorso con GIT_REPO_EXPORT_DIR"
 
 #: cms/djangoapps/contentstore/git_export_utils.py
 msgid ""
@@ -11960,7 +11966,7 @@ msgstr ""
 
 #: lms/templates/modal/_modal-settings-language.html
 msgid "Save Language Settings"
-msgstr ""
+msgstr "Salva lingua preferita"
 
 #: lms/templates/modal/_modal-settings-language.html
 msgid ""

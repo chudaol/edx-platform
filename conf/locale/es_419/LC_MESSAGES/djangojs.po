@@ -52,6 +52,7 @@
 # Jonathan Amaya <jonathan.amaya88@yahoo.com>, 2014
 # Juan Camilo Montoya Franco <juan.montoya@hmltda.com>, 2014
 # Nuri Plans Toral <nplans@gmail.com>, 2014
+# Thomas Alberto Castro Acosta <snaketh@gmail.com>, 2014
 # Valeria Freire <valtodopds@hotmail.com>, 2014
 # #-#-#-#-#  underscore-studio.po (edx-platform)  #-#-#-#-#
 # edX translation file
@@ -4168,7 +4169,7 @@ msgstr "Administración de cohortes"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
 msgid "Assign students to cohort groups manually"
-msgstr ""
+msgstr "Asignar a los estudiantes a formar grupos manualmente"
 
 #: lms/templates/instructor/instructor_dashboard_2/cohorts.underscore
 msgid "Select a cohort group to manage"
@@ -4253,7 +4254,7 @@ msgstr "No se ha podido iniciar tu sesión."
 
 #: lms/templates/student_account/login.underscore
 msgid "Log in"
-msgstr "Inicia sesión"
+msgstr "Iniciar sesión"
 
 #: lms/templates/student_account/login.underscore
 msgid "Log in using %(name)s"

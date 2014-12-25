@@ -69,6 +69,7 @@
 # Irvin Cabrera <pirpinachisloco@hotmail.com>, 2014
 # Ismael Saavedra <isma.18.94@gmail.com>, 2014
 # jimenaianina <jime.ianina@gmail.com>, 2014
+# Jonathan Amaya <jonathan.amaya88@yahoo.com>, 2014
 # jorgebarrero <jorgebarrero@gmail.com>, 2014
 # Juan Camilo Montoya Franco <juan.montoya@hmltda.com>, 2013-2014
 # Juan Camilo Montoya Franco <juan.montoya@hmltda.com>, 2013-2014
@@ -9862,26 +9863,31 @@ msgid ""
 "guide-for-students.readthedocs.org/en/latest/index.html'>edX Guide for "
 "Students</a>."
 msgstr ""
+"Para informacion detallada, ver <a href='http://edx-guide-for-"
+"students.readthedocs.org/en/latest/SFD_mathformatting.html'>Ingresando "
+"expresiones matematicas y cientificas</a> en la <a href='http://edx-guide-"
+"for-students.readthedocs.org/en/latest/index.html'> Guia para estudiantes "
+"edX</a>."
 
 #: lms/templates/courseware/courseware.html
 msgid "Tips"
-msgstr ""
+msgstr "Consejos"
 
 #: lms/templates/courseware/courseware.html
 msgid "To Use"
-msgstr ""
+msgstr "Para usar"
 
 #: lms/templates/courseware/courseware.html
 msgid "Type"
-msgstr ""
+msgstr "Escribir"
 
 #: lms/templates/courseware/courseware.html
 msgid "Examples"
-msgstr ""
+msgstr "Ejemplos"
 
 #: lms/templates/courseware/courseware.html
 msgid "Numbers"
-msgstr ""
+msgstr "Numeros"
 
 #: lms/templates/courseware/courseware.html
 msgid "Operators"
@@ -9889,7 +9895,7 @@ msgstr "Operadores"
 
 #: lms/templates/courseware/courseware.html
 msgid "Greek letters"
-msgstr ""
+msgstr "letras Griegas"
 
 #: lms/templates/courseware/courseware.html
 msgid "Constants"
@@ -9897,15 +9903,15 @@ msgstr "Constantes"
 
 #: lms/templates/courseware/courseware.html
 msgid "Affixes"
-msgstr ""
+msgstr "Añadidos"
 
 #: lms/templates/courseware/courseware.html
 msgid "Basic functions"
-msgstr ""
+msgstr "Funciones basicas"
 
 #: lms/templates/courseware/courseware.html
 msgid "Trigonometric functions"
-msgstr ""
+msgstr "Funciones trigonometricas"
 
 #: lms/templates/courseware/courseware.html
 msgid "Scientific notation"
@@ -10471,7 +10477,7 @@ msgstr "{course_number} {course_name} Imagen de portada"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Your verification is pending"
-msgstr ""
+msgstr "Su verificacion esta pendiente"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 #: lms/templates/dashboard/_dashboard_course_listing.html
@@ -10485,7 +10491,7 @@ msgstr "Inscrito como;"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Verified Pending"
-msgstr ""
+msgstr "Pendiente verificado"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 #: lms/templates/dashboard/_dashboard_course_listing.html
@@ -10537,36 +10543,36 @@ msgstr "Inicio del curso - {start_date}"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Verification not yet complete."
-msgstr ""
+msgstr "Verificacion no esta completa"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "You only have {days} days left to verify for this course."
-msgstr ""
+msgstr "Usted solamente tiene {dias} días para verificarse para este curso."
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Almost there!"
-msgstr ""
+msgstr "Casi llegamos!"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "You still need to verify for this course."
-msgstr ""
+msgstr "Usted todavia necesita verificarse para este curso"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Verify Now"
-msgstr ""
+msgstr "Verificar ahora"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "You have already verified your ID!"
-msgstr ""
+msgstr "Usted ha verificado su ID!"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Thanks for your patience as we process your request."
-msgstr ""
+msgstr "Gracias por su paciencia mientras se procesa su solicitud."
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Your verification status is good until {date}."
-msgstr ""
+msgstr "Su estado de verificación es bueno hasta {fecha}"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Challenge Yourself!"
@@ -12332,7 +12338,7 @@ msgstr "Ventas"
 
 #: lms/templates/instructor/instructor_dashboard_2/e-commerce.html
 msgid "Total CC Amount: "
-msgstr ""
+msgstr "Total monto CC:"
 
 #: lms/templates/instructor/instructor_dashboard_2/e-commerce.html
 msgid "Click to generate a CSV file for all sales records in this course"
@@ -12346,7 +12352,7 @@ msgstr "Descargar todas las facturas"
 
 #: lms/templates/instructor/instructor_dashboard_2/e-commerce.html
 msgid "Download All CC Sales"
-msgstr ""
+msgstr "Descargar todas la ventas CC"
 
 #: lms/templates/instructor/instructor_dashboard_2/e-commerce.html
 msgid "Enter the invoice number to invalidate or re-validate sale"
@@ -13620,6 +13626,8 @@ msgid ""
 "If no additional billing details are populated the payment confirmation will"
 " be sent to the user making the purchase."
 msgstr ""
+"Si no hay detalles de facturación adicionales se llenan la confirmación del "
+"pago y será enviado al usuario que realiza la compra."
 
 #: lms/templates/shoppingcart/billing_details.html
 msgid "Payment processing occurs on a separate secure site."
@@ -13691,6 +13699,9 @@ msgid ""
 "following receipt has been emailed to "
 "<strong>{appended_recipient_emails}</strong></span>"
 msgstr ""
+"Usted ha sido inscrito exitosamente por <b>{appended_course_names}</b>. El "
+"siguiente recibo ha sido enviado por correo a "
+"<strong>{appended_recipient_emails}</strong></span>"
 
 #: lms/templates/shoppingcart/receipt.html
 msgid ""
@@ -13906,6 +13917,8 @@ msgstr "Ver Curso &nbsp; &nbsp; &#x25b8;"
 msgid ""
 "{course_names} has been removed because the enrollment period has closed."
 msgstr ""
+"{course_names} ha sido removido porque el periodo de inscripcion a sido "
+"cerrado."
 
 #: lms/templates/shoppingcart/shopping_cart.html
 msgid "Registration for:"
@@ -13925,7 +13938,7 @@ msgstr "el código ha sido aplicado"
 
 #: lms/templates/shoppingcart/shopping_cart.html
 msgid "TOTAL:"
-msgstr ""
+msgstr "TOTAL:"
 
 #: lms/templates/shoppingcart/shopping_cart.html
 #: lms/templates/shoppingcart/shopping_cart.html

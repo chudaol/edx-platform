@@ -1640,7 +1640,7 @@ msgstr "Zadanie z otwartą odpowiedzią"
 
 #: common/lib/xmodule/xmodule/combined_open_ended_module.py
 msgid "Current task that the student is on."
-msgstr ""
+msgstr "Bieżące zadanie, które wykonuje student."
 
 #: common/lib/xmodule/xmodule/combined_open_ended_module.py
 msgid ""
@@ -1709,7 +1709,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/combined_open_ended_module.py
 msgid "Minimum Peer Grading Calibrations"
-msgstr ""
+msgstr "Minimalna kalibracja wzajemnej oceny"
 
 #: common/lib/xmodule/xmodule/combined_open_ended_module.py
 msgid ""
@@ -1719,7 +1719,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/combined_open_ended_module.py
 msgid "Maximum Peer Grading Calibrations"
-msgstr ""
+msgstr "Maksymalna kalibracja wzajemnej oceny"
 
 #: common/lib/xmodule/xmodule/combined_open_ended_module.py
 msgid ""
@@ -1737,7 +1737,7 @@ msgstr "Liczba rówieśników, którzy ocenią każdy projekt."
 
 #: common/lib/xmodule/xmodule/combined_open_ended_module.py
 msgid "Required Peer Grading"
-msgstr ""
+msgstr "Wymagana ocena"
 
 #: common/lib/xmodule/xmodule/combined_open_ended_module.py
 msgid ""
@@ -1858,7 +1858,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Discussion Sorting Alphabetical"
-msgstr ""
+msgstr "Sortowanie alfabetyczne dyskusji"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
@@ -1988,7 +1988,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Getting Started With Studio"
-msgstr ""
+msgstr "Pierwsze kroki w Studio"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Add Course Team Members"
@@ -2062,7 +2062,7 @@ msgstr ""
 #: common/lib/xmodule/xmodule/course_module.py
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Edit Course Outline"
-msgstr ""
+msgstr "Edytuj opis kursu"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Set Section Release Dates"
@@ -2090,7 +2090,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Use drag and drop to reorder the content in your course."
-msgstr ""
+msgstr "Użyj \"przeciągnij i upuść\", aby uporządkować zawartość w twoim kursie."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Renaming Sections"
@@ -2129,7 +2129,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Explore the Studio Help Forum"
-msgstr ""
+msgstr "Poznaj forum pomocy Studio"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
@@ -2189,7 +2189,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Add Staff Bios"
-msgstr ""
+msgstr "Dodaj notatkę o kadrze"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
@@ -2199,7 +2199,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Add Course FAQs"
-msgstr ""
+msgstr "Dodaj FAQ kursu"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Include a short list of frequently asked questions about your course."
@@ -2207,7 +2207,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Add Course Prerequisites"
-msgstr ""
+msgstr "Dodaj wymagania wstępne kursu"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
@@ -2228,7 +2228,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Due Date Display Format"
-msgstr ""
+msgstr "Format wyświetlania ostatecznego terminu"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
@@ -2269,7 +2269,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Course About Page Image"
-msgstr ""
+msgstr "Obrazek strony \"O kursie\""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
@@ -2286,7 +2286,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Certificate Name (Short)"
-msgstr ""
+msgstr "Nazwa certyfikatu (Krótka)"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
@@ -2296,7 +2296,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Certificate Name (Long)"
-msgstr ""
+msgstr "Nazwa certyfikatu (Długa)"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "CSS Class for Course Reruns"
@@ -2318,7 +2318,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Hide Progress Tab"
-msgstr ""
+msgstr "Ukryj kartę postępu"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Allows hiding of the progress tab."
@@ -2370,7 +2370,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Invitation Only"
-msgstr ""
+msgstr "Tylko z zaproszeniem"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Pre-Course Survey Name"
@@ -2405,7 +2405,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Both"
-msgstr ""
+msgstr "Razem"
 
 #: common/lib/xmodule/xmodule/course_module.py
 #: lms/templates/footer-edx-new.html lms/templates/footer-legacy.html
@@ -2475,7 +2475,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/html_module.py
 msgid "Raw"
-msgstr ""
+msgstr "Surowy"
 
 #: common/lib/xmodule/xmodule/html_module.py
 msgid "HTML for the additional pages"

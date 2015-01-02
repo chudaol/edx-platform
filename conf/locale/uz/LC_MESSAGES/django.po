@@ -8276,7 +8276,7 @@ msgstr ""
 
 #: lms/templates/video.html
 msgid "HD off"
-msgstr ""
+msgstr "HD ўчиқ"
 
 #: lms/templates/video.html
 msgid "Turn off captions"
@@ -9550,7 +9550,7 @@ msgstr ""
 
 #: lms/templates/discussion/_similar_posts.html
 msgid "Hide"
-msgstr ""
+msgstr "Яшириш"
 
 #: lms/templates/discussion/_thread_list_template.html
 #: lms/templates/discussion/_underscore_templates.html
@@ -9644,7 +9644,7 @@ msgstr ""
 #: lms/templates/discussion/_underscore_templates.html wiki/forms.py
 #: wiki/forms.py wiki/forms.py
 msgid "Title"
-msgstr ""
+msgstr "Sarlavha"
 
 #: lms/templates/discussion/_underscore_templates.html
 msgid "Update post"

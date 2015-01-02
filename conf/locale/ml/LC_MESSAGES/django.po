@@ -81,7 +81,7 @@ msgstr ""
 #: cms/djangoapps/contentstore/views/component.py
 #: common/lib/xmodule/xmodule/video_module/video_module.py
 msgid "Advanced"
-msgstr ""
+msgstr "വികസിതമായത്"
 
 #: cms/djangoapps/contentstore/views/helpers.py
 #: lms/djangoapps/class_dashboard/dashboard_data.py
@@ -132,7 +132,7 @@ msgstr ""
 #: common/djangoapps/django_comment_common/models.py
 #: lms/templates/discussion/_underscore_templates.html
 msgid "Community TA"
-msgstr ""
+msgstr "സാമൂഹ്യ സഹാധ്യാപകന്‍"
 
 #: common/djangoapps/django_comment_common/models.py
 msgid "Student"
@@ -194,7 +194,7 @@ msgstr ""
 #: common/djangoapps/student/models.py
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "None"
-msgstr ""
+msgstr "യാതൊന്നുമരുത്‌"
 
 #: common/djangoapps/student/views.py
 msgid "Course id not specified"
@@ -886,7 +886,7 @@ msgstr ""
 
 #: common/lib/capa/capa/inputtypes.py common/lib/capa/capa/inputtypes.py
 msgid "unanswered"
-msgstr ""
+msgstr "ഉത്തരം പറയാത്തത്"
 
 #: common/lib/capa/capa/inputtypes.py
 msgid "processing"
@@ -1055,7 +1055,7 @@ msgstr ""
 #: common/templates/course_modes/choose.html lms/templates/login.html
 #: lms/templates/register.html
 msgid "or"
-msgstr ""
+msgstr "അല്ലെങ്കില്‍"
 
 #: common/lib/capa/capa/responsetypes.py
 msgid "error getting student answer from {student_answers}"
@@ -1181,7 +1181,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/annotatable_module.py
 msgid "Annotation"
-msgstr ""
+msgstr "വ്യാഖ്യാനം"
 
 #: common/lib/xmodule/xmodule/capa_base.py
 #: common/lib/xmodule/xmodule/combined_open_ended_module.py
@@ -1230,7 +1230,7 @@ msgstr ""
 #: common/lib/xmodule/xmodule/modulestore/inheritance.py
 #: lms/templates/problem.html
 msgid "Show Answer"
-msgstr ""
+msgstr "ഉത്തരം കാണിക്കുക"
 
 #: common/lib/xmodule/xmodule/capa_base.py
 msgid ""
@@ -2256,7 +2256,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "General"
-msgstr ""
+msgstr "പൊതുവായത്"
 
 #. Translators: TBD stands for 'To Be Determined' and is used when a course
 #. does not yet have an announced start date.
@@ -2286,7 +2286,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/html_module.py
 msgid "Text"
-msgstr ""
+msgstr "വചനം"
 
 #: common/lib/xmodule/xmodule/html_module.py
 #: common/lib/xmodule/xmodule/html_module.py
@@ -2308,7 +2308,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/html_module.py
 msgid "Editor"
-msgstr ""
+msgstr "തിരുത്തൽ സഹായി "
 
 #: common/lib/xmodule/xmodule/html_module.py
 msgid "Visual"
@@ -2717,7 +2717,7 @@ msgstr ""
 #: common/lib/xmodule/xmodule/tabs.py
 #: lms/templates/peer_grading/peer_grading.html
 msgid "Progress"
-msgstr ""
+msgstr "പുരോഗതി"
 
 #. Translators: "Wiki" is the name of the course's wiki page
 #: common/lib/xmodule/xmodule/tabs.py lms/djangoapps/course_wiki/views.py
@@ -2757,7 +2757,7 @@ msgstr ""
 #. their course
 #: common/lib/xmodule/xmodule/tabs.py
 msgid "Instructor"
-msgstr ""
+msgstr "അദ്ധ്യാപകന്‍"
 
 #: common/lib/xmodule/xmodule/textannotation_module.py
 msgid "Text Annotation"
@@ -3150,6 +3150,8 @@ msgstr ""
 msgid ""
 "Your response has been submitted. Please check back later for your grade."
 msgstr ""
+"താങ്കളുടെ പ്രതികരണം സമര്‍പ്പിച്ചിരിക്കുന്നു. താങ്കളുടെ നിലവാരം "
+"അറിയുന്നതിനായി ദയവായി പിന്നീട് പരിശോധിക്കുക."
 
 #. Translators: "Not started" communicates to a student that their response
 #. has not yet been graded
@@ -3454,7 +3456,7 @@ msgstr ""
 #: lms/templates/wiki/plugins/attachments/index.html
 #: lms/templates/discussion/_thread_list_template.html
 msgid "Search"
-msgstr ""
+msgstr "തിരയല്‍"
 
 #: common/static/js/vendor/mathjax-MathJax-c9db6ac/docs/source/mjtheme/layout.html
 #: lms/templates/static_templates/copyright.html
@@ -3475,7 +3477,23 @@ msgstr ""
 #: lms/templates/shoppingcart/billing_details.html
 #: lms/templates/shoppingcart/receipt.html
 msgid "Name"
-msgstr ""
+msgstr "പേര്"
+
+#. #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
+#. Translators: This label appears above a field on the registration form
+#. meant to hold the user's public username.
+#: lms/djangoapps/class_dashboard/dashboard_data.py
+#: lms/djangoapps/class_dashboard/dashboard_data.py
+#: lms/djangoapps/instructor/views/api.py
+#: lms/djangoapps/instructor/views/legacy.py
+#: lms/djangoapps/instructor/views/legacy.py
+#: lms/djangoapps/instructor/views/tools.py
+#: openedx/core/djangoapps/user_api/views.py
+#: lms/templates/staff_problem_info.html
+#: lms/templates/instructor/instructor_dashboard_2/metrics.html
+#: lms/templates/instructor/instructor_dashboard_2/metrics.html
+msgid "Username"
+msgstr "ഉപയോക്ത നാമം"
 
 #. #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: This label appears above a field on the registration form
@@ -4010,7 +4028,7 @@ msgstr ""
 #: lms/templates/instructor/instructor_dashboard_2/generate_registarion_codes_modal.html
 #: lms/templates/instructor/instructor_dashboard_2/generate_registarion_codes_modal.html
 msgid "Email"
-msgstr ""
+msgstr "ഈമെയില്‍"
 
 #: lms/djangoapps/instructor/views/api.py
 msgid "Language"
@@ -4868,7 +4886,7 @@ msgstr ""
 #: lms/templates/shoppingcart/verified_cert_receipt.html
 #: wiki/plugins/attachments/forms.py
 msgid "Description"
-msgstr ""
+msgstr "വ്യാഖ്യാനം"
 
 #: lms/djangoapps/shoppingcart/reports.py
 msgid "Comments"
@@ -5717,7 +5735,7 @@ msgstr ""
 #: cms/templates/studio_xblock_wrapper.html
 #: lms/templates/discussion/_underscore_templates.html
 msgid "Delete"
-msgstr ""
+msgstr "നീക്കം ചെയ്യുക"
 
 #: lms/templates/wiki/delete.html
 msgid "You cannot delete a root article."
@@ -5753,7 +5771,7 @@ msgstr ""
 #: lms/templates/instructor/instructor_dashboard_2/e-commerce.html
 #: lms/templates/wiki/includes/article_menu.html
 msgid "Edit"
-msgstr ""
+msgstr "തിരുത്തുക"
 
 #: lms/templates/wiki/edit.html lms/templates/wiki/edit.html.py
 msgid "Save changes"
@@ -5761,7 +5779,7 @@ msgstr ""
 
 #: lms/templates/wiki/edit.html
 msgid "Preview"
-msgstr ""
+msgstr "പൂര്‍വ്വദര്‍ശനം"
 
 #. #-#-#-#-#  mako.po (edx-platform)  #-#-#-#-#
 #. Translators: this is a control to allow users to exit out of this modal
@@ -5782,7 +5800,7 @@ msgstr ""
 #: lms/templates/modal/_modal-settings-language.html
 #: lms/templates/modal/accessible_confirm.html
 msgid "Close"
-msgstr ""
+msgstr "അടയ്ക്കുക"
 
 #: lms/templates/wiki/edit.html
 msgid "Wiki Preview"
@@ -6022,7 +6040,7 @@ msgstr ""
 
 #: lms/templates/wiki/plugins/attachments/index.html
 msgid "Upload File"
-msgstr ""
+msgstr "ഫയൽ അപ്‌ലോഡ്‌ ചെയ്യുക"
 
 #: lms/templates/wiki/plugins/attachments/index.html
 msgid "Upload file"
@@ -6066,7 +6084,7 @@ msgstr ""
 
 #: lms/templates/wiki/plugins/attachments/index.html
 msgid "Replace"
-msgstr ""
+msgstr "പകരം വയ്ക്കുക"
 
 #: lms/templates/wiki/plugins/attachments/index.html
 msgid "Restore"
@@ -6297,7 +6315,7 @@ msgstr ""
 
 #: cms/djangoapps/contentstore/utils.py lms/templates/notes.html
 msgid "My Notes"
-msgstr ""
+msgstr "എന്റെ കുറിപ്പുകൾ"
 
 #: cms/djangoapps/contentstore/management/commands/git_export.py
 msgid ""
@@ -6322,7 +6340,7 @@ msgstr ""
 
 #: cms/djangoapps/contentstore/views/component.py
 msgid "Video"
-msgstr ""
+msgstr "വീഡിയോ"
 
 #: cms/djangoapps/contentstore/views/component.py
 msgid "Blank"
@@ -6502,7 +6520,7 @@ msgstr ""
 #: lms/templates/courseware/legacy_instructor_dashboard.html
 #: lms/templates/instructor/instructor_dashboard_2/metrics.html
 msgid "Loading..."
-msgstr ""
+msgstr "ലോഡ് ചെയ്തുകൊണ്ടിരിക്കുന്നു..."
 
 #: cms/templates/course-create-rerun.html
 #: cms/templates/course-create-rerun.html cms/templates/index.html
@@ -6513,7 +6531,7 @@ msgstr ""
 #: lms/templates/discussion/_underscore_templates.html
 #: lms/templates/verify_student/face_upload.html
 msgid "Cancel"
-msgstr ""
+msgstr "ഒഴിവാക്കു"
 
 #: cms/templates/course-create-rerun.html cms/templates/index.html
 #: cms/templates/settings.html lms/templates/courseware/course_about.html
@@ -6530,7 +6548,7 @@ msgstr ""
 #: cms/templates/settings_graders.html cms/templates/widgets/header.html
 #: lms/templates/wiki/includes/article_menu.html
 msgid "Settings"
-msgstr ""
+msgstr "ക്രമീകരണങ്ങൾ "
 
 #: cms/templates/html_error.html lms/templates/module-error.html
 msgid "Error:"
@@ -6601,7 +6619,7 @@ msgstr ""
 #: cms/templates/studio_xblock_wrapper.html
 #: lms/templates/wiki/includes/article_menu.html
 msgid "View"
-msgstr ""
+msgstr "ദൃശ്യം"
 
 #: cms/templates/registration/activation_complete.html
 #: lms/templates/registration/activation_complete.html
@@ -6714,7 +6732,7 @@ msgstr ""
 #: lms/templates/annotatable.html lms/templates/imageannotation.html
 #: lms/templates/textannotation.html lms/templates/videoannotation.html
 msgid "Collapse Instructions"
-msgstr ""
+msgstr "നിര്‍ദ്ദേശങ്ങള്‍ സങ്കോചിപ്പിക്കുക"
 
 #: lms/templates/annotatable.html
 msgid "Guided Discussion"
@@ -6722,7 +6740,7 @@ msgstr ""
 
 #: lms/templates/annotatable.html
 msgid "Hide Annotations"
-msgstr ""
+msgstr "വ്യാഖ്യാനങ്ങള്‍ മറച്ചുവക്കുക"
 
 #: lms/templates/contact.html lms/templates/static_templates/about.html
 #: lms/templates/static_templates/about.html
@@ -7054,7 +7072,7 @@ msgstr ""
 #: lms/templates/folditbasic.html
 #: lms/templates/courseware/legacy_instructor_dashboard.html
 msgid "Submitted"
-msgstr ""
+msgstr "സമര്‍പ്പിച്ചിരിക്കുന്നു"
 
 #: lms/templates/folditchallenge.html
 msgid "Puzzle Leaderboard"
@@ -7062,7 +7080,7 @@ msgstr ""
 
 #: lms/templates/folditchallenge.html
 msgid "User"
-msgstr ""
+msgstr "ഉപയോക്താവ്‌"
 
 #: lms/templates/footer-edx-new.html lms/templates/footer-edx-new.html
 msgid "About edX"
@@ -7255,7 +7273,7 @@ msgstr ""
 #: lms/templates/peer_grading/peer_grading_problem.html
 #: lms/templates/survey/survey.html
 msgid "Submit"
-msgstr ""
+msgstr "സമര്‍പ്പിക്കുക"
 
 #: lms/templates/help_modal.html
 msgid "Thank You!"
@@ -7652,11 +7670,11 @@ msgstr ""
 #: lms/templates/combinedopenended/selfassessment/self_assessment_prompt.html
 #: lms/templates/verify_student/face_upload.html
 msgid "Save"
-msgstr ""
+msgstr "സംരക്ഷിക്കുക"
 
 #: lms/templates/problem.html
 msgid "Reveal Answer"
-msgstr ""
+msgstr "ഉത്തരം പ്രകാശിപ്പിക്കുക"
 
 #: lms/templates/problem.html
 msgid "You have used {num_used} of {num_total} submissions"
@@ -7897,7 +7915,7 @@ msgstr ""
 #: lms/templates/seq_module.html lms/templates/seq_module.html
 #: lms/templates/discussion/mustache/_pagination.mustache
 msgid "Next"
-msgstr ""
+msgstr "അടുത്തത്"
 
 #: lms/templates/signup_modal.html
 msgid "Sign Up for {platform_name}"
@@ -8066,7 +8084,7 @@ msgstr ""
 #: lms/templates/sysadmin_dashboard.html
 #: lms/templates/sysadmin_dashboard_gitlogs.html
 msgid "Users"
-msgstr ""
+msgstr "ഉപയോക്താക്കൾ"
 
 #: lms/templates/sysadmin_dashboard.html
 #: lms/templates/sysadmin_dashboard_gitlogs.html
@@ -8252,11 +8270,11 @@ msgstr ""
 
 #: lms/templates/video.html
 msgid "Video position"
-msgstr ""
+msgstr "വീഡിയോ സ്ഥാനം"
 
 #: lms/templates/video.html
 msgid "Play"
-msgstr ""
+msgstr "പ്ലേ"
 
 #: lms/templates/video.html
 msgid "Speeds"
@@ -8268,7 +8286,7 @@ msgstr ""
 
 #: lms/templates/video.html
 msgid "Volume"
-msgstr ""
+msgstr "ശബ്ദം"
 
 #: lms/templates/video.html
 msgid ""
@@ -8278,15 +8296,15 @@ msgstr ""
 
 #: lms/templates/video.html
 msgid "Fill browser"
-msgstr ""
+msgstr "ഫയല്‍ ബ്രൌസര്‍."
 
 #: lms/templates/video.html
 msgid "HD off"
-msgstr ""
+msgstr "HD യില്‍ അല്ല"
 
 #: lms/templates/video.html
 msgid "Turn off captions"
-msgstr ""
+msgstr "എഴുത്തുകള്‍ ഒഴിവാക്കുക"
 
 #: lms/templates/video.html
 msgid "Skip to end of transcript."
@@ -8333,7 +8351,7 @@ msgstr ""
 #: lms/templates/combinedopenended/combined_open_ended.html
 #: lms/templates/peer_grading/peer_grading_problem.html
 msgid "Hide Question"
-msgstr ""
+msgstr "ചോദ്യം മറക്കുക"
 
 #: lms/templates/combinedopenended/combined_open_ended.html
 msgid "New Submission"
@@ -8646,7 +8664,7 @@ msgstr ""
 
 #: lms/templates/courseware/courseware.html
 msgid "Open Calculator"
-msgstr ""
+msgstr "കണക്കുക്കൂട്ടല്‍ യന്ത്രം തുറക്കുക"
 
 #: lms/templates/courseware/courseware.html
 msgid "Calculator Input Field"
@@ -9020,11 +9038,11 @@ msgstr ""
 
 #: lms/templates/courseware/legacy_instructor_dashboard.html
 msgid "Task Type"
-msgstr ""
+msgstr "കര്‍ത്തവ്യത്തിന്റെ തരം"
 
 #: lms/templates/courseware/legacy_instructor_dashboard.html
 msgid "Task inputs"
-msgstr ""
+msgstr "കര്‍ത്തവ്യനിവേശങ്ങള്‍"
 
 #: lms/templates/courseware/legacy_instructor_dashboard.html
 msgid "Task Id"
@@ -9032,7 +9050,7 @@ msgstr ""
 
 #: lms/templates/courseware/legacy_instructor_dashboard.html
 msgid "Requester"
-msgstr ""
+msgstr "അപേക്ഷകന്‍"
 
 #: lms/templates/courseware/legacy_instructor_dashboard.html
 msgid "Task State"
@@ -9040,11 +9058,11 @@ msgstr ""
 
 #: lms/templates/courseware/legacy_instructor_dashboard.html
 msgid "Duration (sec)"
-msgstr ""
+msgstr "ദൈര്‍ഘ്യം (സെക്കന്റ്)"
 
 #: lms/templates/courseware/legacy_instructor_dashboard.html
 msgid "Task Progress"
-msgstr ""
+msgstr "കര്‍ത്തവ്യത്തിന്റെ പുരോഗതി"
 
 #: lms/templates/courseware/legacy_instructor_dashboard.html
 #: lms/templates/courseware/legacy_instructor_dashboard.html
@@ -9524,7 +9542,7 @@ msgstr ""
 
 #: lms/templates/discussion/_discussion_module.html
 msgid "Show Discussion"
-msgstr ""
+msgstr "ചര്‍ച്ച കാണിക്കുക"
 
 #: lms/templates/discussion/_discussion_module_studio.html
 msgid "To view live discussions, click Preview or View Live in Unit Settings."
@@ -9558,7 +9576,7 @@ msgstr ""
 
 #: lms/templates/discussion/_similar_posts.html
 msgid "Hide"
-msgstr ""
+msgstr "ഒളിപ്പിക്കുക"
 
 #: lms/templates/discussion/_thread_list_template.html
 #: lms/templates/discussion/_underscore_templates.html
@@ -9652,7 +9670,7 @@ msgstr ""
 #: lms/templates/discussion/_underscore_templates.html wiki/forms.py
 #: wiki/forms.py wiki/forms.py
 msgid "Title"
-msgstr ""
+msgstr "തലക്കെട്ട്‌"
 
 #: lms/templates/discussion/_underscore_templates.html
 msgid "Update post"
@@ -9725,7 +9743,7 @@ msgstr ""
 
 #: lms/templates/discussion/_underscore_templates.html
 msgid "Pinned"
-msgstr ""
+msgstr "ശ്രദ്ധയില്‍ പെടുത്തിയിരിക്കുന്നു"
 
 #: lms/templates/discussion/_underscore_templates.html
 msgid "By: Staff"
@@ -9928,16 +9946,16 @@ msgstr ""
 
 #: lms/templates/discussion/_underscore_templates.html
 msgid "Open"
-msgstr ""
+msgstr "തുറക്കുക"
 
 #: lms/templates/discussion/_underscore_templates.html
 msgid "More"
-msgstr ""
+msgstr "കൂടുതൽ"
 
 #: lms/templates/discussion/_underscore_templates.html
 #: lms/templates/discussion/mustache/_profile_thread.mustache
 msgid "anonymous"
-msgstr ""
+msgstr "അജ്ഞാതന്‍"
 
 #: lms/templates/discussion/_user_profile.html
 msgid ", "
@@ -9977,7 +9995,7 @@ msgstr ""
 #: lms/templates/discussion/mustache/_pagination.mustache
 #: lms/templates/discussion/mustache/_pagination.mustache
 msgid "…"
-msgstr ""
+msgstr "..."
 
 #: lms/templates/discussion/mustache/_profile_thread.mustache
 msgid "View discussion"
@@ -10644,7 +10662,7 @@ msgstr ""
 #: lms/templates/instructor/instructor_dashboard_2/e-commerce.html
 #: lms/templates/instructor/instructor_dashboard_2/edit_coupon_modal.html
 msgid "Code"
-msgstr ""
+msgstr "കോഡ്‌"
 
 #: lms/templates/instructor/instructor_dashboard_2/add_coupon_modal.html
 #: lms/templates/instructor/instructor_dashboard_2/edit_coupon_modal.html
@@ -11516,7 +11534,7 @@ msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/send_email.html
 msgid "Message:"
-msgstr ""
+msgstr "സന്ദേശം:"
 
 #: lms/templates/instructor/instructor_dashboard_2/send_email.html
 msgid ""
@@ -11815,7 +11833,7 @@ msgstr ""
 
 #: lms/templates/peer_grading/peer_grading.html
 msgid "Required"
-msgstr ""
+msgstr "ആവശ്യമായത്"
 
 #: lms/templates/peer_grading/peer_grading.html
 msgid "No due date"
@@ -12172,7 +12190,7 @@ msgstr ""
 
 #: lms/templates/shoppingcart/receipt.html
 msgid "State"
-msgstr ""
+msgstr "അവസ്ഥ"
 
 #: lms/templates/shoppingcart/receipt.html
 msgid "Registration for"
@@ -13657,7 +13675,7 @@ msgstr ""
 
 #: cms/templates/asset_index.html cms/templates/asset_index.html
 msgid "Upload New File"
-msgstr ""
+msgstr "പുതിയ ഫയൽ അപ്‌ലോഡ്‌ ചെയ്യുക "
 
 #: cms/templates/asset_index.html
 msgid "Loading&hellip;"
@@ -13718,11 +13736,11 @@ msgstr ""
 
 #: cms/templates/asset_index.html
 msgid "Choose File"
-msgstr ""
+msgstr "ഫയൽ തിരഞ്ഞെടുക്കുക"
 
 #: cms/templates/asset_index.html
 msgid "Your file has been deleted."
-msgstr ""
+msgstr "നിങ്ങളുടെ ഫയല്‍ നീക്കം ചെയ്തിരിക്കുന്നു"
 
 #: cms/templates/asset_index.html
 msgid "close alert"
@@ -13736,7 +13754,7 @@ msgstr ""
 #: cms/templates/export_git.html cms/templates/import.html
 #: cms/templates/widgets/header.html
 msgid "Tools"
-msgstr ""
+msgstr "ഉപകരണങ്ങള്‍"
 
 #: cms/templates/checklists.html
 msgid "Current Checklists"
@@ -14022,11 +14040,11 @@ msgstr ""
 
 #: cms/templates/course_outline.html
 msgid "Collapse All Sections"
-msgstr ""
+msgstr "എല്ലാ മേഖലകളും ഒരുമിപ്പിക്കുക"
 
 #: cms/templates/course_outline.html
 msgid "Expand All Sections"
-msgstr ""
+msgstr "എല്ലാ മേഖലകളും വികസിപ്പിക്കുക"
 
 #: cms/templates/course_outline.html
 msgid "Click to open the courseware in the LMS in a new tab"
@@ -15522,7 +15540,7 @@ msgstr ""
 
 #: cms/templates/settings_advanced.html
 msgid "Your policy changes have been saved."
-msgstr ""
+msgstr "നിങ്ങളുടെ നയങ്ങള്‍ സൂക്ഷിച്ചിരിക്കുന്നു"
 
 #: cms/templates/settings_advanced.html
 msgid "There was an error saving your information. Please see below."
@@ -15797,7 +15815,7 @@ msgstr ""
 #: cms/templates/widgets/problem-edit.html
 #: cms/templates/widgets/problem-edit.html
 msgid "Heading 1"
-msgstr ""
+msgstr "ശീര്‍ഷകം 1"
 
 #: cms/templates/widgets/problem-edit.html
 #: cms/templates/widgets/problem-edit.html

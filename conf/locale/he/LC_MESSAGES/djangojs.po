@@ -78,7 +78,7 @@ msgstr ""
 #: cms/static/js/base.js lms/static/js/verify_student/photocapture.js
 #: cms/templates/js/checklist.underscore
 msgid "This link will open in a new browser window/tab"
-msgstr ""
+msgstr "קישור זה יפתח בחלון/טאב חדש"
 
 #: cms/static/js/factories/manage_users.js
 #: lms/static/coffee/src/instructor_dashboard/util.js
@@ -112,6 +112,10 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/html/edit.js
 #: cms/templates/js/asset-library.underscore
 msgid "Name"
+msgstr "שם"
+
+#: cms/static/js/views/metadata.js lms/static/js/views/file_uploader.js
+msgid "Upload File"
 msgstr ""
 
 #: cms/static/js/views/metadata.js lms/static/js/views/file_uploader.js
@@ -3070,7 +3074,7 @@ msgstr ""
 
 #: cms/static/js/base.js
 msgid "This link will open in a modal window"
-msgstr ""
+msgstr "קישור זה יפתח בחלון חדש"
 
 #: cms/static/js/sock.js
 msgid "Hide Studio Help"
@@ -3256,7 +3260,7 @@ msgstr ""
 
 #: cms/static/js/models/uploads.js
 msgid "or"
-msgstr ""
+msgstr "או"
 
 #: cms/static/js/models/xblock_validation.js
 msgid "This component has validation issues."
@@ -3312,7 +3316,7 @@ msgstr ""
 
 #: cms/static/js/views/asset.js
 msgid "Delete File Confirmation"
-msgstr ""
+msgstr "אישור למחיקת הקובץ"
 
 #: cms/static/js/views/asset.js
 msgid ""
@@ -3327,7 +3331,7 @@ msgstr ""
 
 #: cms/static/js/views/assets.js cms/templates/js/asset-library.underscore
 msgid "Date Added"
-msgstr ""
+msgstr "תאריך ההוספה"
 
 #: cms/static/js/views/assets.js
 msgid "File {filename} exceeds maximum size of {maxFileSizeInMBs} MB"
@@ -3456,11 +3460,11 @@ msgstr ""
 
 #: cms/static/js/views/overview.js
 msgid "Collapse All Sections"
-msgstr ""
+msgstr "לכווץ את כל הסעיפים"
 
 #: cms/static/js/views/overview.js
 msgid "Expand All Sections"
-msgstr ""
+msgstr "להרחיב את כל הסעיפים"
 
 #: cms/static/js/views/overview.js
 msgid "Release date:"

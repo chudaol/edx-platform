@@ -182,7 +182,7 @@ def _has_access_course_desc(user, action, course):
             debug("Deny: invitation only")
             return False
 
-        if reg_method_ok and start < now < end:
+        if reg_method_ok and (start < now < end or settings.FEATURES.get('ENABLE_ENROLL_AFTER_START') and now < end):
             debug("Allow: in enrollment period")
             return True
 

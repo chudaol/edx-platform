@@ -59,6 +59,7 @@ DISCUSSION_SETTINGS = {
 
 # Features
 FEATURES = {
+    'ENABLE_ENROLL_AFTER_START': True,
     'SAMPLE': False,
     'USE_DJANGO_PIPELINE': True,
 
@@ -137,7 +138,7 @@ FEATURES = {
     #   for each course via django-admin interface.
     # If False and ENABLE_INSTRUCTOR_EMAIL: Email will be turned on by default
     #   for all Mongo-backed courses.
-    'REQUIRE_COURSE_EMAIL_AUTH': True,
+    'REQUIRE_COURSE_EMAIL_AUTH': False,
 
     # Analytics experiments - shows instructor analytics tab in LMS instructor dashboard.
     # Enabling this feature depends on installation of a separate analytics server.
@@ -200,16 +201,16 @@ FEATURES = {
     'ENABLE_CHAT': False,
 
     # Allow users to enroll with methods other than just honor code certificates
-    'MULTIPLE_ENROLLMENT_ROLES': False,
+    'MULTIPLE_ENROLLMENT_ROLES': True,
 
     # Toggle the availability of the shopping cart page
-    'ENABLE_SHOPPING_CART': False,
+    'ENABLE_SHOPPING_CART': True,
 
     # Toggle storing detailed billing information
     'STORE_BILLING_INFO': False,
 
     # Enable flow for payments for course registration (DIFFERENT from verified student flow)
-    'ENABLE_PAID_COURSE_REGISTRATION': False,
+    'ENABLE_PAID_COURSE_REGISTRATION': True,
 
     # Automatically approve student identity verification attempts
     'AUTOMATIC_VERIFY_STUDENT_IDENTITY_FOR_TESTING': False,
@@ -249,7 +250,7 @@ FEATURES = {
     'ALLOW_WIKI_ROOT_ACCESS': True,
 
     # Turn on/off Microsites feature
-    'USE_MICROSITES': False,
+    'USE_MICROSITES': True,
 
     # Turn on third-party auth. Disabled for now because full implementations are not yet available. Remember to syncdb
     # if you enable this; we don't create tables by default.
@@ -696,94 +697,15 @@ STATICFILES_DIRS = [
 FAVICON_PATH = 'images/favicon.ico'
 
 # Locale/Internationalization
-TIME_ZONE = 'America/New_York'  # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-LANGUAGE_CODE = 'en'  # http://www.i18nguy.com/unicode/language-identifiers.html
+TIME_ZONE = 'Europe/Kiev'  # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
+LANGUAGE_CODE = 'uk'  # http://www.i18nguy.com/unicode/language-identifiers.html
 # these languages display right to left
 LANGUAGES_BIDI = ("en@rtl", "he", "ar", "fa", "ur", "fa-ir")
 
 # Sourced from http://www.localeplanet.com/icu/ and wikipedia
 LANGUAGES = (
     ('en', u'English'),
-    ('en@rtl', u'English (right-to-left)'),
-    ('eo', u'Dummy Language (Esperanto)'),  # Dummy languaged used for testing
-    ('fake2', u'Fake translations'),        # Another dummy language for testing (not pushed to prod)
-
-    ('am', u'አማርኛ'),  # Amharic
-    ('ar', u'العربية'),  # Arabic
-    ('az', u'azərbaycanca'),  # Azerbaijani
-    ('bg-bg', u'български (България)'),  # Bulgarian (Bulgaria)
-    ('bn-bd', u'বাংলা (বাংলাদেশ)'),  # Bengali (Bangladesh)
-    ('bn-in', u'বাংলা (ভারত)'),  # Bengali (India)
-    ('bs', u'bosanski'),  # Bosnian
-    ('ca', u'Català'),  # Catalan
-    ('ca@valencia', u'Català (València)'),  # Catalan (Valencia)
-    ('cs', u'Čeština'),  # Czech
-    ('cy', u'Cymraeg'),  # Welsh
-    ('da', u'dansk'),  # Danish
-    ('de-de', u'Deutsch (Deutschland)'),  # German (Germany)
-    ('el', u'Ελληνικά'),  # Greek
-    ('en-uk', u'English (United Kingdom)'),  # English (United Kingdom)
-    ('en@lolcat', u'LOLCAT English'),  # LOLCAT English
-    ('en@pirate', u'Pirate English'),  # Pirate English
-    ('es-419', u'Español (Latinoamérica)'),  # Spanish (Latin America)
-    ('es-ar', u'Español (Argentina)'),  # Spanish (Argentina)
-    ('es-ec', u'Español (Ecuador)'),  # Spanish (Ecuador)
-    ('es-es', u'Español (España)'),  # Spanish (Spain)
-    ('es-mx', u'Español (México)'),  # Spanish (Mexico)
-    ('es-pe', u'Español (Perú)'),  # Spanish (Peru)
-    ('et-ee', u'Eesti (Eesti)'),  # Estonian (Estonia)
-    ('eu-es', u'euskara (Espainia)'),  # Basque (Spain)
-    ('fa', u'فارسی'),  # Persian
-    ('fa-ir', u'فارسی (ایران)'),  # Persian (Iran)
-    ('fi-fi', u'Suomi (Suomi)'),  # Finnish (Finland)
-    ('fil', u'Filipino'),  # Filipino
-    ('fr', u'Français'),  # French
-    ('gl', u'Galego'),  # Galician
-    ('gu', u'ગુજરાતી'),  # Gujarati
-    ('he', u'עברית'),  # Hebrew
-    ('hi', u'हिन्दी'),  # Hindi
-    ('hr', u'hrvatski'),  # Croatian
-    ('hu', u'magyar'),  # Hungarian
-    ('hy-am', u'Հայերեն (Հայաստան)'),  # Armenian (Armenia)
-    ('id', u'Bahasa Indonesia'),  # Indonesian
-    ('it-it', u'Italiano (Italia)'),  # Italian (Italy)
-    ('ja-jp', u'日本語 (日本)'),  # Japanese (Japan)
-    ('kk-kz', u'қазақ тілі (Қазақстан)'),  # Kazakh (Kazakhstan)
-    ('km-kh', u'ភាសាខ្មែរ (កម្ពុជា)'),  # Khmer (Cambodia)
-    ('kn', u'ಕನ್ನಡ'),  # Kannada
-    ('ko-kr', u'한국어 (대한민국)'),  # Korean (Korea)
-    ('lt-lt', u'Lietuvių (Lietuva)'),  # Lithuanian (Lithuania)
-    ('ml', u'മലയാളം'),  # Malayalam
-    ('mn', u'Монгол хэл'),  # Mongolian
-    ('mr', u'मराठी'),  # Marathi
-    ('ms', u'Bahasa Melayu'),  # Malay
-    ('nb', u'Norsk bokmål'),  # Norwegian Bokmål
-    ('ne', u'नेपाली'),  # Nepali
-    ('nl-nl', u'Nederlands (Nederland)'),  # Dutch (Netherlands)
-    ('or', u'ଓଡ଼ିଆ'),  # Oriya
-    ('pl', u'Polski'),  # Polish
-    ('pt-br', u'Português (Brasil)'),  # Portuguese (Brazil)
-    ('pt-pt', u'Português (Portugal)'),  # Portuguese (Portugal)
-    ('ro', u'română'),  # Romanian
-    ('ru', u'Русский'),  # Russian
-    ('si', u'සිංහල'),  # Sinhala
-    ('sk', u'Slovenčina'),  # Slovak
-    ('sl', u'Slovenščina'),  # Slovenian
-    ('sq', u'shqip'),  # Albanian
-    ('sr', u'Српски'),  # Serbian
-    ('sv', u'svenska'),  # Swedish
-    ('sw', u'Kiswahili'),  # Swahili
-    ('ta', u'தமிழ்'),  # Tamil
-    ('te', u'తెలుగు'),  # Telugu
-    ('th', u'ไทย'),  # Thai
-    ('tr-tr', u'Türkçe (Türkiye)'),  # Turkish (Turkey)
-    ('uk', u'Українська'),  # Ukranian
-    ('ur', u'اردو'),  # Urdu
-    ('vi', u'Tiếng Việt'),  # Vietnamese
-    ('uz', u'Ўзбек'),  # Uzbek
-    ('zh-cn', u'中文 (简体)'),  # Chinese (China)
-    ('zh-hk', u'中文 (香港)'),  # Chinese (Hong Kong)
-    ('zh-tw', u'中文 (台灣)'),  # Chinese (Taiwan)
+    ('uk', u'Українська')  # Ukranian
 )
 
 LANGUAGE_DICT = dict(LANGUAGES)
@@ -848,7 +770,7 @@ ZENDESK_API_KEY = None
 EMBARGO_SITE_REDIRECT_URL = None
 
 ##### shoppingcart Payment #####
-PAYMENT_SUPPORT_EMAIL = 'payment@example.com'
+PAYMENT_SUPPORT_EMAIL = 'info@ed-era.com'
 
 ##### Using cybersource by default #####
 
@@ -870,7 +792,7 @@ CC_PROCESSOR = {
 }
 
 # Setting for PAID_COURSE_REGISTRATION, DOES NOT AFFECT VERIFIED STUDENTS
-PAID_COURSE_REGISTRATION_CURRENCY = ['usd', '$']
+PAID_COURSE_REGISTRATION_CURRENCY = ['uah', '₴']
 
 # Members of this group are allowed to generate payment reports
 PAYMENT_REPORT_GENERATOR_GROUP = 'shoppingcart_report_access'

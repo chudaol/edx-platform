@@ -884,7 +884,7 @@ class PaidCourseRegistration(OrderItem):
         item.status = order.status
         item.mode = course_mode.slug
         item.qty = 1
-        item.unit_cost = cost
+        item.unit_cost = 200
         item.line_desc = _(u'Registration for Course: {course_name}').format(
             course_name=course.display_name_with_default)
         item.currency = currency

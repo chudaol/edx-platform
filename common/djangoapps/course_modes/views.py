@@ -62,12 +62,39 @@ class ChooseModeView(View):
         # to the usual "choose your track" page.
         has_enrolled_professional = (enrollment_mode == "professional" and is_active)
         if "professional" in modes and not has_enrolled_professional:
-            return redirect(
-                reverse(
-                    'verify_student_show_requirements',
-                    kwargs={'course_id': course_key.to_deprecated_string()}
-                )
-            )
+            donation_for_course = request.session.get("donation_for_course", {})
+            chosen_price = modes["professional"].min_price
+
+            course = modulestore().get_course(course_key)
+            context = {
+                "course_modes_choose_url": reverse("course_modes_choose", kwargs={'course_id': course_key.to_deprecated_string()}),
+                "modes": modes,
+                "course_name": course.display_name_with_default,
+                "course_org": course.display_org_with_default,
+                "course_num": course.display_number_with_default,
+                "chosen_price": chosen_price,
+                "error": error,
+                "upgrade": upgrade,
+                "can_audit": "audit" in modes,
+                "responsive": True
+            }
+            context["suggested_prices"] = [
+                decimal.Decimal(x.strip())
+                for x in modes["professional"].suggested_prices.split(",")
+                if x.strip()
+            ]
+            context["currency"] = modes["professional"].currency.upper()
+            context["min_price"] = modes["professional"].min_price
+            context["verified_name"] = modes["professional"].name
+            context["verified_description"] = modes["professional"].description
+
+            return render_to_response("course_modes/choose_edera.html", context)
+            # return redirect(
+            #     reverse(
+            #         'verify_student_show_requirements',
+            #         kwargs={'course_id': course_key.to_deprecated_string()}
+            #     )
+            # )
 
         # If there isn't a verified mode available, then there's nothing
         # to do on this page.  The user has almost certainly been auto-registered
@@ -107,7 +134,7 @@ class ChooseModeView(View):
             context["verified_name"] = modes["verified"].name
             context["verified_description"] = modes["verified"].description
 
-        return render_to_response("course_modes/choose.html", context)
+        return render_to_response("course_modes/choose_edera.html", context)
 
     @method_decorator(login_required)
     @method_decorator(commit_on_success_with_read_committed)

@@ -3,7 +3,7 @@
   <li class="field contribution-option">
     <input type="radio" name="contribution" value="${price|h}" ${'checked' if price == chosen_price else ''} id="contribution-${price|h}" />
     <label for="contribution-${price|h}">
-      <span class="deco-denomination">$</span>
+      <span class="deco-denomination"></span>
       <span class="label-value">${price}</span>
       <span class="denomination-name">${currency}</span>
     </label>
@@ -22,8 +22,8 @@
           <span class="sr">Other Amount</span>
         </label>
         <div class="wrapper">
-          <span class="deco-denomination">$</span>
-          <input type="text" size="9" name="contribution-other-amt" id="contribution-other-amt" value="${chosen_price if (chosen_price and chosen_price not in suggested_prices) else ''}"/>
+          <span class="deco-denomination"></span>
+          <input type="text" disabled="disabled" size="9" name="contribution-other-amt" id="contribution-other-amt" value="${chosen_price if (chosen_price and chosen_price not in suggested_prices) else ''}"/>
           <span class="denomination-name">${currency}</span>
         </div>
       </li>

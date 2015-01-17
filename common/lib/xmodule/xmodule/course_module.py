@@ -1,3 +1,6 @@
+"""
+Django module container for classes and operations related to the "Course Module" content type
+"""
 import logging
 from cStringIO import StringIO
 from math import exp
@@ -8,12 +11,13 @@ from datetime import datetime
 import dateutil.parser
 from lazy import lazy
 
+
 from xmodule.seq_module import SequenceDescriptor, SequenceModule
 from xmodule.graders import grader_from_conf
 from xmodule.tabs import CourseTabList
 import json
 
-from xblock.fields import Scope, List, String, Dict, Boolean, Integer
+from xblock.fields import Scope, List, String, Dict, Boolean, Integer, Float
 from .fields import Date
 from django.utils.timezone import UTC
 
@@ -184,6 +188,11 @@ class CourseFields(object):
         help=_("Enter the date you want to advertise as the course start date, if this date is different from the set start date. To advertise the set start date, enter null."),
         scope=Scope.settings
     )
+    pre_requisite_courses = List(
+        display_name=_("Pre-Requisite Courses"),
+        help=_("Pre-Requisite Course key if this course has a pre-requisite course"),
+        scope=Scope.settings
+    )
     grading_policy = Dict(
         help="Grading policy definition for this class",
         default={
@@ -260,7 +269,7 @@ class CourseFields(object):
     )
     discussion_topics = Dict(
         display_name=_("Discussion Topic Mapping"),
-        help=_("Enter discussion categories in the following format: \"CategoryName\": {\"id\": \"i4x-InstitutionName-CourseNumber-course-CourseRun\"}. For example, one discussion category may be \"Lydian Mode\": {\"id\": \"i4x-UniversityX-MUS101-course-2014_T1\"}."),
+        help=_("Enter discussion categories in the following format: \"CategoryName\": {\"id\": \"i4x-InstitutionName-CourseNumber-course-CourseRun\"}. For example, one discussion category may be \"Lydian Mode\": {\"id\": \"i4x-UniversityX-MUS101-course-2014_T1\"}. The \"id\" value for each category must be unique."),
         scope=Scope.settings
     )
     discussion_sort_alpha = Boolean(
@@ -289,7 +298,11 @@ class CourseFields(object):
         default=False,
         scope=Scope.settings
     )
-
+    video_upload_pipeline = Dict(
+        display_name=_("Video Upload Credentials"),
+        help=_("Enter the unique identifier for your course's video files provided by edX."),
+        scope=Scope.settings
+    )
     no_grade = Boolean(
         display_name=_("Course Not Graded"),
         help=_("Enter true or false. If true, the course will not be graded."),
@@ -648,6 +661,31 @@ class CourseFields(object):
             {"display_name": _("None"), "value": CATALOG_VISIBILITY_NONE}]
     )
 
+    entrance_exam_enabled = Boolean(
+        display_name=_("Entrance Exam Enabled"),
+        help=_(
+            "Specify whether students must complete an entrance exam before they can view your course content." +
+            "Note, you must enable Entrance Exams for this course setting to take effect."),
+        default=False,
+        scope=Scope.settings,
+    )
+
+    entrance_exam_minimum_score_pct = Float(
+        display_name=_("Entrance Exam Minimum Score (%)"),
+        help=_(
+            "Specify a minimum percentage score for an entrance exam before students can view your course content." +
+            "Note, you must enable Entrance Exams for this course setting to take effect."),
+        default=65,
+        scope=Scope.settings,
+    )
+
+    entrance_exam_id = String(
+        display_name=_("Entrance Exam ID"),
+        help=_("Content module identifier (location) of entrance exam."),
+        default=None,
+        scope=Scope.settings,
+    )
+
 
 class CourseDescriptor(CourseFields, SequenceDescriptor):
     module_class = SequenceModule
@@ -914,6 +952,19 @@ class CourseDescriptor(CourseFields, SequenceDescriptor):
         return set(config.get("cohorted_discussions", []))
 
     @property
+    def always_cohort_inline_discussions(self):
+        """
+        This allow to change the default behavior of inline discussions cohorting. By
+        setting this to False, all inline discussions are non-cohorted unless their
+        ids are specified in cohorted_discussions.
+        """
+        config = self.cohort_config
+        if config is None:
+            return True
+
+        return bool(config.get("always_cohort_inline_discussions", True))
+
+    @property
     def is_newish(self):
         """
         Returns if the course has been flagged as new. If
@@ -1152,3 +1203,13 @@ class CourseDescriptor(CourseFields, SequenceDescriptor):
             return self.display_organization
 
         return self.org
+
+    @property
+    def video_pipeline_configured(self):
+        """
+        Returns whether the video pipeline advanced setting is configured for this course.
+        """
+        return (
+            self.video_upload_pipeline is not None and
+            'course_video_upload_token' in self.video_upload_pipeline
+        )

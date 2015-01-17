@@ -289,7 +289,11 @@ class StudentAccountUpdateTest(UrlResetMixin, TestCase):
 
         # Send the view the email address tied to the inactive user
         response = self._change_password(email=self.NEW_EMAIL)
-        self.assertEqual(response.status_code, 400)
+
+        # Expect that the activation email is still sent,
+        # since the user may have lost the original activation email.
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(mail.outbox), 1)
 
     def test_password_change_no_user(self):
         # Log out the user created during test setup
@@ -432,13 +436,13 @@ class StudentAccountLoginAndRegistrationTest(ModuleStoreTestCase):
         expected_providers = [
             {
                 "name": "Facebook",
-                "iconClass": "icon-facebook",
+                "iconClass": "fa-facebook",
                 "loginUrl": self._third_party_login_url("facebook", "account_login"),
                 "registerUrl": self._third_party_login_url("facebook", "account_register")
             },
             {
                 "name": "Google",
-                "iconClass": "icon-google-plus",
+                "iconClass": "fa-google-plus",
                 "loginUrl": self._third_party_login_url("google-oauth2", "account_login"),
                 "registerUrl": self._third_party_login_url("google-oauth2", "account_register")
             }
@@ -465,7 +469,7 @@ class StudentAccountLoginAndRegistrationTest(ModuleStoreTestCase):
         expected_providers = [
             {
                 "name": "Facebook",
-                "iconClass": "icon-facebook",
+                "iconClass": "fa-facebook",
                 "loginUrl": self._third_party_login_url(
                     "facebook", "account_login",
                     course_id=unicode(course.id),
@@ -479,7 +483,7 @@ class StudentAccountLoginAndRegistrationTest(ModuleStoreTestCase):
             },
             {
                 "name": "Google",
-                "iconClass": "icon-google-plus",
+                "iconClass": "fa-google-plus",
                 "loginUrl": self._third_party_login_url(
                     "google-oauth2", "account_login",
                     course_id=unicode(course.id),
@@ -513,7 +517,7 @@ class StudentAccountLoginAndRegistrationTest(ModuleStoreTestCase):
         expected_providers = [
             {
                 "name": "Facebook",
-                "iconClass": "icon-facebook",
+                "iconClass": "fa-facebook",
                 "loginUrl": self._third_party_login_url(
                     "facebook", "account_login",
                     course_id=unicode(course.id),
@@ -527,7 +531,7 @@ class StudentAccountLoginAndRegistrationTest(ModuleStoreTestCase):
             },
             {
                 "name": "Google",
-                "iconClass": "icon-google-plus",
+                "iconClass": "fa-google-plus",
                 "loginUrl": self._third_party_login_url(
                     "google-oauth2", "account_login",
                     course_id=unicode(course.id),

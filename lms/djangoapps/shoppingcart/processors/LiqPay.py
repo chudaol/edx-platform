@@ -137,7 +137,7 @@ def get_purchase_params(cart, callback_url=None, extra_data=None):
     params['type'] = 'buy'
 
     params['language'] = 'ru'
-    params['signed_date_time'] = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+    # params['signed_date_time'] = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
 
     if callback_url is not None:
         params['server_url'] = callback_url

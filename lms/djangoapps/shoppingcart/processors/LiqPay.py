@@ -20,7 +20,7 @@ from textwrap import dedent
 from datetime import datetime
 from collections import OrderedDict, defaultdict
 from decimal import Decimal, InvalidOperation
-from hashlib import sha256
+from hashlib import sha1
 from django.conf import settings
 from django.utils.translation import ugettext as _
 from edxmako.shortcuts import render_to_string
@@ -103,9 +103,24 @@ def sign(params):
     """
     json_object = OrderedDict()
 
-    json_object['signature'] = "FM/T2HKryQHjDw+NjWI+joLOiqg="
+    json_object['signature'] = processor_hash(data_hash(params))
     json_object['data'] = data_hash(params)
     return json_object
+
+
+def processor_hash(value):
+    """
+    Calculate the base64-encoded, SHA-1 hash used by LiqPay.
+
+    Args:
+        value (string): The value to encode.
+
+    Returns:
+        string
+
+    """
+    secret_key = get_processor_config().get('SECRET_KEY', '')
+    return base64.b64encode(sha1(secret_key + value + secret_key).digest())
 
 
 def get_purchase_params(cart, callback_url=None, extra_data=None):
@@ -365,7 +380,7 @@ def verify_signatures(params):
     # Validate the signature to ensure that the message is from CyberSource
     # and has not been tampered with.
     signature = params.get('signature')
-    if signature != 'FM/T2HKryQHjDw+NjWI+joLOiqg=':
+    if signature != processor_hash(data):
         raise CCProcessorSignatureException()
 
     # Validate that we have the paramters we expect and can convert them

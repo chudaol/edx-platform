@@ -1,4 +1,4 @@
-<form target="_blank" accept-charset="utf-8" action="https://www.liqpay.com/api/checkout" method="post">
+<form  accept-charset="utf-8" action="https://www.liqpay.com/api/checkout" method="post">
     % for pk, pv in params.iteritems():
         <input type="hidden" name="${pk}" value="${pv}" />
     % endfor

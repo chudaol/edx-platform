@@ -101,11 +101,11 @@ def sign(params):
     Returns:
         dict: The same parameters dict, with a 'signature' key calculated from the other values.
     """
-    # json_object = OrderedDict()
+    json_object = OrderedDict()
 
-    params['signature'] = "FM/T2HKryQHjDw+NjWI+joLOiqg="
-    params['data'] = data_hash(params)
-    return params
+    json_object['signature'] = "FM/T2HKryQHjDw+NjWI+joLOiqg="
+    json_object['data'] = data_hash(params)
+    return json_object
 
 
 def get_purchase_params(cart, callback_url=None, extra_data=None):

@@ -61,7 +61,7 @@ def data_hash(params):
 
 
 def data_unhash(string):
-    string = base64.b64dncode(string)
+    string = base64.b64decode(string)
     return json.loads(string)
 
 
@@ -126,22 +126,24 @@ def get_purchase_params(cart, callback_url=None, extra_data=None):
     amount = "{0:0.2f}".format(total_cost)
     params = OrderedDict()
 
+    params['version'] = 3
+    params['description'] = 'payment for course'
+
     params['amount'] = amount
     params['currency'] = cart.currency
-    params['orderNumber'] = "OrderId: {0:d}".format(cart.id)
+    params['order_id'] = "OrderId: {0:d}".format(cart.id)
 
     params['public_key'] = get_processor_config().get('PUBLIC_KEY', '')
     params['type'] = 'buy'
 
     params['language'] = 'ru'
     params['signed_date_time'] = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
-    params['pay_way'] = 'card'
 
     if callback_url is not None:
         params['server_url'] = callback_url
 
     if extra_data is not None:
-        # CyberSource allows us to send additional data in "merchant defined data" fields
+        # LiqPay allows us to send additional data in "merchant defined data" fields
         for num, item in enumerate(extra_data, start=1):
             key = u"merchant_defined_data{num}".format(num=num)
             params[key] = item
@@ -335,7 +337,6 @@ def _get_processor_decline_html(params):
             email=payment_support_email
         )
     )
-
 
 
 def verify_signatures(params):

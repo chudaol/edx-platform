@@ -10,7 +10,7 @@ urlpatterns = patterns(
     '',
     url(
         r'^show_requirements/{}/$'.format(settings.COURSE_ID_PATTERN),
-        views.show_requirements,
+        views.VerifyView.as_view(),        
         name="verify_student_show_requirements"
     ),
 

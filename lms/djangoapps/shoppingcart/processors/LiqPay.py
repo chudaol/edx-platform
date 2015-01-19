@@ -142,11 +142,13 @@ def get_purchase_params(cart, callback_url=None, extra_data=None):
     params = OrderedDict()
 
     params['version'] = 3
-    params['description'] = 'payment for course'
+    params['description'] = cart.id
 
     params['amount'] = amount
     params['currency'] = cart.currency
-    params['order_id'] = "OrderId: {0:d}".format(cart.id)
+    params['orderNumber'] = "OrderId: {0:d}".format(cart.id)
+
+    params['signed_date_time'] = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
 
     params['public_key'] = get_processor_config().get('PUBLIC_KEY', '')
     params['type'] = 'buy'
@@ -156,6 +158,14 @@ def get_purchase_params(cart, callback_url=None, extra_data=None):
 
     if callback_url is not None:
         params['server_url'] = callback_url
+
+    params['server_url'] = get_processor_config().get('SERVER_URL', 'https://59065b71.ngrok.com/shoppingcart/postpay_callback/')
+    if get_processor_config().get('SANDBOX'):
+        params['sandbox'] = 1
+
+    if callback_url is not None:
+        params['override_custom_receipt_page'] = callback_url
+        params['override_custom_cancel_page'] = callback_url
 
     if extra_data is not None:
         # LiqPay allows us to send additional data in "merchant defined data" fields
@@ -185,7 +195,7 @@ def process_postpay_callback(params):
     try:
         valid_params = verify_signatures(params)
         result = _payment_accepted(
-            valid_params['order_id'],
+            valid_params['description'],
             valid_params['amount'],
             valid_params['currency'],
             valid_params['status']
@@ -222,7 +232,7 @@ def _record_payment_info(params, order):
     """
     Record the purchase and run purchased_callbacks
     Args:
-        params (dict): The parameters we received from CyberSource.
+        params (dict): The parameters we received from LiqPay.
     Returns:
         None
     """
@@ -292,29 +302,13 @@ def _payment_accepted(order_id, auth_amount, currency, decision):
     except Order.DoesNotExist:
         raise CCProcessorDataException(_("The payment processor accepted an order whose number is not in our system."))
 
-    if decision == 'success':
-        if auth_amount == order.total_cost and currency == order.currency:
-            return {
-                'accepted': True,
-                'amt_charged': auth_amount,
-                'currency': currency,
-                'order': order
-            }
-        else:
-            ex = CCProcessorWrongAmountException(
-                _(
-                    u"The amount charged by the processor {charged_amount} {charged_amount_currency} is different "
-                    u"than the total cost of the order {total_cost} {total_cost_currency}."
-                ).format(
-                    charged_amount=auth_amount,
-                    charged_amount_currency=currency,
-                    total_cost=order.total_cost,
-                    total_cost_currency=order.currency
-                )
-            )
-
-            ex.order = order
-            raise ex
+    if decision == 'success' or decision == 'sandbox':
+        return {
+            'accepted': True,
+            'amt_charged': auth_amount,
+            'currency': currency,
+            'order': order
+        }
     else:
         return {
             'accepted': False,
@@ -374,7 +368,7 @@ def verify_signatures(params):
     json_data = data_unhash(data)
     # First see if the user cancelled the transaction
     # if so, then not all parameters will be passed back so we can't yet verify signatures
-    if json_data.get('status') == u'success':
+    if json_data.get('status') == u'failure':
         raise CCProcessorUserCancelled()
 
     # Validate the signature to ensure that the message is from CyberSource
@@ -390,25 +384,25 @@ def verify_signatures(params):
     # which fields they included in the signature, we need to be careful.
     valid_params = {}
     required_params = [
-        ('order_id', int),
+        ('description', int),
         ('currency', str),
         ('status', str),
         ('amount', Decimal),
     ]
     for key, key_type in required_params:
-        if key not in params:
+        if key not in json_data:
             raise CCProcessorDataException(
                 _(
                     u"The payment processor did not return a required parameter: {parameter}"
                 ).format(parameter=key)
             )
         try:
-            valid_params[key] = key_type(params[key])
+            valid_params[key] = key_type(json_data[key])
         except (ValueError, TypeError, InvalidOperation):
             raise CCProcessorDataException(
                 _(
                     u"The payment processor returned a badly-typed value {value} for parameter {parameter}."
-                ).format(value=params[key], parameter=key)
+                ).format(value=json_data[key], parameter=key)
             )
 
     return valid_params

@@ -13,14 +13,9 @@ urlpatterns = patterns(
     # most likely after enrolling in a course and selecting
     # a "verified" track.
     url(
-        r'^start-flow/{course}/$'.format(course=settings.COURSE_ID_PATTERN),
-        # Pylint seems to dislike the as_view() method because as_view() is
-        # decorated with `classonlymethod` instead of `classmethod`.
-        views.PayAndVerifyView.as_view(),  # pylint: disable=no-value-for-parameter
-        name="verify_student_start_flow",
-        kwargs={
-            'message': PayAndVerifyView.FIRST_TIME_VERIFY_MSG
-        }
+        r'^show_requirements/{}/$'.format(settings.COURSE_ID_PATTERN),
+        views.VerifyView.as_view(),        
+        name="verify_student_show_requirements"
     ),
 
     # The user is enrolled in a non-paid mode and wants to upgrade.

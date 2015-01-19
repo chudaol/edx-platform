@@ -658,7 +658,7 @@ class OrderItem(TimeStampedModel):
         # this is a validation step to verify that the currency of the item we
         # are adding is the same as the currency of the order we are adding it
         # to
-        currency = kwargs.get('currency', 'usd')
+        currency = kwargs.get('currency', 'uah')
         if order.currency != currency and order.orderitem_set.exists():
             raise InvalidCartItem(_("Trying to add a different currency into the cart"))
 

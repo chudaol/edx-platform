@@ -22,6 +22,7 @@ from collections import OrderedDict, defaultdict
 from decimal import Decimal, InvalidOperation
 from hashlib import sha1
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 from edxmako.shortcuts import render_to_string
 from shoppingcart.models import Order
@@ -137,6 +138,7 @@ def get_purchase_params(cart, callback_url=None, extra_data=None):
     Returns:
         dict
     """
+    site_name = microsite.get_value('SITE_NAME', settings.SITE_NAME)
     total_cost = cart.total_cost
     amount = "{0:0.2f}".format(total_cost)
     params = OrderedDict()
@@ -145,7 +147,7 @@ def get_purchase_params(cart, callback_url=None, extra_data=None):
     params['description'] = cart.id
 
     params['amount'] = amount
-    params['currency'] = cart.currency
+    params['currency'] = "uah"
     params['orderNumber'] = "OrderId: {0:d}".format(cart.id)
 
     params['signed_date_time'] = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -160,6 +162,9 @@ def get_purchase_params(cart, callback_url=None, extra_data=None):
         params['server_url'] = callback_url
 
     params['server_url'] = get_processor_config().get('SERVER_URL', 'https://59065b71.ngrok.com/shoppingcart/postpay_callback/')
+    params['result_url'] = '{base_url}{dashboard}'.format(
+        base_url=site_name,
+        dashboard=reverse('dashboard'))
     if get_processor_config().get('SANDBOX'):
         params['sandbox'] = 1
 

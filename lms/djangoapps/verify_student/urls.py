@@ -25,7 +25,7 @@ urlpatterns = patterns(
 
     url(
         r'^verified/{}/$'.format(settings.COURSE_ID_PATTERN),
-        views.VerifiedView.as_view(),
+        views.VerifyView.as_view(),  # pylint: disable=no-value-for-parameter
         name="verify_student_verified"
     ),
 

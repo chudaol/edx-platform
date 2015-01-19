@@ -61,9 +61,30 @@ class VerifyView(View):
     @method_decorator(login_required)
     def get(self, request, course_id):
         """
-        Displays edera payment process
+        Displays the main verification view, which contains three separate steps:
+            - Taking the standard face photo
+            - Taking the id photo
+            - Confirming that the photos and payment price are correct
+              before proceeding to payment
         """
+        upgrade = request.GET.get('upgrade', False)
+
         course_id = CourseKey.from_string(course_id)
+        # If the user has already been verified within the given time period,
+        # redirect straight to the payment -- no need to verify again.
+        if SoftwareSecurePhotoVerification.user_has_valid_or_pending(request.user):
+            return redirect(
+                reverse('verify_student_verified',
+                        kwargs={'course_id': course_id.to_deprecated_string()}) + "?upgrade={}".format(upgrade)
+            )
+        elif CourseEnrollment.enrollment_mode_for_user(request.user, course_id) == ('verified', True):
+            return redirect(reverse('dashboard'))
+        else:
+            # If they haven't completed a verification attempt, we have to
+            # restart with a new one. We can't reuse an older one because we
+            # won't be able to show them their encrypted photo_id -- it's easier
+            # bookkeeping-wise just to start over.
+            progress_state = "start"
 
         # we prefer professional over verify
         current_mode = CourseMode.verified_mode_for_course(course_id)
@@ -72,6 +93,10 @@ class VerifyView(View):
         # from the flow
         if not current_mode:
             return redirect(reverse('dashboard'))
+        if course_id.to_deprecated_string() in request.session.get("donation_for_course", {}):
+            chosen_price = request.session["donation_for_course"][unicode(course_id)]
+        else:
+            chosen_price = current_mode.min_price
 
         course = modulestore().get_course(course_id)
         if current_mode.suggested_prices != '':
@@ -82,8 +107,8 @@ class VerifyView(View):
         else:
             suggested_prices = []
 
-        chosen_price = suggested_prices[0]
         context = {
+            "progress_state": progress_state,
             "user_full_name": request.user.profile.name,
             "course_id": course_id.to_deprecated_string(),
             "course_modes_choose_url": reverse('course_modes_choose', kwargs={'course_id': course_id.to_deprecated_string()}),
@@ -95,11 +120,13 @@ class VerifyView(View):
             "currency": current_mode.currency.upper(),
             "chosen_price": chosen_price,
             "min_price": current_mode.min_price,
+            "upgrade": upgrade == u'True',
             "can_audit": CourseMode.mode_for_course(course_id, 'audit') is not None,
             "modes_dict": CourseMode.modes_for_course_dict(course_id),
+            "retake": request.GET.get('retake', False),
         }
 
-        return render_to_response('verify_student/edera_choose_and_pay.html', context)
+        return render_to_response('verify_student/photo_verification.html', context)
 
 
 class VerifiedView(View):
@@ -637,15 +664,51 @@ class PayAndVerifyView(View):
 @require_POST
 @login_required
 def create_order(request):
+    """
+    Submit PhotoVerification and create a new Order for this verified cert
+    """
+    # Only submit photos if photo data is provided by the client.
+    # TODO (ECOM-188): Once the A/B test of decoupling verified / payment
+    # completes, we may be able to remove photo submission from this step
+    # entirely.
+    submit_photo = (
+        'face_image' in request.POST and
+        'photo_id_image' in request.POST
+    )
+
+    if (
+        submit_photo and not
+        SoftwareSecurePhotoVerification.user_has_valid_or_pending(request.user)
+    ):
+        attempt = SoftwareSecurePhotoVerification(user=request.user)
+        try:
+            b64_face_image = request.POST['face_image'].split(",")[1]
+            b64_photo_id_image = request.POST['photo_id_image'].split(",")[1]
+        except IndexError:
+            log.error(u"Invalid image data during photo verification.")
+            context = {
+                'success': False,
+            }
+            return JsonResponse(context)
+        attempt.upload_face_image(b64_face_image.decode('base64'))
+        attempt.upload_photo_id_image(b64_photo_id_image.decode('base64'))
+        attempt.mark_ready()
+
+        attempt.save()
+
     course_id = request.POST['course_id']
     course_id = CourseKey.from_string(course_id)
-    contribution = request.POST.get("contribution")
+    donation_for_course = request.session.get('donation_for_course', {})
+    current_donation = donation_for_course.get(unicode(course_id), decimal.Decimal(0))
+    contribution = request.POST.get("contribution", donation_for_course.get(unicode(course_id), 0))
     try:
         amount = decimal.Decimal(contribution).quantize(decimal.Decimal('.01'), rounding=decimal.ROUND_DOWN)
     except decimal.InvalidOperation:
         return HttpResponseBadRequest(_("Selected price is not valid number."))
 
-    request.session['donation_for_course'] = amount
+    if amount != current_donation:
+        donation_for_course[unicode(course_id)] = amount
+        request.session['donation_for_course'] = donation_for_course
 
     # prefer professional mode over verified_mode
     current_mode = CourseMode.verified_mode_for_course(course_id)
@@ -654,6 +717,9 @@ def create_order(request):
     if not current_mode:
         log.warn(u"Verification requested for course {course_id} without a verified mode.".format(course_id=course_id))
         return HttpResponseBadRequest(_("This course doesn't support verified certificates"))
+
+    if current_mode.slug == 'professional':
+        amount = current_mode.min_price
 
     if amount < current_mode.min_price:
         return HttpResponseBadRequest(_("No selected price or selected price is below minimum."))

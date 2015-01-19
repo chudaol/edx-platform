@@ -92,7 +92,8 @@ CC_PROCESSOR = {
     'LiqPay': {
          "PURCHASE_ENDPOINT": 'https://www.liqpay.com/api/checkout',
          "PUBLIC_KEY": "i36499461501",
-         "SECRET_KEY": "INkN3OnrlukReo4qdlMLcSR9biw2JnDc1Wzxln2g"
+         "SECRET_KEY": "INkN3OnrlukReo4qdlMLcSR9biw2JnDc1Wzxln2g",
+         "SANDBOX": True
     }
 }
 

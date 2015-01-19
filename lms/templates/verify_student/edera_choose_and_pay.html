@@ -1,0 +1,69 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%! from django.core.urlresolvers import reverse %>
+<%! from lms.envs.common import TECH_SUPPORT_EMAIL %>
+<%inherit file="../main.html" />
+<%namespace name='static' file='/static_content.html'/>
+<%block name="pagetitle">
+    ${_("Register for {} | Verification").format(course_name)}
+</%block>
+<%block name="js_extra">
+<script src="${static.url('js/vendor/responsive-carousel/responsive-carousel.js')}"></script>
+<script src="${static.url('js/vendor/responsive-carousel/responsive-carousel.keybd.js')}"></script>
+<script src="${static.url('js/verify_student/edera_payment.js')}"></script>
+</%block>
+
+<%block name="content">
+
+<div class="container verification-process">
+  <section class="wrapper carousel">
+      <header class="page-header">
+        <h2 class="title">
+            <span class="wrapper-sts">
+                <% organization = '<span class="sts-course-org">' + course_org + '</span>' %>
+                <% course_name_html = '<span class="sts-course-number">' + course_num + '</span> <span class="sts-course-name">' + course_name + '</span>' %>
+                 <span class="sts-label">
+                    ${_("You are enrolling in {organization}'s {course_name}").format(
+                        organization=organization,
+                        course_name=course_name_html
+                    )}
+                </span>
+            </span>
+        </h2>
+      </header>
+      <div id="wrapper-review" class="wrapper-view carousel-item carousel-active">
+          <ol class="review-tasks">
+            <li class="review-task  review-task-contribution">
+                <h4 class="title">${_("Check Your Contribution Level")}</h4>
+
+                <div class="copy">
+                    <p>EdEra – освітній проект з соціальною місією – зробити освіту якісною та доступною. Платний запис, на наш погляд, – важливий аспект мотивації та відповідальності. Розуміючи, що потрібно поєднати доступність і цінову політику, ми ввели систему оплати, опираючись на довіру до користувачів нашого проекту. </p>
+                <ol>
+                    <li><strong>НАША ЦІНА (400 грн)</strong> Ціна, яка дає нам змогу справно функціонувати та впроваджувати нові освітні ініціативи.</li>
+                    <li><strong>ПІДВИЩЕНА (600 грн)</strong> Якщо Вам подобається те, що ми робимо, і є можливість допомогти у нашому розвитку, будемо дуже вдячні за цей вибір.</li>
+                    <li><strong>НА ВИБІР (від 200 грн)</strong> Цей варіант для тих, хто з якихось причин не може чи не хоче сплачувати запропоновані суми. Можна сплатити як менше стандартної ціни, так і більше.</li>
+                    <li><strong>БЕЗКОШТОВНО</strong> З огляду на різні ситуації, які можуть траплятися у житті, та на події в країні, ми надаємо можливість безкоштовного навчання. Таке право мають передусім громадяни пільгових категорії та переселенці з зони АТО. <a href="mailto:info@ed-era.com">Надішліть нам мотиваційний лист</a>, у якому опишіть свою ситуацію, та додайте до нього відповідні документи, якщо це можливо.</li>
+                </ol>
+                </div>
+
+                <%include file="/course_modes/edera_contribution.html" args="suggested_prices=suggested_prices, currency=currency, chosen_price=chosen_price, min_price=min_price"/>
+
+            </li>
+          </ol>
+          <span class="help help-inline price-value">Ви вирішили оплатити <strong><span class="chosen-price" data-price="${chosen_price}">${chosen_price}</span></strong> гривень.</span>
+          <div class="wrapper-content-main">
+            <div class="nav-wizard is-ready">
+            <ol class="wizard-steps" style="list-style-type:none;">
+              <li class="wizard-step step-proceed">
+                <form id="pay_form" method="post" action="${purchase_endpoint}">
+                  <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }">
+                  <input type="hidden" name="course_id" value="${course_id | h}" />
+                  <input class="action-primary" type="button" id="pay_button" value="Оплатити зараз!" name="payment">
+                </form>
+              </li>
+            </ol>
+          </div>
+          </div>
+      </div>
+  </section>
+</div>
+</%block>

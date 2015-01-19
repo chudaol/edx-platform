@@ -42,14 +42,9 @@ urlpatterns = patterns(
     # Note that if the user has already verified, this will redirect
     # to the dashboard.
     url(
-        r'^verify-now/{course}/$'.format(course=settings.COURSE_ID_PATTERN),
-        views.PayAndVerifyView.as_view(),  # pylint: disable=no-value-for-parameter
-        name="verify_student_verify_now",
-        kwargs={
-            'always_show_payment': True,
-            'current_step': PayAndVerifyView.FACE_PHOTO_STEP,
-            'message': PayAndVerifyView.VERIFY_NOW_MSG
-        }
+        r'^verified/{}/$'.format(settings.COURSE_ID_PATTERN),
+        views.VerifyView.as_view(),  # pylint: disable=no-value-for-parameter
+        name="verify_student_verified"
     ),
 
     # The user has paid and still needs to verify,

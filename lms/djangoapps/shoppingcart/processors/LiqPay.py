@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 __author__ = 'olga'
 
 """
@@ -144,7 +146,14 @@ def get_purchase_params(cart, callback_url=None, extra_data=None):
     params = OrderedDict()
 
     params['version'] = 3
-    params['description'] = cart.id
+
+    '{base_url}{dashboard}'.format(
+        base_url=site_name,
+        dashboard=reverse('dashboard'))
+    params['description'] = u'Запис на курс {course_num} | Номер заказу [{course_id}]'.format(
+        course_num=extra_data[0],
+        course_id=cart.id
+    )
 
     params['amount'] = amount
     params['currency'] = "uah"
@@ -199,8 +208,11 @@ def process_postpay_callback(params):
     """
     try:
         valid_params = verify_signatures(params)
+        order_id_group = re.search('(?<=\[)\d+', valid_params['description'])
+        order_id = order_id_group.group(0)
+
         result = _payment_accepted(
-            valid_params['description'],
+            order_id,
             valid_params['amount'],
             valid_params['currency'],
             valid_params['status']
@@ -389,7 +401,7 @@ def verify_signatures(params):
     # which fields they included in the signature, we need to be careful.
     valid_params = {}
     required_params = [
-        ('description', int),
+        ('description', unicode),
         ('currency', str),
         ('status', str),
         ('amount', Decimal),

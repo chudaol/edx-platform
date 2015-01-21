@@ -254,7 +254,7 @@ FEATURES = {
     'ALLOW_WIKI_ROOT_ACCESS': True,
 
     # Turn on/off Microsites feature
-    'USE_MICROSITES': True,
+    'USE_MICROSITES': False,
 
     # Turn on third-party auth. Disabled for now because full implementations are not yet available. Remember to syncdb
     # if you enable this; we don't create tables by default.
@@ -1535,14 +1535,13 @@ MKTG_URL_LINK_MAP = {
     'COURSES': 'courses',
     'ROOT': 'root',
     'TOS': 'tos',
-    'HONOR': 'honor',  # If your site does not have an honor code, simply delete this line.
     'PRIVACY': 'privacy',
     'PRESS': 'press',
     'BLOG': 'blog',
     'DONATE': 'donate',
 
     # Verified Certificates
-    'WHAT_IS_VERIFIED_CERT': 'verified-certificate',
+    'WHAT_IS_VERIFIED_CERT': 'verified-certificate'
 }
 
 ################# Mobile URLS ##########################

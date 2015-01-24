@@ -26,8 +26,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2015-01-18 21:08+0100\n"
-"PO-Revision-Date: 2015-01-18 20:11:20.604962\n"
+"POT-Creation-Date: 2015-01-24 04:31+0100\n"
+"PO-Revision-Date: 2015-01-24 03:33:02.244437\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -72,7 +72,8 @@ msgstr "ÖK Ⱡ'#"
 msgid "Cancel"
 msgstr "Çänçél Ⱡ'σяєм ιρѕ#"
 
-#: cms/static/js/base.js lms/static/js/verify_student/photocapture.js
+#: cms/static/js/base.js lms/static/js/verify_student/edera_payment.js
+#: lms/static/js/verify_student/photocapture.js
 #: cms/templates/js/checklist.underscore
 msgid "This link will open in a new browser window/tab"
 msgstr "Thïs lïnk wïll öpén ïn ä néw ßröwsér wïndöw/täß Ⱡ'σяєм ιρѕυм #"

@@ -34,6 +34,7 @@
 # annburdyliak <annburdyliak@ya.ru>, 2014
 # DariaKh <dashasoha93@bigmir.net>, 2014
 # Eugenia <sakovets93@gmail.com>, 2014
+# Galya Galkina <galyagalkina11@gmail.com>, 2015
 # IvanPrimachenko <jastudent1@gmail.com>, 2014-2015
 # junnyml <junnyml@gmail.com>, 2014
 # Nikita <nikita.gritsenko@gmail.com>, 2014
@@ -50,7 +51,7 @@
 # Translators:
 # Alina Demidchenko <semilitrovka@gmail.com>, 2014
 # annburdyliak <annburdyliak@ya.ru>, 2014
-# olexiim <olexiim@gmail.com>, 2014
+# olexiim <olexiim@gmail.com>, 2014-2015
 # Tetiana Korshun, 2014
 # #-#-#-#-#  messages.po (edx-platform)  #-#-#-#-#
 # edX translation file
@@ -70,7 +71,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2015-01-15 14:42+0000\n"
+"POT-Creation-Date: 2015-01-22 21:19+0000\n"
 "PO-Revision-Date: 2014-12-30 16:21+0000\n"
 "Last-Translator: IvanPrimachenko <jastudent1@gmail.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/edx-platform/language/uk/)\n"
@@ -204,6 +205,7 @@ msgid "Community TA"
 msgstr "Спільнота асистентів"
 
 #: common/djangoapps/django_comment_common/models.py
+#: lms/templates/courseware/course_navigation.html
 msgid "Student"
 msgstr "Студент"
 
@@ -261,9 +263,10 @@ msgstr "Професійно-технічна освіта"
 msgid "Elementary/primary school"
 msgstr "Початкова освіта"
 
+#. #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: 'None' refers to the student's level of education
 #: common/djangoapps/student/models.py
-#: common/lib/xmodule/xmodule/course_module.py
+#: common/lib/xmodule/xmodule/course_module.py cms/templates/settings.html
 msgid "None"
 msgstr "Немає"
 
@@ -935,6 +938,14 @@ msgstr[2] ""
 msgid "Maximum upload file size is {file_size} bytes."
 msgstr ""
 
+#: common/djangoapps/util/milestones_helpers.py
+msgid "Course {} requires {}"
+msgstr ""
+
+#: common/djangoapps/util/milestones_helpers.py
+msgid "System defined milestone"
+msgstr ""
+
 #: common/djangoapps/util/password_policy_validators.py
 msgid "Invalid Length ({0})"
 msgstr "Некоректна довжина  ({0})"
@@ -1104,7 +1115,7 @@ msgstr "Не дозволяється виконання небезпечног�
 #: cms/templates/widgets/problem-edit.html
 #: cms/templates/widgets/problem-edit.html
 msgid "Checkboxes"
-msgstr ""
+msgstr "Множинний вибір"
 
 #: common/lib/capa/capa/responsetypes.py
 #: cms/templates/widgets/problem-edit.html
@@ -1328,7 +1339,7 @@ msgstr ""
 
 #: common/lib/capa/capa/responsetypes.py
 msgid "Image Mapped Input"
-msgstr ""
+msgstr "Вибір зони на зображенні"
 
 #: common/lib/capa/capa/responsetypes.py
 msgid "error grading {image_input_id} (input={user_input})"
@@ -1347,7 +1358,7 @@ msgstr ""
 
 #: common/lib/capa/capa/responsetypes.py
 msgid "Checkboxes With Text Input"
-msgstr ""
+msgstr "Множинний вибір з текстовим полем"
 
 #: common/lib/capa/capa/responsetypes.py
 msgid "Answer not provided for {input_type}"
@@ -1912,6 +1923,14 @@ msgstr ""
 "дати початку введіть \"null\"."
 
 #: common/lib/xmodule/xmodule/course_module.py
+msgid "Pre-Requisite Courses"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Pre-Requisite Course key if this course has a pre-requisite course"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
 msgid "Show Calculator"
 msgstr "Показати калькулятор"
 
@@ -2408,6 +2427,12 @@ msgstr ""
 "знаходяться на боковій панелі сторінки справа."
 
 #: common/lib/xmodule/xmodule/course_module.py
+msgid ""
+"True if timezones should be shown on dates in the courseware. Deprecated in "
+"favor of due_date_display_format."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
 msgid "Due Date Display Format"
 msgstr "Формат відображення терміну здачі"
 
@@ -2559,6 +2584,10 @@ msgid "Invitation Only"
 msgstr "Тільки за запрошеннями"
 
 #: common/lib/xmodule/xmodule/course_module.py
+msgid "Whether to restrict enrollment to invitation by the course staff."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
 msgid "Pre-Course Survey Name"
 msgstr ""
 
@@ -2599,6 +2628,36 @@ msgstr "Обидва"
 #: lms/templates/static_templates/about.html
 msgid "About"
 msgstr "Про нас"
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Entrance Exam Enabled"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid ""
+"Specify whether students must complete an entrance exam before they can view"
+" your course content.Note, you must enable Entrance Exams for this course "
+"setting to take effect."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Entrance Exam Minimum Score (%)"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid ""
+"Specify a minimum percentage score for an entrance exam before students can "
+"view your course content.Note, you must enable Entrance Exams for this "
+"course setting to take effect."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Entrance Exam ID"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/course_module.py
+msgid "Content module identifier (location) of entrance exam."
+msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "General"
@@ -3055,6 +3114,15 @@ msgid ""
 msgstr ""
 
 #: common/lib/xmodule/xmodule/lti_module.py
+msgid "Accept grades past deadline"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/lti_module.py
+msgid ""
+"Select True to allow third party systems to post grades past the deadline."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/lti_module.py
 msgid ""
 "Could not parse custom parameter: {custom_parameter}. Should be \"x=y\" "
 "string."
@@ -3128,6 +3196,14 @@ msgstr ""
 msgid "Enter the date by which problems are due."
 msgstr ""
 
+#: common/lib/xmodule/xmodule/seq_module.py
+msgid "Is Entrance Exam"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/seq_module.py
+msgid "Tag this course module as an Entrance Exam.  "
+msgstr ""
+
 #: common/lib/xmodule/xmodule/split_test_module.py
 msgid "Group ID {group_id}"
 msgstr "Номер групи {group_id}"
@@ -3195,6 +3271,12 @@ msgid ""
 msgstr ""
 "В експерименті використана видалена конфігурація групи. Виберіть коректну "
 "конфігурацію групи або видаліть цей експеримент."
+
+#: common/lib/xmodule/xmodule/split_test_module.py
+msgid ""
+"The experiment uses a group configuration that is not supported for "
+"experiments. Select a valid group configuration or delete this experiment."
+msgstr ""
 
 #: common/lib/xmodule/xmodule/split_test_module.py
 msgid ""
@@ -3541,6 +3623,16 @@ msgstr ""
 msgid ""
 "Indicates whether Student Notes are visible in the course. Students can also"
 " show or hide their notes in the courseware."
+msgstr ""
+
+#: common/lib/xmodule/xmodule/modulestore/inheritance.py
+msgid "Tag this module as part of an Entrance Exam section"
+msgstr ""
+
+#: common/lib/xmodule/xmodule/modulestore/inheritance.py
+msgid ""
+"Enter true or false. If true, answer submissions for problem modules will be"
+" considered in the Entrance Exam scoring/gating algorithm."
 msgstr ""
 
 #. Translators: "Self" is used to denote an openended response that is self-
@@ -4154,6 +4246,10 @@ msgstr "Ласкаво просимо до edX Wiki"
 #: lms/djangoapps/course_wiki/views.py
 msgid "Visit a course wiki to add an article."
 msgstr "Завітайте на wiki курсу аби додати статтю."
+
+#: lms/djangoapps/courseware/tabs.py cms/templates/settings.html
+msgid "Entrance Exam"
+msgstr ""
 
 #. Translators: The join of three or more institution names (e.g., Harvard,
 #. MIT, and Dartmouth).
@@ -5278,11 +5374,20 @@ msgstr ""
 
 #: lms/djangoapps/lms_xblock/mixin.py
 msgid ""
-"This xblock refers to a deleted or invalid content group configuration."
+"A dictionary that maps which groups can be shown this block. The keys are "
+"group configuration ids and the values are a list of group IDs. If there is "
+"no key for a group configuration or if the set of group IDs is empty then "
+"the block is considered visible to all. Note that this field is ignored if "
+"the block is visible_to_staff_only."
 msgstr ""
 
 #: lms/djangoapps/lms_xblock/mixin.py
-msgid "This xblock refers to a deleted or invalid content group."
+msgid ""
+"This component refers to deleted or invalid content group configurations."
+msgstr ""
+
+#: lms/djangoapps/lms_xblock/mixin.py
+msgid "This component refers to deleted or invalid content groups."
 msgstr ""
 
 #: lms/djangoapps/open_ended_grading/staff_grading_service.py
@@ -6226,6 +6331,18 @@ msgid ""
 "There was an error in your date input.  It should be formatted as YYYY-MM-DD"
 msgstr "У вказаній вами даті помилка. Формат дати: YYYY-MM-DD"
 
+#: lms/djangoapps/student_account/views.py
+msgid "No user with the provided email address exists."
+msgstr ""
+
+#: lms/djangoapps/student_account/views.py
+msgid "No email address provided."
+msgstr ""
+
+#: lms/djangoapps/verify_student/models.py
+msgid "Your {platform_name} verification has expired."
+msgstr ""
+
 #: lms/djangoapps/verify_student/models.py
 msgid "No photo ID was provided."
 msgstr "Не надана фотографія посвідчення."
@@ -6246,8 +6363,8 @@ msgid "The image of your face was not clear."
 msgstr "Зображення вашого обличчя не якісне."
 
 #: lms/djangoapps/verify_student/models.py
-msgid "Your face was not visible in your self-photo"
-msgstr "Ваше обличчя не видно на вашому власному фото"
+msgid "Your face was not visible in your self-photo."
+msgstr ""
 
 #: lms/djangoapps/verify_student/models.py
 msgid "There was an error verifying your ID photos."
@@ -6530,6 +6647,8 @@ msgid ""
 "You're receiving this e-mail because you requested a password reset for your"
 " user account at %(site_name)s."
 msgstr ""
+"Ви отримали цього листа, тому що ви запитали про відновлення паролю для "
+"вашого облікового запису на %(site_name)s."
 
 #: lms/templates/registration/password_reset_email.html
 msgid "Please go to the following page and choose a new password:"
@@ -7266,6 +7385,10 @@ msgstr ""
 "{err}"
 
 #: cms/djangoapps/contentstore/views/course.py
+msgid "Invalid prerequisite course key"
+msgstr ""
+
+#: cms/djangoapps/contentstore/views/course.py
 msgid "invalid JSON"
 msgstr ""
 
@@ -7496,17 +7619,20 @@ msgstr "Сторінку не знайдено"
 msgid "Page not found"
 msgstr "Сторінку не знайдено"
 
+#: cms/templates/asset_index.html cms/templates/container.html
+#: cms/templates/course_outline.html cms/templates/group_configurations.html
+#: cms/templates/group_configurations.html cms/templates/library.html
+#: lms/templates/courseware/legacy_instructor_dashboard.html
+#: lms/templates/courseware/legacy_instructor_dashboard.html
+#: lms/templates/edxnotes/edxnotes.html
+#: lms/templates/instructor/instructor_dashboard_2/metrics.html
+msgid "Loading"
+msgstr "Завантаження"
+
 #: cms/templates/asset_index.html lms/templates/courseware/courseware.html
 #: lms/templates/verify_student/_modal_editname.html
 msgid "close"
 msgstr "закрити"
-
-#: cms/templates/container.html cms/templates/course_outline.html
-#: lms/templates/courseware/legacy_instructor_dashboard.html
-#: lms/templates/courseware/legacy_instructor_dashboard.html
-#: lms/templates/instructor/instructor_dashboard_2/metrics.html
-msgid "Loading..."
-msgstr "Завантаження..."
 
 #: cms/templates/course-create-rerun.html
 #: cms/templates/course-create-rerun.html cms/templates/index.html
@@ -7538,11 +7664,6 @@ msgstr "Відхилити"
 #: lms/templates/wiki/includes/article_menu.html
 msgid "Settings"
 msgstr "Налаштування"
-
-#: cms/templates/group_configurations.html cms/templates/library.html
-#: lms/templates/edxnotes/edxnotes.html
-msgid "Loading"
-msgstr "Завантаження"
 
 #: cms/templates/html_error.html lms/templates/module-error.html
 msgid "Error:"
@@ -7596,6 +7717,7 @@ msgid "Admin"
 msgstr "Адміністратор"
 
 #: cms/templates/manage_users.html cms/templates/manage_users_lib.html
+#: lms/templates/courseware/course_navigation.html
 #: lms/templates/discussion/_underscore_templates.html
 msgid "Staff"
 msgstr "Співробітники"
@@ -7609,7 +7731,7 @@ msgstr "Користувач"
 #: cms/templates/register.html lms/templates/register.html
 #: lms/templates/verify_student/face_upload.html
 msgid "example: Jane Doe"
-msgstr "приклад:  Jane Doe"
+msgstr "приклад:  Петрик П’яточкін"
 
 #: cms/templates/register.html lms/templates/register-shib.html
 #: lms/templates/register.html lms/templates/signup_modal.html
@@ -7622,12 +7744,16 @@ msgstr "Ім'я для форумів"
 #: cms/templates/register.html lms/templates/register-shib.html
 #: lms/templates/register.html lms/templates/register.html
 msgid "example: JaneDoe"
-msgstr "приклад: JaneDoe"
+msgstr "приклад: PetrykPyatochkin"
 
 #: cms/templates/register.html
 #: lms/templates/dashboard/_dashboard_info_language.html
 msgid "Preferred Language"
 msgstr "Обрати потрібну мову"
+
+#: cms/templates/settings.html lms/templates/courseware/course_about.html
+msgid "Requirements"
+msgstr ""
 
 #: cms/templates/studio_xblock_wrapper.html lms/templates/help_modal.html
 #: lms/templates/help_modal.html lms/templates/module-error.html
@@ -7811,7 +7937,7 @@ msgstr "Прив'язати"
 
 #: lms/templates/dashboard.html
 msgid "Order History"
-msgstr ""
+msgstr "Історія замовлень"
 
 #: lms/templates/dashboard.html lms/templates/dashboard.html
 msgid "Reset Password"
@@ -7925,7 +8051,7 @@ msgstr "Змінити моє ім'я "
 #: lms/templates/dashboard/_dashboard_course_listing.html
 #: lms/templates/instructor/instructor_dashboard_2/membership.html
 msgid "Unenroll"
-msgstr "Видалити зі списку"
+msgstr "Відписатись від курсу"
 
 #: lms/templates/edit_unit_link.html
 msgid "View Unit in Studio"
@@ -8429,9 +8555,10 @@ msgstr "Увійти у Мій  {platform_name} Аккаунт"
 msgid "Access My Courses"
 msgstr "Переглянути Мої Курси"
 
-#: lms/templates/login.html lms/templates/register.html
-msgid "Processing your account information…"
-msgstr "Обробка даних Вашого облікового запису ..."
+#: lms/templates/login.html lms/templates/register-shib.html
+#: lms/templates/register.html
+msgid "Processing your account information"
+msgstr ""
 
 #: lms/templates/login.html
 msgid "Please log in"
@@ -8447,7 +8574,7 @@ msgstr "Нам прикро, але аккаунти {platform_name} тимча�
 
 #: lms/templates/login.html
 msgid "We couldn't log you in."
-msgstr ""
+msgstr "Неможливо увійти"
 
 #: lms/templates/login.html
 msgid "Your email or password is incorrect"
@@ -8539,8 +8666,8 @@ msgid "(reload your page to refresh)"
 msgstr "(перезавантажте сторінку для оновлення)"
 
 #: lms/templates/manage_user_standing.html
-msgid "working..."
-msgstr "виконання ..."
+msgid "working"
+msgstr ""
 
 #: lms/templates/mathjax_accessible.html
 msgid ""
@@ -8722,10 +8849,6 @@ msgid "Update my {platform_name} Account"
 msgstr "Оновити мою обліковий запис на {platform_name}"
 
 #: lms/templates/register-shib.html
-msgid "Processing your account information …"
-msgstr "Обробка даних Вашого облікового запису ..."
-
-#: lms/templates/register-shib.html
 msgid "Welcome {username}!  Please set your preferences below"
 msgstr ""
 "Ласкаво просимо, {username}! Будь ласка, вкажіть Ваші налаштування нижче"
@@ -8817,7 +8940,7 @@ msgid ""
 "able to receive email from your courses."
 msgstr ""
 "Ви отримаєте листа-активацію. Для завершення реєстрації ви повинні перейти "
-"за посиланням-активацією. Не бачите листа? Перевірте папку \"Спам\" і "
+"за посиланням-активацією. Не бачите листа? Перевірте теку \"Спам\" і "
 "позначте листи від class.stanford.edu як \"Не спам\", якщо ви хочете "
 "отримувати повідомлення від наших курсів."
 
@@ -8830,7 +8953,7 @@ msgid ""
 msgstr ""
 "Частиною процесу реєстрації на  {platform_name} є отримання листа активації "
 "вашого облікового запису. Ви маєте перейти за посиланням, щоб завершити "
-"реєстрацію. Не бачите листа? Перевірте папку \"Спам\" і позначте листи від "
+"реєстрацію. Не бачите листа? Перевірте теку \"Спам\" і позначте листи від "
 "{platform_name} як \"Не спам\". У {platform_name}, ми спілкуватимемося з "
 "Вами переважно за допомогою пошти."
 
@@ -9763,6 +9886,7 @@ msgstr "до {date}"
 
 #: lms/templates/courseware/course_about.html
 #: lms/templates/courseware/course_about.html
+#: lms/templates/courseware/course_about.html
 #: lms/templates/courseware/mktg_course_about.html
 msgid "An error occurred. Please try again later."
 msgstr "Помилка. Будь ласка, спробуйте пізніше."
@@ -9827,6 +9951,16 @@ msgstr "Огляд"
 msgid "Share with friends and family!"
 msgstr "Поділитися з родиною та друзями!"
 
+#: lms/templates/courseware/course_about.html
+#: lms/templates/courseware/course_about.html
+msgid "Tweet that you've registered for this course"
+msgstr ""
+
+#: lms/templates/courseware/course_about.html
+#: lms/templates/courseware/course_about.html
+msgid "Email someone to say you've registered for this course"
+msgstr ""
+
 #. Translators: This text will be automatically posted to the student's
 #. Twitter account. {url} should appear at the end of the text.
 #: lms/templates/courseware/course_about.html
@@ -9840,6 +9974,10 @@ msgstr "Пройти курс {platform} онлайн"
 #: lms/templates/courseware/course_about.html
 msgid "I just registered for {number} {title} through {platform} {url}"
 msgstr "Я щойно зареєструвався на {number} {title} через {platform} {url}"
+
+#: lms/templates/courseware/course_about.html
+msgid "Post a Facebook message to say you've registered for this course"
+msgstr ""
 
 #: lms/templates/courseware/course_about.html
 msgid "Classes Start"
@@ -9866,8 +10004,24 @@ msgid "Prerequisites"
 msgstr "Необхідні умови для запису на курс"
 
 #: lms/templates/courseware/course_about.html
+msgid "You must successfully complete {course} before you begin this course"
+msgstr ""
+
+#: lms/templates/courseware/course_about.html
 msgid "Additional Resources"
 msgstr "Додаткові ресурси"
+
+#: lms/templates/courseware/course_navigation.html
+msgid "View this course as:"
+msgstr ""
+
+#: lms/templates/courseware/course_navigation.html
+msgid "Student in {content_group}"
+msgstr ""
+
+#: lms/templates/courseware/course_navigation.html
+msgid "set preview mode"
+msgstr ""
 
 #. Translators: 'needs attention' is an alternative string for the
 #. notification image that indicates the tab "needs attention".
@@ -9876,17 +10030,8 @@ msgid "needs attention"
 msgstr "зверніть увагу"
 
 #: lms/templates/courseware/course_navigation.html
-#: lms/templates/courseware/course_navigation.html
-msgid "Staff view"
-msgstr "Режим співробітника"
-
-#: lms/templates/courseware/course_navigation.html
 msgid "Course is not yet visible to students."
 msgstr "Курс ще не видимий для студентів."
-
-#: lms/templates/courseware/course_navigation.html
-msgid "Student view"
-msgstr "Перегляд в режимі студента"
 
 #: lms/templates/courseware/course_navigation.html
 msgid ""
@@ -10146,8 +10291,8 @@ msgstr ""
 
 #: lms/templates/courseware/legacy_instructor_dashboard.html
 msgid ""
-"To manage beta tester roles and cohort groups, visit the Membership section "
-"of the Instructor Dashboard."
+"To manage beta tester roles and cohorts, visit the Membership section of the"
+" Instructor Dashboard."
 msgstr ""
 
 #: lms/templates/courseware/legacy_instructor_dashboard.html
@@ -10397,7 +10542,7 @@ msgstr ""
 
 #: lms/templates/dashboard/_dashboard_certificate_information.html
 msgid "Your final grade:"
-msgstr "Ваша остаточна оцінка:"
+msgstr "Ваша оцінка:"
 
 #: lms/templates/dashboard/_dashboard_certificate_information.html
 msgid "Grade required for a {cert_name_short}:"
@@ -10564,7 +10709,7 @@ msgstr ""
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Verify Now"
-msgstr ""
+msgstr "Підтвердити зараз"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 #: lms/templates/dashboard/_dashboard_course_listing.html
@@ -10623,12 +10768,12 @@ msgstr "Переглянути курс"
 #: lms/templates/dashboard/_dashboard_course_listing.html
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Are you sure you want to unenroll from the purchased course"
-msgstr ""
+msgstr "Ви впевнені, що хочете відписатися від оплаченого курсу"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Are you sure you want to unenroll from"
-msgstr ""
+msgstr "Ви впевнені, що хочете відписатися від"
 
 #: lms/templates/dashboard/_dashboard_course_listing.html
 #: lms/templates/dashboard/_dashboard_course_listing.html
@@ -10643,6 +10788,12 @@ msgstr ""
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Email Settings"
 msgstr "Налаштування пошти"
+
+#: lms/templates/dashboard/_dashboard_course_listing.html
+msgid ""
+"You must successfully complete {link_start}{prc_display}{link_end} before "
+"you begin this course."
+msgstr ""
 
 #: lms/templates/dashboard/_dashboard_prompt_midcourse_reverify.html
 #: lms/templates/dashboard/_dashboard_prompt_midcourse_reverify.html
@@ -10704,7 +10855,6 @@ msgstr "Затверджено:"
 
 #: lms/templates/dashboard/_dashboard_status_verification.html
 #: lms/templates/dashboard/_dashboard_status_verification.html
-#: lms/templates/dashboard/_dashboard_status_verification.html
 msgid "ID-Verification Status"
 msgstr ""
 
@@ -10722,13 +10872,17 @@ msgid ""
 msgstr ""
 
 #: lms/templates/dashboard/_dashboard_status_verification.html
-msgid "Re-verify Yourself"
+msgid "{platform_name} Verification Status"
+msgstr ""
+
+#: lms/templates/dashboard/_dashboard_status_verification.html
+msgid "Resubmit Verification"
 msgstr ""
 
 #: lms/templates/dashboard/_dashboard_status_verification.html
 msgid ""
-"If you fail to pass a verification attempt before your course ends, you will"
-" not receive a verified certificate."
+"To receive a verified certificate, you have to submit a new photo of "
+"yourself and your government-issued photo ID before the course ends."
 msgstr ""
 
 #: lms/templates/dashboard/_dashboard_third_party_error.html
@@ -10918,12 +11072,9 @@ msgid "Show Comments (%(num_comments)s)"
 msgstr "Показати Коментарі (%(num_comments)s)"
 
 #: lms/templates/discussion/_underscore_templates.html
+#: lms/templates/discussion/_underscore_templates.html
 msgid "Add a comment"
 msgstr "Додати коментар"
-
-#: lms/templates/discussion/_underscore_templates.html
-msgid "Add a comment..."
-msgstr "Додати коментар ..."
 
 #: lms/templates/discussion/_underscore_templates.html
 msgid "marked as answer %(time_ago)s by %(user)s"
@@ -11076,11 +11227,8 @@ msgstr "Всі групи"
 #: lms/templates/discussion/_underscore_templates.html
 msgid ""
 "Discussion admins, moderators, and TAs can make their posts visible to all "
-"students or specify a single cohort group."
+"students or specify a single cohort."
 msgstr ""
-"Адміністратори обговорень, модератори та асистенти викладача можуть робити "
-"свої пости видимими для всіх студентів чи для однієї конкретної навчальної "
-"групи."
 
 #: lms/templates/discussion/_underscore_templates.html
 msgid "Title:"
@@ -11091,8 +11239,8 @@ msgid "Add a clear and descriptive title to encourage participation."
 msgstr "Додайте зрозумілу та вичерпну назву, щоб заохотити участь."
 
 #: lms/templates/discussion/_underscore_templates.html
-msgid "Enter your question or comment…"
-msgstr "Введіть своє питання або відгук ..."
+msgid "Enter your question or comment"
+msgstr ""
 
 #: lms/templates/discussion/_underscore_templates.html
 msgid "follow this post"
@@ -11387,7 +11535,8 @@ msgstr ""
 "Цей лист було автоматично відправлено з {site_name}, тому що хтось спробував"
 " створити обліковий запис на {platform_name} використовуючи цю електронну "
 "адресу. Якщо ви не намагались створити цей обліковий запис і не хочете "
-"активувати його, то ви більше не отримуватимете листи від {platform_name}."
+"активувати його, то ви більше не будете отримувати листи від "
+"{platform_name}."
 
 #: lms/templates/emails/activation_email.txt
 #: lms/templates/emails/email_change.txt
@@ -11408,8 +11557,8 @@ msgid ""
 "assistance, check the help section of the {platform_name} website."
 msgstr ""
 "Якщо ви не створювали обліковий запис, не потрібно нічого робити - ви більше"
-" не отримуватимете від нас листів. Будь ласка, не відповідайте на цей лист. "
-"Якщо вам потрібна допомога, перейдіть до розділу допомоги на сайті  "
+" не будете отримувати від нас листів. Будь ласка, не відповідайте на цей "
+"лист. Якщо вам потрібна допомога, перейдіть до розділу допомоги на сайті  "
 "{platform_name}."
 
 #: lms/templates/emails/activation_email_subject.txt
@@ -12140,6 +12289,13 @@ msgstr "Курс вже закінчився?"
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Grade Cutoffs:"
 msgstr "Шкала оцінок:"
+
+#. Translators: git is a version-control system; see http://git-scm.com/about
+#: lms/templates/instructor/instructor_dashboard_2/course_info.html
+msgid ""
+"View detailed Git import logs for this course {link_start}by clicking "
+"here{link_end}."
+msgstr ""
 
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
@@ -13827,7 +13983,7 @@ msgstr ""
 
 #: lms/templates/shoppingcart/registration_code_receipt.html
 msgid "The course you are registering for is closed."
-msgstr ""
+msgstr "Курс, на який Ви намагаєтеся зареєструватися, закритий."
 
 #: lms/templates/shoppingcart/registration_code_receipt.html
 #: lms/templates/shoppingcart/registration_code_redemption.html
@@ -14163,7 +14319,7 @@ msgstr "На даний момент сервери {platform_name} перева
 
 #: lms/templates/student_account/email_change_failed.html
 msgid "Email change failed."
-msgstr ""
+msgstr "Не вдалося змінити електронну пошту."
 
 #: lms/templates/student_account/email_change_failed.html
 msgid "Something went wrong. Please contact {support} for help."
@@ -14218,7 +14374,7 @@ msgstr ""
 
 #: lms/templates/survey/survey.html
 msgid "You are missing the following required fields:"
-msgstr ""
+msgstr "Ви не заповнили наступні необхідні поля:"
 
 #: lms/templates/survey/survey.html
 msgid "Cancel and Return to Dashboard"
@@ -14237,7 +14393,7 @@ msgstr ""
 
 #: lms/templates/survey/survey.html
 msgid "Who can I contact if I have questions?"
-msgstr ""
+msgstr "З ким я можу зв'язатися, якщо в мене виникнуть питання?"
 
 #: lms/templates/survey/survey.html
 msgid ""
@@ -14387,7 +14543,7 @@ msgstr ""
 #: lms/templates/verify_student/midcourse_photo_reverification.html
 #: lms/templates/verify_student/photo_reverification.html
 msgid "Error submitting your images"
-msgstr ""
+msgstr "Виникла помилка при завантаженні Ваших зображень"
 
 #: lms/templates/verify_student/midcourse_photo_reverification.html
 #: lms/templates/verify_student/photo_reverification.html
@@ -14437,7 +14593,7 @@ msgstr "Виглядає добре"
 #: lms/templates/verify_student/photo_verification.html
 #: lms/templates/verify_student/photo_verification.html
 msgid "Tips on taking a successful photo"
-msgstr ""
+msgstr "Підказки, як зробити правильне фото"
 
 #: lms/templates/verify_student/midcourse_photo_reverification.html
 #: lms/templates/verify_student/photo_reverification.html
@@ -14485,7 +14641,7 @@ msgstr ""
 #: lms/templates/verify_student/photo_verification.html
 #: lms/templates/verify_student/photo_verification.html
 msgid "once you are happy with the photo"
-msgstr ""
+msgstr "як тільки Ви будете задоволені фотографією"
 
 #: lms/templates/verify_student/midcourse_photo_reverification.html
 #: lms/templates/verify_student/photo_reverification.html
@@ -14527,7 +14683,7 @@ msgstr ""
 #: lms/templates/verify_student/photo_reverification.html
 #: lms/templates/verify_student/photo_verification.html
 msgid "Check Your Name"
-msgstr "Первірте своє ім'я"
+msgstr "Перевірте своє ім'я"
 
 #: lms/templates/verify_student/midcourse_photo_reverification.html
 msgid ""
@@ -14831,6 +14987,8 @@ msgid ""
 "Please review the photos and verify that they meet the requirements listed "
 "below."
 msgstr ""
+"Будь ласка, перевірте фотографії та впевніться, що вони відповідають "
+"вимогам, зазначеним нижче."
 
 #: lms/templates/verify_student/photo_reverification.html
 #: lms/templates/verify_student/photo_reverification.html
@@ -14928,14 +15086,17 @@ msgid ""
 "and retake your photos. If you are still having trouble, please contact us "
 "at {email_address}"
 msgstr ""
+"Нам дуже шкода, але на цій сторінці відбулася помилка. Оновіть, будь ласка, "
+"сторінку та зробіть Ваші фото знову. Якщо у Вас все ще виникатимуть "
+"проблеми, то зв'яжіться із нами за адресою {email_address}"
 
 #: lms/templates/verify_student/photo_verification.html
 msgid "Take Your Photo"
-msgstr ""
+msgstr "Зробіть Ваше фото"
 
 #: lms/templates/verify_student/photo_verification.html
 msgid "What if my camera isn't working?"
-msgstr ""
+msgstr "Що робити, якщо моя камера не працює?"
 
 #: lms/templates/verify_student/photo_verification.html
 msgid "You can always continue to audit the course without verifying."
@@ -14953,11 +15114,11 @@ msgstr ""
 
 #: lms/templates/verify_student/photo_verification.html
 msgid "Review the Photos You've Taken"
-msgstr ""
+msgstr "Переглянути фото, які Ви зробили"
 
 #: lms/templates/verify_student/photo_verification.html
 msgid "Check Your Contribution Level"
-msgstr "Первірте розмір Вашого внеску"
+msgstr "Перевірте розмір Вашого внеску"
 
 #. Translators: The last part of this string will appear such as: "(min. 50
 #. USD)"
@@ -14973,7 +15134,7 @@ msgstr ""
 
 #: lms/templates/verify_student/photo_verification.html
 msgid "To complete your registration, you will need to pay:"
-msgstr ""
+msgstr "Для того, щоб завершити реєестрацію, Вам необхідно буде заплатити:"
 
 #: lms/templates/verify_student/photo_verification.html
 msgid "Before proceeding, please confirm that your details match"
@@ -15292,10 +15453,10 @@ msgstr "Вміст"
 
 #: cms/templates/asset_index.html cms/templates/container.html
 #: cms/templates/course_info.html cms/templates/course_outline.html
-#: cms/templates/edit-tabs.html cms/templates/group_configurations.html
-#: cms/templates/index.html cms/templates/library.html
-#: cms/templates/manage_users.html cms/templates/manage_users_lib.html
-#: cms/templates/textbooks.html cms/templates/videos_index.html
+#: cms/templates/edit-tabs.html cms/templates/index.html
+#: cms/templates/library.html cms/templates/manage_users.html
+#: cms/templates/manage_users_lib.html cms/templates/textbooks.html
+#: cms/templates/videos_index.html
 msgid "Page Actions"
 msgstr ""
 
@@ -15303,10 +15464,6 @@ msgstr ""
 #: cms/templates/videos_index.html
 msgid "Upload New File"
 msgstr "Вивантажити новий файл"
-
-#: cms/templates/asset_index.html
-msgid "Loading&hellip;"
-msgstr ""
 
 #: cms/templates/asset_index.html
 msgid "Adding Files for Your Course"
@@ -15340,20 +15497,21 @@ msgstr ""
 
 #: cms/templates/asset_index.html
 msgid ""
-"Use the {em_start}Embed URL{em_end} value to link to the file or image from "
-"a component, a course update, or a course handout."
+"Use the {em_start}{studio_name} URL{em_end} value to link to the file or "
+"image from a component, a course update, or a course handout."
 msgstr ""
 
 #: cms/templates/asset_index.html
 msgid ""
-"Use the {em_start}External URL{em_end} value to reference the file or image "
-"only from outside of your course."
+"Use the {em_start}Web URL{em_end} value to reference the file or image only "
+"from outside of your course. {em_start}Note:{em_end} If you lock a file, the"
+" Web URL no longer works for external access to a file."
 msgstr ""
 
 #: cms/templates/asset_index.html
 msgid ""
-"Click in the Embed URL or External URL column to select the value, then copy"
-" it."
+"To copy a URL, double click the value in the URL column, then copy the "
+"selected text."
 msgstr ""
 
 #: cms/templates/asset_index.html
@@ -15659,7 +15817,7 @@ msgid ""
 msgstr ""
 
 #: cms/templates/course_outline.html cms/templates/course_outline.html
-#: cms/templates/course_outline.html
+#: cms/templates/course_outline.html cms/templates/settings.html
 msgid "Course Outline"
 msgstr ""
 
@@ -16068,26 +16226,47 @@ msgid "Course git url:"
 msgstr ""
 
 #: cms/templates/group_configurations.html
-msgid "New Group Configuration"
+#: cms/templates/group_configurations.html
+#: cms/templates/visibility_editor.html
+msgid "Content Groups"
+msgstr ""
+
+#: cms/templates/group_configurations.html
+#: cms/templates/group_configurations.html
+msgid "Experiment Group Configurations"
 msgstr ""
 
 #: cms/templates/group_configurations.html
 msgid "This module is disabled at the moment."
 msgstr ""
 
-#: cms/templates/group_configurations.html cms/templates/settings_graders.html
-msgid "What can I do on this page?"
-msgstr ""
-
 #: cms/templates/group_configurations.html
-msgid "You can create, edit, and delete group configurations."
+msgid ""
+"Use content groups to give groups of students access to a specific set of "
+"course content. In addition to course content that is intended for all "
+"students, each content group sees content that you specifically designate as"
+" visible to it. By associating a content group with one or more cohorts, you"
+" can customize the content that a particular cohort or cohorts sees in your "
+"course."
 msgstr ""
 
 #: cms/templates/group_configurations.html
 msgid ""
-"A group configuration defines how many groups of students are in an "
-"experiment. When you create an experiment, you select the group "
-"configuration to use."
+"Click {em_start}New content group{em_end} to add a new content group. To "
+"edit the name of a content group, hover over its box and click "
+"{em_start}Edit{em_end}. Content groups cannot be deleted."
+msgstr ""
+
+#: cms/templates/group_configurations.html
+#: cms/templates/group_configurations.html
+msgid "Learn More"
+msgstr ""
+
+#: cms/templates/group_configurations.html
+msgid ""
+"Use experiment group configurations to define how many groups of students "
+"are in a content experiment. When you create a content experiment for a "
+"course, you select the group configuration to use."
 msgstr ""
 
 #: cms/templates/group_configurations.html
@@ -16102,10 +16281,6 @@ msgid ""
 "You can delete a group configuration only if it is not in use in an "
 "experiment. To delete a configuration, hover over its box and click the "
 "delete icon."
-msgstr ""
-
-#: cms/templates/group_configurations.html
-msgid "Learn More"
 msgstr ""
 
 #: cms/templates/group_configurations.html cms/templates/settings.html
@@ -17361,10 +17536,6 @@ msgid "Enter your YouTube video's ID (along with any restriction parameters)"
 msgstr ""
 
 #: cms/templates/settings.html
-msgid "Requirements"
-msgstr ""
-
-#: cms/templates/settings.html
 msgid "Expectations of the students taking this course"
 msgstr ""
 
@@ -17374,6 +17545,40 @@ msgstr ""
 
 #: cms/templates/settings.html
 msgid "Time spent on all course work"
+msgstr ""
+
+#: cms/templates/settings.html
+msgid "Prerequisite Course"
+msgstr ""
+
+#: cms/templates/settings.html
+msgid "Course that students must complete before beginning this course"
+msgstr ""
+
+#: cms/templates/settings.html
+msgid "set pre-requisite course"
+msgstr ""
+
+#: cms/templates/settings.html
+msgid "Require students to pass an exam before beginning the course."
+msgstr ""
+
+#: cms/templates/settings.html
+msgid "You can now view and author your course entrance exam from the "
+msgstr ""
+
+#: cms/templates/settings.html
+msgid "Grade Requirements"
+msgstr ""
+
+#: cms/templates/settings.html
+msgid " %"
+msgstr ""
+
+#: cms/templates/settings.html
+msgid ""
+"The score student must meet in order to successfully complete the entrance "
+"exam. "
 msgstr ""
 
 #: cms/templates/settings.html
@@ -17482,6 +17687,10 @@ msgid "New Assignment Type"
 msgstr ""
 
 #: cms/templates/settings_graders.html
+msgid "What can I do on this page?"
+msgstr ""
+
+#: cms/templates/settings_graders.html
 msgid ""
 "You can use the slider under Overall Grade Range to specify whether your "
 "course is pass/fail or graded by letter, and to establish the thresholds for"
@@ -17504,6 +17713,14 @@ msgstr ""
 #: cms/templates/studio_xblock_wrapper.html
 #: cms/templates/studio_xblock_wrapper.html
 msgid "Expand or Collapse"
+msgstr ""
+
+#: cms/templates/studio_xblock_wrapper.html
+msgid "Visibility Settings"
+msgstr ""
+
+#: cms/templates/studio_xblock_wrapper.html
+msgid "Visibility"
 msgstr ""
 
 #: cms/templates/studio_xblock_wrapper.html
@@ -17598,6 +17815,52 @@ msgid ""
 "ID. On the Course Outline page, you create or locate a video component to "
 "play this video. Edit the video component to paste the ID into the Advanced "
 "{em_start}EdX Video ID{em_end} field."
+msgstr ""
+
+#: cms/templates/visibility_editor.html
+msgid "No content groups exist"
+msgstr ""
+
+#: cms/templates/visibility_editor.html
+msgid ""
+"Use content groups to give groups of students access to a specific set of "
+"course content. Create one or more content groups, and make specific "
+"components visible to them."
+msgstr ""
+
+#: cms/templates/visibility_editor.html
+msgid "Manage content groups"
+msgstr ""
+
+#. Translators: Any text between {screen_reader_start} and {screen_reader_end}
+#. is only read by screen readers and never shown in the browser.
+#: cms/templates/visibility_editor.html
+msgid ""
+"{screen_reader_start}Warning:{screen_reader_end} The Unit this component is "
+"contained in is hidden from students. Visibility settings here will be "
+"trumped by this."
+msgstr ""
+
+#: cms/templates/visibility_editor.html
+msgid "Make visible to:"
+msgstr "Зробити видимим для:"
+
+#: cms/templates/visibility_editor.html
+msgid "All Students and Staff"
+msgstr ""
+
+#: cms/templates/visibility_editor.html
+msgid "Specific Content Groups"
+msgstr ""
+
+#: cms/templates/visibility_editor.html
+msgid "Deleted Content Group"
+msgstr ""
+
+#: cms/templates/visibility_editor.html
+msgid ""
+"Content group no longer exists. Please choose another or allow access to All"
+" Students and staff"
 msgstr ""
 
 #: cms/templates/emails/activation_email.txt

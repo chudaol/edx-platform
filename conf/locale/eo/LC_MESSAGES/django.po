@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2015-01-18 21:11+0100\n"
-"PO-Revision-Date: 2015-01-18 20:11:20.243628\n"
+"POT-Creation-Date: 2015-01-24 04:32+0100\n"
+"PO-Revision-Date: 2015-01-24 03:33:01.887158\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -6196,6 +6196,7 @@ msgstr ""
 
 #: lms/djangoapps/shoppingcart/processors/CyberSource.py
 #: lms/djangoapps/shoppingcart/processors/CyberSource2.py
+#: lms/djangoapps/shoppingcart/processors/LiqPay.py
 msgid ""
 "The payment processor accepted an order whose number is not in our system."
 msgstr ""
@@ -6558,12 +6559,14 @@ msgstr ""
 "             Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт#"
 
 #: lms/djangoapps/shoppingcart/processors/CyberSource2.py
+#: lms/djangoapps/shoppingcart/processors/LiqPay.py
 msgid "The payment processor did not return a required parameter: {parameter}"
 msgstr ""
 "Thé päýmént pröçéssör dïd nöt rétürn ä réqüïréd pärämétér: {parameter} "
 "Ⱡ'σяєм ιρѕυм ∂σłσя#"
 
 #: lms/djangoapps/shoppingcart/processors/CyberSource2.py
+#: lms/djangoapps/shoppingcart/processors/LiqPay.py
 msgid ""
 "The payment processor returned a badly-typed value {value} for parameter "
 "{parameter}."
@@ -6582,6 +6585,7 @@ msgstr ""
 "{total_cost} {total_cost_currency}. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢#"
 
 #: lms/djangoapps/shoppingcart/processors/CyberSource2.py
+#: lms/djangoapps/shoppingcart/processors/LiqPay.py
 msgid ""
 "Sorry! Our payment processor did not accept your payment.  The decision they"
 " returned was {decision}, and the reason was {reason}.  You were not "
@@ -6595,6 +6599,7 @@ msgstr ""
 "α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ #"
 
 #: lms/djangoapps/shoppingcart/processors/CyberSource2.py
+#: lms/djangoapps/shoppingcart/processors/LiqPay.py
 msgid ""
 "Sorry! Our payment processor sent us back a payment confirmation that had "
 "inconsistent data! We apologize that we cannot verify whether the charge "
@@ -6611,6 +6616,7 @@ msgstr ""
 "∂σł#"
 
 #: lms/djangoapps/shoppingcart/processors/CyberSource2.py
+#: lms/djangoapps/shoppingcart/processors/LiqPay.py
 msgid ""
 "Sorry! Due to an error your purchase was charged for a different amount than"
 " the order total! The specific error message is: {msg}. Your credit card has"
@@ -6624,6 +6630,7 @@ msgstr ""
 "єιυѕм#"
 
 #: lms/djangoapps/shoppingcart/processors/CyberSource2.py
+#: lms/djangoapps/shoppingcart/processors/LiqPay.py
 msgid ""
 "Sorry! Our payment processor sent us back a corrupted message regarding your"
 " charge, so we are unable to validate that the message actually came from "
@@ -6642,6 +6649,7 @@ msgstr ""
 "łαвσяє єт ∂σłσяє мαgηα αłιqυα. υт єηιм #"
 
 #: lms/djangoapps/shoppingcart/processors/CyberSource2.py
+#: lms/djangoapps/shoppingcart/processors/LiqPay.py
 msgid ""
 "Sorry! Our payment processor sent us back a message saying that you have "
 "cancelled this transaction. The items in your shopping cart will exist for "
@@ -6655,6 +6663,7 @@ msgstr ""
 "¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ι#"
 
 #: lms/djangoapps/shoppingcart/processors/CyberSource2.py
+#: lms/djangoapps/shoppingcart/processors/LiqPay.py
 msgid ""
 "We're sorry, but this payment was declined. The items in your shopping cart "
 "have been saved. If you have any questions about this transaction, please "
@@ -6666,6 +6675,7 @@ msgstr ""
 "#"
 
 #: lms/djangoapps/shoppingcart/processors/CyberSource2.py
+#: lms/djangoapps/shoppingcart/processors/LiqPay.py
 msgid ""
 "Sorry! Your payment could not be processed because an unexpected exception "
 "occurred. Please contact us at {email} for assistance."
@@ -6837,6 +6847,7 @@ msgid "There was an error verifying your ID photos."
 msgstr "Théré wäs än érrör vérïfýïng ýöür ÌD phötös. Ⱡ'σяєм ιρѕυм#"
 
 #: lms/djangoapps/verify_student/views.py
+#: lms/djangoapps/verify_student/views_.py
 #: lms/templates/shoppingcart/verified_cert_receipt.html
 #: lms/templates/verify_student/photo_verification.html
 #: lms/templates/verify_student/show_requirements.html
@@ -6844,14 +6855,17 @@ msgid "Intro"
 msgstr "Ìntrö Ⱡ'σяєм ι#"
 
 #: lms/djangoapps/verify_student/views.py
+#: lms/djangoapps/verify_student/views_.py
 msgid "Make payment"
 msgstr "Mäké päýmént Ⱡ#"
 
 #: lms/djangoapps/verify_student/views.py
+#: lms/djangoapps/verify_student/views_.py
 msgid "Payment confirmation"
 msgstr "Päýmént çönfïrmätïön Ⱡ'σя#"
 
 #: lms/djangoapps/verify_student/views.py
+#: lms/djangoapps/verify_student/views_.py
 #: lms/templates/verify_student/midcourse_photo_reverification.html
 #: lms/templates/verify_student/photo_reverification.html
 #: lms/templates/verify_student/photo_reverification.html
@@ -6861,51 +6875,63 @@ msgid "Take photo"
 msgstr "Täké phötö Ⱡ#"
 
 #: lms/djangoapps/verify_student/views.py
+#: lms/djangoapps/verify_student/views_.py
 msgid "Take a photo of your ID"
 msgstr "Täké ä phötö öf ýöür ÌD Ⱡ'σяє#"
 
 #: lms/djangoapps/verify_student/views.py
+#: lms/djangoapps/verify_student/views_.py
 msgid "Review your info"
 msgstr "Révïéw ýöür ïnfö Ⱡ'σ#"
 
 #: lms/djangoapps/verify_student/views.py
+#: lms/djangoapps/verify_student/views_.py
 msgid "Enrollment confirmation"
 msgstr "Énröllmént çönfïrmätïön Ⱡ'σяє#"
 
 #: lms/djangoapps/verify_student/views.py
+#: lms/djangoapps/verify_student/views_.py
 msgid "Selected price is not valid number."
 msgstr "Séléçtéd prïçé ïs nöt välïd nümßér. Ⱡ'σяєм ιρ#"
 
 #: lms/djangoapps/verify_student/views.py
+#: lms/djangoapps/verify_student/views_.py
 msgid "This course doesn't support verified certificates"
 msgstr "Thïs çöürsé döésn't süppört vérïfïéd çértïfïçätés Ⱡ'σяєм ιρѕυм ∂#"
 
 #: lms/djangoapps/verify_student/views.py
+#: lms/djangoapps/verify_student/views_.py
 msgid "No selected price or selected price is below minimum."
 msgstr ""
 "Nö séléçtéd prïçé ör séléçtéd prïçé ïs ßélöw mïnïmüm. Ⱡ'σяєм ιρѕυм ∂σ#"
 
 #: lms/djangoapps/verify_student/views.py
+#: lms/djangoapps/verify_student/views_.py
 msgid "Missing required parameters: {missing}"
 msgstr "Mïssïng réqüïréd pärämétérs: {missing} Ⱡ'σяєм ι#"
 
 #: lms/djangoapps/verify_student/views.py
+#: lms/djangoapps/verify_student/views_.py
 msgid "You already have a valid or pending verification."
 msgstr "Ýöü älréädý hävé ä välïd ör péndïng vérïfïçätïön. Ⱡ'σяєм ιρѕυм ∂#"
 
 #: lms/djangoapps/verify_student/views.py
+#: lms/djangoapps/verify_student/views_.py
 msgid "No profile found for user"
 msgstr "Nö pröfïlé föünd för üsér Ⱡ'σяєм#"
 
 #: lms/djangoapps/verify_student/views.py
+#: lms/djangoapps/verify_student/views_.py
 msgid "Name must be at least {min_length} characters long."
 msgstr "Nämé müst ßé ät léäst {min_length} çhäräçtérs löng. Ⱡ'σяєм ιρѕυ#"
 
 #: lms/djangoapps/verify_student/views.py
+#: lms/djangoapps/verify_student/views_.py
 msgid "Image data is not valid."
 msgstr "Ìmägé dätä ïs nöt välïd. Ⱡ'σяє#"
 
 #: lms/djangoapps/verify_student/views.py
+#: lms/djangoapps/verify_student/views_.py
 msgid "Verification photos received"
 msgstr "Vérïfïçätïön phötös réçéïvéd Ⱡ'σяєм #"
 
@@ -7104,7 +7130,6 @@ msgstr "Pässwörd Rését Hélp Ⱡ'σя#"
 
 #: lms/templates/registration/password_reset_confirm.html
 #: cms/templates/login.html lms/templates/login-sidebar.html
-#: lms/templates/register-sidebar.html
 msgid "Need Help?"
 msgstr "Nééd Hélp? Ⱡ#"
 
@@ -9013,28 +9038,6 @@ msgstr "Pléäsé trý ägäïn lätér. Ⱡ'σяє#"
 msgid "Note: only instructors may annotate."
 msgstr "Nöté: önlý ïnstrüçtörs mäý ännötäté. Ⱡ'σяєм ιρ#"
 
-#: lms/templates/index.html
-msgid "Free courses from <strong>{university_name}</strong>"
-msgstr "Fréé çöürsés fröm <strong>{university_name}</strong> Ⱡ'σяєм#"
-
-#: lms/templates/index.html
-msgid "For anyone, anywhere, anytime"
-msgstr "För änýöné, änýwhéré, änýtïmé Ⱡ'σяєм #"
-
-#. Translators: 'Open edX' is a brand, please keep this untranslated. See
-#. http://openedx.org for more information.
-#: lms/templates/index.html
-msgid "Welcome to Open edX!"
-msgstr "Wélçömé tö Öpén édX! Ⱡ'σя#"
-
-#. Translators: 'Open edX' is a brand, please keep this untranslated. See
-#. http://openedx.org for more information.
-#: lms/templates/index.html
-msgid "It works! This is the default homepage for this Open edX instance."
-msgstr ""
-"Ìt wörks! Thïs ïs thé défäült hömépägé för thïs Öpén édX ïnstänçé. Ⱡ'σяєм "
-"ιρѕυм ∂σłσя #"
-
 #: lms/templates/invalid_email_key.html
 msgid "Invalid email change key"
 msgstr "Ìnvälïd émäïl çhängé kéý Ⱡ'σяє#"
@@ -9493,64 +9496,6 @@ msgstr "Lög ïn Ⱡ'σяєм ιρѕ#"
 msgid "Welcome to {platform_name}"
 msgstr "Wélçömé tö {platform_name} Ⱡ'#"
 
-#: lms/templates/register-sidebar.html
-msgid ""
-"Registering with {platform_name} gives you access to all of our current and "
-"future free courses. Not ready to take a course just yet? Registering puts "
-"you on our mailing list - we will update you as courses are added."
-msgstr ""
-"Régïstérïng wïth {platform_name} gïvés ýöü äççéss tö äll öf öür çürrént änd "
-"fütüré fréé çöürsés. Nöt réädý tö täké ä çöürsé jüst ýét? Régïstérïng püts "
-"ýöü ön öür mäïlïng lïst - wé wïll üpdäté ýöü äs çöürsés äré äddéd. Ⱡ'σяєм "
-"ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ#"
-
-#: lms/templates/register-sidebar.html
-msgid "Next Steps"
-msgstr "Néxt Stéps Ⱡ#"
-
-#: lms/templates/register-sidebar.html
-msgid ""
-"You will receive an activation email.  You must click on the activation link"
-" to complete the process.  Don't see the email?  Check your spam folder and "
-"mark emails from class.stanford.edu as 'not spam', since you'll want to be "
-"able to receive email from your courses."
-msgstr ""
-"Ýöü wïll réçéïvé än äçtïvätïön émäïl.  Ýöü müst çlïçk ön thé äçtïvätïön lïnk"
-" tö çömplété thé pröçéss.  Dön't séé thé émäïl?  Çhéçk ýöür späm földér änd "
-"märk émäïls fröm çläss.stänförd.édü äs 'nöt späm', sïnçé ýöü'll wänt tö ßé "
-"äßlé tö réçéïvé émäïl fröm ýöür çöürsés. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, "
-"¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя ιη¢ι∂#"
-
-#: lms/templates/register-sidebar.html
-msgid ""
-"As part of joining {platform_name}, you will receive an activation email.  "
-"You must click on the activation link to complete the process.  Don't see "
-"the email?  Check your spam folder and mark {platform_name} emails as 'not "
-"spam'.  At {platform_name}, we communicate mostly through email."
-msgstr ""
-"Às pärt öf jöïnïng {platform_name}, ýöü wïll réçéïvé än äçtïvätïön émäïl.  "
-"Ýöü müst çlïçk ön thé äçtïvätïön lïnk tö çömplété thé pröçéss.  Dön't séé "
-"thé émäïl?  Çhéçk ýöür späm földér änd märk {platform_name} émäïls äs 'nöt "
-"späm'.  Àt {platform_name}, wé çömmünïçäté möstlý thröügh émäïl. Ⱡ'σяєм "
-"ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тємρσя #"
-
-#: lms/templates/register-sidebar.html
-msgid "Need help in registering with {platform_name}?"
-msgstr "Nééd hélp ïn régïstérïng wïth {platform_name}? Ⱡ'σяєм ιρ#"
-
-#: lms/templates/register-sidebar.html
-msgid "View our FAQs for answers to commonly asked questions."
-msgstr ""
-"Vïéw öür FÀQs för änswérs tö çömmönlý äskéd qüéstïöns. Ⱡ'σяєм ιρѕυм ∂σ#"
-
-#: lms/templates/register-sidebar.html
-msgid ""
-"Once registered, most questions can be answered in the course specific "
-"discussion forums or through the FAQs."
-msgstr ""
-"Önçé régïstéréd, möst qüéstïöns çän ßé änswéréd ïn thé çöürsé spéçïfïç "
-"dïsçüssïön förüms ör thröügh thé FÀQs. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕ#"
-
 #: lms/templates/register.html
 msgid "Register for {platform_name}"
 msgstr "Régïstér för {platform_name} Ⱡ'σ#"
@@ -9562,10 +9507,6 @@ msgstr "Çréäté Mý {platform_name} Àççöünt Ⱡ'σя#"
 #: lms/templates/register.html
 msgid "Welcome!"
 msgstr "Wélçömé! #"
-
-#: lms/templates/register.html
-msgid "Register below to create your {platform_name} account"
-msgstr "Régïstér ßélöw tö çréäté ýöür {platform_name} äççöünt Ⱡ'σяєм ιρѕυ#"
 
 #. Translators: provider_name is the name of an external, third-party user
 #. authentication service (like Google or LinkedIn).
@@ -15401,6 +15342,7 @@ msgid "You are re-verifying for {organization}'s {course_name}"
 msgstr "Ýöü äré ré-vérïfýïng för {organization}'s {course_name} Ⱡ'σяєм ιρ#"
 
 #: lms/templates/verify_student/_verification_header.html
+#: lms/templates/verify_student/edera_choose_and_pay.html
 msgid "You are enrolling in {organization}'s {course_name}"
 msgstr "Ýöü äré énröllïng ïn {organization}'s {course_name} Ⱡ'σяєм #"
 
@@ -15444,6 +15386,17 @@ msgstr ""
 "türnéd ön, änd ällöwéd tö fünçtïön ïn ýöür wéß ßröwsér (çömmönlý ädjüstäßlé "
 "ïn ýöür ßröwsér séttïngs).</strong> Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя"
 " α∂ιριѕι¢ιηg єłιт, ѕє∂ ∂σ єιυѕмσ∂ тєм#"
+
+#: lms/templates/verify_student/edera_choose_and_pay.html
+#: lms/templates/verify_student/photo_verification.html
+#: lms/templates/verify_student/verified.html
+msgid "Register for {} | Verification"
+msgstr "Régïstér för {} | Vérïfïçätïön Ⱡ'σяєм #"
+
+#: lms/templates/verify_student/edera_choose_and_pay.html
+#: lms/templates/verify_student/photo_verification.html
+msgid "Check Your Contribution Level"
+msgstr "Çhéçk Ýöür Çöntrïßütïön Lévél Ⱡ'σяєм #"
 
 #: lms/templates/verify_student/face_upload.html
 msgid "Edit Your Full Name"
@@ -16084,11 +16037,6 @@ msgid "Upgrade Your Registration for {} | Verification"
 msgstr "Ûpgrädé Ýöür Régïsträtïön för {} | Vérïfïçätïön Ⱡ'σяєм ιρѕυм #"
 
 #: lms/templates/verify_student/photo_verification.html
-#: lms/templates/verify_student/verified.html
-msgid "Register for {} | Verification"
-msgstr "Régïstér för {} | Vérïfïçätïön Ⱡ'σяєм #"
-
-#: lms/templates/verify_student/photo_verification.html
 msgid ""
 "You don't seem to have a webcam connected. Double-check that your webcam is "
 "connected and working to continue registering, or select to {a_start} audit "
@@ -16153,10 +16101,6 @@ msgstr "Gö tö Stép 2: Täké ÌD Phötö Ⱡ'σяєм#"
 #: lms/templates/verify_student/photo_verification.html
 msgid "Review the Photos You've Taken"
 msgstr "Révïéw thé Phötös Ýöü'vé Täkén Ⱡ'σяєм #"
-
-#: lms/templates/verify_student/photo_verification.html
-msgid "Check Your Contribution Level"
-msgstr "Çhéçk Ýöür Çöntrïßütïön Lévél Ⱡ'σяєм #"
 
 #. Translators: The last part of this string will appear such as: "(min. 50
 #. USD)"

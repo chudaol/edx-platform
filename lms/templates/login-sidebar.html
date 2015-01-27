@@ -21,10 +21,7 @@ from django.core.urlresolvers import reverse
 
   ## Disable help unless the FAQ marketing link is enabled
   % if settings.MKTG_URL_LINK_MAP.get('FAQ'):
-    <h3>${_("Need Help?")}</h3>
-    <p>${_("Looking for help in logging in or with your {platform_name} account?").format(platform_name=platform_name)}
-    <a href="${marketing_link('FAQ')}">
-        ${_("View our help section for answers to commonly asked questions.")}
-    </a></p>
+    <h3>ЗАЛИШИЛИСЬ ЗАПИТАННЯ?</h3>
+    <p>Пишіть нам на <a target="_blank" href="mailto:info@ed-era.com?subject=Help">info@ed-era.com</a> або зв'яжіться з нами одним зі способів, зазначених у контактах.</p>
   % endif
 </div>

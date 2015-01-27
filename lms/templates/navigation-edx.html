@@ -52,23 +52,19 @@ site_status_msg = get_site_status_msg(course_id)
     % endif
 
     % if user.is_authenticated():
-      % if not course or disable_courseware_header:
-    <nav aria-label="Main" class="nav-main">
-      <ul class="left nav-global authenticated">
-        <%block name="navigation_global_links_authenticated">
-            <li class="nav-global-01">
-              <a href="${marketing_link('HOW_IT_WORKS')}">${_("How it Works")}</a>
-            </li>
-            <li class="nav-global-02">
-              <a href="${marketing_link('COURSES')}">${_("Find Courses")}</a>
-            </li>
-            <li class="nav-global-03">
-              <a href="${marketing_link('SCHOOLS')}">${_("Schools & Partners")}</a>
-            </li>
-        </%block>
-      </ul>
-    </nav>
-      % endif
+    <div class="left nav-global authenticated">
+      <%block name="navigation_global_links_authenticated">
+          <!--<li class="nav-global-01">-->
+            <!--<a href="${marketing_link('HOW_IT_WORKS')}">${_("How it Works")}</a>-->
+          <!--</li>-->
+          <li class="nav-global-02">
+            <a href="${marketing_link('COURSES')}">${_("Find Courses")}</a>
+          </li>
+          <!--<li class="nav-global-03">-->
+            <!--<a href="${marketing_link('SCHOOLS')}">${_("Schools & Partners")}</a>-->
+          <!--</li>-->
+      </%block>
+    </div>
 
     <ul class="user">
       <li class="primary">
@@ -101,21 +97,21 @@ site_status_msg = get_site_status_msg(course_id)
       % endif
 
     % else:
-    <nav aria-label="Main" class="nav-main">
-      <ul class="left nav-global">
-        <%block name="navigation_global_links">
-            <li class="nav-global-01">
-              <a href="${marketing_link('HOW_IT_WORKS')}">${_("How it Works")}</a>
-            </li>
-            <li class="nav-global-02">
-              <a href="${marketing_link('COURSES')}">${_("Find Courses")}</a>
-            </li>
-            <li class="nav-global-03">
-              <a href="${marketing_link('SCHOOLS')}">${_("Schools & Partners")}</a>
-            </li>
-        </%block>
-      </ul>
-    </nav>
+    <ol class="left nav-global">
+      <%block name="navigation_global_links">
+        % if microsite.get_value('ENABLE_MKTG_SITE', settings.FEATURES.get('ENABLE_MKTG_SITE', False)):
+          <!--<li class="nav-global-01">-->
+            <!--<a href="${marketing_link('HOW_IT_WORKS')}">${_("How it Works")}</a>-->
+          <!--</li>-->
+          <li class="nav-global-02">
+            <a href="${marketing_link('COURSES')}">${_("Find Courses")}</a>
+          </li>
+          <!--<li class="nav-global-03">-->
+            <!--<a href="${marketing_link('SCHOOLS')}">${_("Schools & Partners")}</a>-->
+          <!--</li>-->
+        % endif
+      </%block>
+    </ol>
 
     <nav aria-label="Account" class="nav-account-management">
       <div class="right nav-courseware">

@@ -682,8 +682,8 @@ def course_info(request, course_id):
         # link to where the student should go to enroll in the course:
         # about page if there is not marketing site, SITE_NAME if there is
         url_to_enroll = reverse(course_about, args=[course_id])
-        if settings.FEATURES.get('ENABLE_MKTG_SITE'):
-            url_to_enroll = marketing_link('COURSES')
+        # if settings.FEATURES.get('ENABLE_MKTG_SITE'):
+        #     url_to_enroll = marketing_link('COURSES')
 
         show_enroll_banner = request.user.is_authenticated() and not CourseEnrollment.is_enrolled(request.user, course.id)
 
@@ -813,8 +813,8 @@ def course_about(request, course_id):
         )
         course = get_course_with_access(request.user, permission_name, course_key)
 
-        if microsite.get_value('ENABLE_MKTG_SITE', settings.FEATURES.get('ENABLE_MKTG_SITE', False)):
-            return redirect(reverse('info', args=[course.id.to_deprecated_string()]))
+        # if microsite.get_value('ENABLE_MKTG_SITE', settings.FEATURES.get('ENABLE_MKTG_SITE', False)):
+        #     return redirect(reverse('info', args=[course.id.to_deprecated_string()]))
 
         registered = registered_for_course(course, request.user)
 

@@ -300,7 +300,7 @@ FEATURES = {
     'ENABLE_THIRD_PARTY_AUTH': False,
 
     # Toggle to enable alternate urls for marketing links
-    'ENABLE_MKTG_SITE': False,
+    'ENABLE_MKTG_SITE': True,
 
     # Prevent concurrent logins per user
     'PREVENT_CONCURRENT_LOGINS': True,
@@ -1654,18 +1654,18 @@ CSRF_COOKIE_AGE = 60 * 60 * 24 * 7 * 52
 ######################### MARKETING SITE ###############################
 EDXMKTG_COOKIE_NAME = 'edxloggedin'
 MKTG_URLS = {}
+
 MKTG_URL_LINK_MAP = {
     'ABOUT': 'about',
     'CONTACT': 'contact',
-    'FAQ': 'help',
+    'FAQ': 'faq',
     'COURSES': 'courses',
-    'ROOT': 'root',
     'TOS': 'tos',
     'PRIVACY': 'privacy',
     'PRESS': 'press',
     'BLOG': 'blog',
-    'DONATE': 'donate',
-
+    'DONATE':'donate',
+    'ROOT': 'root',
     # Verified Certificates
     'WHAT_IS_VERIFIED_CERT': 'verified-certificate'
 }

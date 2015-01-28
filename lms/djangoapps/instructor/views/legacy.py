@@ -834,12 +834,12 @@ def _do_enroll_students(course, course_key, students, secure=False, overload=Fal
         )
         # We can't get the url to the course's About page if the marketing site is enabled.
         course_about_url = None
-        if not settings.FEATURES.get('ENABLE_MKTG_SITE', False):
-            course_about_url = u'{proto}://{site}{path}'.format(
-                proto=protocol,
-                site=stripped_site_name,
-                path=reverse('about_course', kwargs={'course_id': course_key.to_deprecated_string()})
-            )
+        # if not settings.FEATURES.get('ENABLE_MKTG_SITE', False):
+        course_about_url = u'{proto}://{site}{path}'.format(
+            proto=protocol,
+            site=stripped_site_name,
+            path=reverse('about_course', kwargs={'course_id': course_key.to_deprecated_string()})
+        )
 
         # Composition of email
         email_data = {

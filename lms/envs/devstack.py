@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Specific overrides to the base prod settings to make development easier.
 """
@@ -40,6 +41,9 @@ ANALYTICS_API_KEY = ""
 # Set this to the dashboard URL in order to display the link from the
 # dashboard to the Analytics Dashboard.
 ANALYTICS_DASHBOARD_URL = None
+
+# Setting for PAID_COURSE_REGISTRATION, DOES NOT AFFECT VERIFIED STUDENTS
+PAID_COURSE_REGISTRATION_CURRENCY = ['uah', '₴']
 
 
 ################################ DEBUG TOOLBAR ################################

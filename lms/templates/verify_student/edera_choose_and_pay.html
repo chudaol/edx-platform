@@ -21,6 +21,7 @@
             organization: "${course_org}",
             course_num: "${course_num}",
             course_name: "${course_name}",
+            user_full_name: "${user_full_name}",
             currency: "${currency}",
             chosen_price: ${chosen_price},
             min_price: ${min_price},
@@ -39,7 +40,50 @@
   }).call(this, require || RequireJS.require);
 </script>
 </%block>
-
+<style>
+  .contribution {
+    width: 100%;
+    background-color: #f0e7e7;
+  }
+  .contributions-row {
+    width:  100%;
+    text-align: center;
+    height:  300px;
+  }
+  .contribution-button-wrapper {
+    display: inline-flex;
+    width: 20%;
+    margin:  10px;
+    border:  1px solid gray;
+    height: 250px;
+  }
+  .contribution-button {
+    background-color: gray;
+  }
+  .contribution-price {
+    padding-top: 20px;
+    height:  20%;
+    background-color: #F0F8FF;
+  }
+  .contribution-price input {
+    width: 60%;
+    text-align: center;
+  }
+  .contribution-description {
+    border-top: 1px solid #FF0000;
+  }
+  .contribution-button {
+    cursor: pointer;
+  }
+  .free {
+    background-color: white;
+    padding: 10px;
+  }
+  .decision {
+    padding: 10px;
+    background-color: gray;
+  }
+</style>
 <%block name="content">
 
 <div class="container verification-process">

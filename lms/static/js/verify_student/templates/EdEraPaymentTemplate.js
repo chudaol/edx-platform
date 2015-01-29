@@ -1,9 +1,14 @@
 ;
 (function (define, undefined) {
   define(["underscore"], function (_) {
-    var html, contribution, title, liqPay;
+    var html, contribution, title, subtitle, liqPay;
 
     title = '<h3>Ви реєструєтеся на курс <%=course_num%> <%=course_name%></h3>';
+
+    subtitle = '<h4>EdEra – освітній проект з соціальною місією – зробити освіту якісною та доступною. ' +
+    'Платний запис, на наш погляд, – важливий аспект мотивації та відповідальності. ' +
+    'Розуміючи, що потрібно поєднати доступність і цінову політику, ми ввели систему оплати, опираючись на довіру до користувачів нашого проекту.' +
+    '</h4>'
 
     contribution = '<div class="contribution"></div>';
 

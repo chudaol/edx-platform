@@ -12,6 +12,7 @@
        * @overrides
        */
       template: EdEraContributionButtonTemplate,
+      className: "contribution-button-wrapper",
       events: {
         "change input": "_onChangeInput",
         "click .contribution-button": "_onClickMe"

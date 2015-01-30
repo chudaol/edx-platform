@@ -1,13 +1,13 @@
 Вітаємо Вас, ${order.user.profile.name}!
-
+<br/>
 % for order_item in order_items:
     Ваша оплата за ${order_item.line_desc} на ${settings.CC_MERCHANT_NAME} була здійснена!
 % endfor
-
-${_("Total billed to credit/debit card: {currency_symbol}{total_cost}").format(total_cost=order.total_cost, currency_symbol=currency_symbol)}
+<br/>
+<p>Ви оплатили ${total_cost} гривень.</p>
 
 За будь-якими запитаннями звертайтесь до ${payment_support_email}.
-
+<br/>
 З повагою,
-
+<br/>
 Команда EdEra

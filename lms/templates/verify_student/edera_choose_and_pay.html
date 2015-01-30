@@ -41,47 +41,101 @@
 </script>
 </%block>
 <style>
-  .contribution {
-    width: 100%;
-    background-color: #f0e7e7;
+  /* PAYMENT */
+  .verification-process {
+    width: 960px;
+    margin: 50px auto;
   }
-  .contributions-row {
-    width:  100%;
+  .verification-process h3 {
     text-align: center;
-    height:  300px;
+    font-size: 20px;
+    text-transform: uppercase;
+    line-height: 1.4;
   }
-  .contribution-button-wrapper {
-    display: inline-flex;
-    width: 20%;
-    margin:  10px;
-    border:  1px solid gray;
-    height: 250px;
+  .verification-process .contributions-row:after {
+    content: "";
+    display: table;
+    clear: both;
   }
-  .contribution-button {
-    background-color: gray;
+  .verification-process .contribution-button-wrapper {
+    width: 300px;
+    margin: 20px 10px;
+    float: left;
+    background-color: #fff;
   }
-  .contribution-price {
-    padding-top: 20px;
-    height:  20%;
-    background-color: #F0F8FF;
-  }
-  .contribution-price input {
-    width: 60%;
-    text-align: center;
-  }
-  .contribution-description {
-    border-top: 1px solid #FF0000;
-  }
-  .contribution-button {
+  .verification-process .contribution-button {
+    height: 160px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+    box-shadow: 0 0 1px rgba(34, 25, 25, 0.4);
+    border-radius: 2px;
+    padding: 20px;
     cursor: pointer;
   }
-  .free {
-    background-color: white;
-    padding: 10px;
+  .verification-process .contribution-button:hover {
+    box-shadow: 0 0 1px rgba(34, 25, 25, 0.8);
   }
-  .decision {
-    padding: 10px;
-    background-color: gray;
+  .verification-process .contribution-button.active {
+    background-color: #fffdd6;
+    box-shadow: 0 0 1px rgba(34, 25, 25, 0.8);
+  }
+  .verification-process .contribution-price {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    height: 45px;
+  }
+  .verification-process .contribution-price input {
+    width: 250px;
+  }
+  .verification-process .contribution-description {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .verification-process .free {
+    font-size: 14px;
+    font-style: italic;
+    color: #444;
+    line-height: 1.4;
+    width: 940px;
+    margin: 20px auto 40px;
+  }
+  .verification-process .decision {
+    width: 940px;
+    margin: 20px auto;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .verification-process #pay_form {
+    width: 940px;
+    margin: 20px auto;
+  }
+  .verification-process #pay_button {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    *display: inline;
+    text-decoration: none;
+    padding: 10px 15px 8px;
+    line-height: 1;
+    border: 2px solid #2993de;
+    color: #2993de;
+    background-color: transparent;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 14px;
+    box-shadow: 0 0 1px rgba(34, 25, 25, 0.4);
+    font-weight: bold;
+  }
+  .verification-process #pay_button:hover {
+    background-color: #2993de;
+    color: white ;
   }
 </style>
 <%block name="content">

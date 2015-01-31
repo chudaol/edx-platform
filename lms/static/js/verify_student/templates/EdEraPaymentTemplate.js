@@ -5,10 +5,10 @@
 
     title = '<h3>Ви реєструєтеся на курс <%=course_num%> <%=course_name%></h3>';
 
-    subtitle = '<h4>EdEra – освітній проект з соціальною місією – зробити освіту якісною та доступною. ' +
+    subtitle = '<p class="description">EdEra – освітній проект з соціальною місією – зробити освіту якісною та доступною. ' +
     'Платний запис, на наш погляд, – важливий аспект мотивації та відповідальності. ' +
     'Розуміючи, що потрібно поєднати доступність і цінову політику, ми ввели систему оплати, опираючись на довіру до користувачів нашого проекту.' +
-    '</h4>'
+    '</p>';
 
     contribution = '<div class="contribution"></div>';
 
@@ -18,7 +18,7 @@
     '<input class="action-primary" type="button" id="pay_button" value="Оплатити зараз!" name="payment">' +
     '</form>';
 
-    html = title + contribution + liqPay;
+    html = title + subtitle + contribution + liqPay;
     return _.template(html);
   });
 }).call(this, define || RequireJS.define);

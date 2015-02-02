@@ -3,7 +3,7 @@
     define(["underscore"], function (_) {
         var html, decision, free, mailLink;
 
-        decision = '<div class="decision">Ви вирішили оплатити <span class="chosen_price" data-chosen="<%=chosen_price%>"><%=chosen_price%></span> гривень.</div>';
+        decision = '<div class="decision">Ви вирішили оплатити <span class="chosen_price" data-chosen="<%=chosen_price%>"><%=chosen_price%></span> грн.</div>';
 
         mailLink = '<a target="_blank" href="mailto:info@ed-era.com?subject=Мотиваційний лист для запису на <%=course_name%>&body=Мотиваційний лист від <%=user_full_name%>">' +
                      'Надішліть нам мотиваційний лист' +

@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2015-01-24 04:32+0100\n"
-"PO-Revision-Date: 2015-01-24 03:33:01.887158\n"
+"POT-Creation-Date: 2015-02-04 11:46+0100\n"
+"PO-Revision-Date: 2015-02-04 10:46:14.302638\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -5069,7 +5069,6 @@ msgstr ""
 "ιρѕυм ∂σłσя ѕ#"
 
 #: lms/djangoapps/instructor/views/api.py
-#: lms/djangoapps/shoppingcart/models.py
 msgid "pdf download unavailable right now, please contact support."
 msgstr ""
 "pdf döwnlöäd ünäväïläßlé rïght nöw, pléäsé çöntäçt süppört. Ⱡ'σяєм ιρѕυм "
@@ -7128,21 +7127,6 @@ msgstr ""
 msgid "Password Reset Help"
 msgstr "Pässwörd Rését Hélp Ⱡ'σя#"
 
-#: lms/templates/registration/password_reset_confirm.html
-#: cms/templates/login.html lms/templates/login-sidebar.html
-msgid "Need Help?"
-msgstr "Nééd Hélp? Ⱡ#"
-
-#: lms/templates/registration/password_reset_confirm.html
-msgid ""
-"\n"
-"              View our %(start_link)shelp section for contact information and answers to commonly asked questions%(end_link)s\n"
-"          "
-msgstr ""
-"\n"
-"              Vïéw öür %(start_link)shélp séçtïön för çöntäçt ïnförmätïön änd änswérs tö çömmönlý äskéd qüéstïöns%(end_link)s\n"
-"           Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢т#"
-
 #: lms/templates/registration/password_reset_email.html
 msgid ""
 "You're receiving this e-mail because you requested a password reset for your"
@@ -9106,18 +9090,6 @@ msgstr "Nöt Énrölléd? Ⱡ'#"
 #: lms/templates/login-sidebar.html
 msgid "Sign up for {platform_name} today!"
 msgstr "Sïgn üp för {platform_name} tödäý! Ⱡ'σяє#"
-
-#: lms/templates/login-sidebar.html
-msgid "Looking for help in logging in or with your {platform_name} account?"
-msgstr ""
-"Löökïng för hélp ïn löggïng ïn ör wïth ýöür {platform_name} äççöünt? Ⱡ'σяєм "
-"ιρѕυм ∂σł#"
-
-#: lms/templates/login-sidebar.html
-msgid "View our help section for answers to commonly asked questions."
-msgstr ""
-"Vïéw öür hélp séçtïön för änswérs tö çömmönlý äskéd qüéstïöns. Ⱡ'σяєм ιρѕυм "
-"∂σłσя#"
 
 #: lms/templates/login.html
 msgid "Log into your {platform_name} Account"
@@ -12126,7 +12098,6 @@ msgid "We hope you enjoy learning with {platform_name}!"
 msgstr "Wé höpé ýöü énjöý léärnïng wïth {platform_name}! Ⱡ'σяєм ιρ#"
 
 #: lms/templates/emails/activation_email.txt
-#: lms/templates/emails/order_confirmation_email.txt
 msgid "The {platform_name} Team"
 msgstr "Thé {platform_name} Téäm Ⱡ#"
 
@@ -12218,7 +12189,6 @@ msgid "You have been invited to a beta test for {course_name}"
 msgstr "Ýöü hävé ßéén ïnvïtéd tö ä ßétä tést för {course_name} Ⱡ'σяєм ιρѕυм#"
 
 #: lms/templates/emails/business_order_confirmation_email.txt
-#: lms/templates/emails/order_confirmation_email.txt
 msgid "Hi {name},"
 msgstr "Hï {name}, #"
 
@@ -12231,7 +12201,6 @@ msgid "Your payment was successful."
 msgstr "Ýöür päýmént wäs süççéssfül. Ⱡ'σяєм #"
 
 #: lms/templates/emails/business_order_confirmation_email.txt
-#: lms/templates/emails/order_confirmation_email.txt
 msgid ""
 "If you have billing questions, please read the FAQ ({faq_url}) or contact "
 "{billing_email}."
@@ -12240,7 +12209,6 @@ msgstr ""
 "{billing_email}. Ⱡ'σяєм ιρѕυм ∂σłσя ѕι#"
 
 #: lms/templates/emails/business_order_confirmation_email.txt
-#: lms/templates/emails/order_confirmation_email.txt
 msgid "If you have billing questions, please contact {billing_email}."
 msgstr ""
 "Ìf ýöü hävé ßïllïng qüéstïöns, pléäsé çöntäçt {billing_email}. Ⱡ'σяєм ιρѕυм "
@@ -12263,17 +12231,14 @@ msgstr ""
 "réçéïpt réçïpïént. Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт α#"
 
 #: lms/templates/emails/business_order_confirmation_email.txt
-#: lms/templates/emails/order_confirmation_email.txt
 msgid "The items in your order are:"
 msgstr "Thé ïtéms ïn ýöür ördér äré: Ⱡ'σяєм #"
 
 #: lms/templates/emails/business_order_confirmation_email.txt
-#: lms/templates/emails/order_confirmation_email.txt
 msgid "Quantity - Description - Price"
 msgstr "Qüäntïtý - Désçrïptïön - Prïçé Ⱡ'σяєм #"
 
 #: lms/templates/emails/business_order_confirmation_email.txt
-#: lms/templates/emails/order_confirmation_email.txt
 msgid "Total billed to credit/debit card: {currency_symbol}{total_cost}"
 msgstr ""
 "Tötäl ßïlléd tö çrédït/déßït çärd: {currency_symbol}{total_cost} Ⱡ'σяєм "
@@ -12304,7 +12269,6 @@ msgid "Recipient Email:"
 msgstr "Réçïpïént Émäïl: Ⱡ'σ#"
 
 #: lms/templates/emails/business_order_confirmation_email.txt
-#: lms/templates/emails/order_confirmation_email.txt
 msgid "#:"
 msgstr "#: Ⱡ'#"
 
@@ -12520,24 +12484,6 @@ msgstr ""
 msgid "You have been enrolled in {course_name}"
 msgstr "Ýöü hävé ßéén énrölléd ïn {course_name} Ⱡ'σяєм #"
 
-#: lms/templates/emails/order_confirmation_email.txt
-msgid ""
-"Your payment was successful. You will see the charge below on your next "
-"credit or debit card statement under the company name {merchant_name}."
-msgstr ""
-"Ýöür päýmént wäs süççéssfül. Ýöü wïll séé thé çhärgé ßélöw ön ýöür néxt "
-"çrédït ör déßït çärd stätémént ündér thé çömpäný nämé {merchant_name}. "
-"Ⱡ'σяєм ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя#"
-
-#: lms/templates/emails/order_confirmation_email.txt
-#: lms/templates/emails/photo_submission_confirmation.txt
-msgid "Thank you,"
-msgstr "Thänk ýöü, Ⱡ#"
-
-#: lms/templates/emails/order_confirmation_email.txt
-msgid "Your order number is: {order_number}"
-msgstr "Ýöür ördér nümßér ïs: {order_number} Ⱡ'σяєм#"
-
 #: lms/templates/emails/photo_submission_confirmation.txt
 msgid "Hi {full_name},"
 msgstr "Hï {full_name}, #"
@@ -12554,6 +12500,10 @@ msgstr ""
 "Wé'vé réçéïvéd ýöür ïnförmätïön änd thé vérïfïçätïön pröçéss häs ßégün. Ýöü "
 "çän çhéçk thé stätüs öf thé vérïfïçätïön pröçéss ön ýöür däshßöärd. Ⱡ'σяєм "
 "ιρѕυм ∂σłσя ѕιт αмєт, ¢σηѕє¢тєтυя α∂ιρ#"
+
+#: lms/templates/emails/photo_submission_confirmation.txt
+msgid "Thank you,"
+msgstr "Thänk ýöü, Ⱡ#"
 
 #: lms/templates/emails/photo_submission_confirmation.txt
 msgid "The {platform_name} team"
@@ -15342,7 +15292,6 @@ msgid "You are re-verifying for {organization}'s {course_name}"
 msgstr "Ýöü äré ré-vérïfýïng för {organization}'s {course_name} Ⱡ'σяєм ιρ#"
 
 #: lms/templates/verify_student/_verification_header.html
-#: lms/templates/verify_student/edera_choose_and_pay.html
 msgid "You are enrolling in {organization}'s {course_name}"
 msgstr "Ýöü äré énröllïng ïn {organization}'s {course_name} Ⱡ'σяєм #"
 
@@ -15392,11 +15341,6 @@ msgstr ""
 #: lms/templates/verify_student/verified.html
 msgid "Register for {} | Verification"
 msgstr "Régïstér för {} | Vérïfïçätïön Ⱡ'σяєм #"
-
-#: lms/templates/verify_student/edera_choose_and_pay.html
-#: lms/templates/verify_student/photo_verification.html
-msgid "Check Your Contribution Level"
-msgstr "Çhéçk Ýöür Çöntrïßütïön Lévél Ⱡ'σяєм #"
 
 #: lms/templates/verify_student/face_upload.html
 msgid "Edit Your Full Name"
@@ -16101,6 +16045,10 @@ msgstr "Gö tö Stép 2: Täké ÌD Phötö Ⱡ'σяєм#"
 #: lms/templates/verify_student/photo_verification.html
 msgid "Review the Photos You've Taken"
 msgstr "Révïéw thé Phötös Ýöü'vé Täkén Ⱡ'σяєм #"
+
+#: lms/templates/verify_student/photo_verification.html
+msgid "Check Your Contribution Level"
+msgstr "Çhéçk Ýöür Çöntrïßütïön Lévél Ⱡ'σяєм #"
 
 #. Translators: The last part of this string will appear such as: "(min. 50
 #. USD)"
@@ -18404,6 +18352,10 @@ msgstr "Réqüïréd Ìnförmätïön tö Sïgn Ìn tö {studio_name} Ⱡ'σяє
 #: cms/templates/login.html
 msgid "{studio_name} Support"
 msgstr "{studio_name} Süppört Ⱡ#"
+
+#: cms/templates/login.html
+msgid "Need Help?"
+msgstr "Nééd Hélp? Ⱡ#"
 
 #: cms/templates/login.html
 msgid ""

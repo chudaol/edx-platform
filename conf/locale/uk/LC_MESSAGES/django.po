@@ -12,6 +12,7 @@
 # Nikolai Belochub, 2014
 # Oleksandr Pylypenko <lex.pilipenko@gmail.com>, 2014
 # olexiim <olexiim@gmail.com>, 2014-2015
+# Olga Filipova <chudaol@gmail.com>, 2015
 # Zapadenska <oruda@ymail.com>, 2014
 # Sergii <felytic@gmail.com>, 2014
 # Tsybulska Karolina <kirakivuk@gmail.com>, 2014
@@ -6590,6 +6591,8 @@ msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
 msgstr ""
+"Будь ласка, введіть ваш пароль двічі, щоб ми могли пересвідчитись, що ви "
+"ввели його правильно."
 
 #: lms/templates/registration/password_reset_confirm.html
 msgid ""
@@ -6597,6 +6600,8 @@ msgid ""
 "        Required fields are noted by %(bold_start)sbold text and an asterisk (*)%(bold_end)s.\n"
 "        "
 msgstr ""
+"\n"
+"Обов'язкові для заповнення поля виділені %(bold_start)sжирним текстом та зірочкою (*)%(bold_end)s."
 
 #: lms/templates/registration/password_reset_confirm.html
 #: lms/templates/forgot_password_modal.html lms/templates/login.html

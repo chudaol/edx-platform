@@ -16,7 +16,8 @@ TEMPLATE_DEBUG = True
 SITE_NAME = 'localhost:8000'
 # By default don't use a worker, execute tasks as if they were local functions
 CELERY_ALWAYS_EAGER = True
-
+THEME_NAME = "edera-theme"
+# PLATFORM_NAME = "EdEra"
 ################################ LOGGERS ######################################
 
 import logging
@@ -31,7 +32,7 @@ for pkg_name in ['track.contexts', 'track.middleware', 'dd.dogapi']:
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 FEATURES['ENABLE_INSTRUCTOR_EMAIL'] = True     # Enable email for all Studio courses
 FEATURES['REQUIRE_COURSE_EMAIL_AUTH'] = False  # Give all courses email (don't require django-admin perms)
-
+# FEATURES['USE_CUSTOM_THEME'] = True
 
 ########################## ANALYTICS TESTING ########################
 

@@ -383,8 +383,8 @@ class Order(models.Model):
                         'recipient_type': recipient[2],
                         'site_name': site_name,
                         'order_items': orderitems,
-                        'course_names': processor_reply_dump.get("course_id"),
-                        'course_id': processor_reply_dump.get("course_id"),
+                        'course_names': processor_reply_dump.course_id,
+                        'course_id': processor_reply_dump.course_id,
                         'dashboard_url': dashboard_url,
                         'currency_symbol': settings.PAID_COURSE_REGISTRATION_CURRENCY[1],
                         'order_placed_by': '{username} ({email})'.format(username=self.user.username, email=getattr(self.user, 'email')),  # pylint: disable=no-member

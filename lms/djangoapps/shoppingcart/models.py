@@ -344,7 +344,7 @@ class Order(models.Model):
 
         return csv_file, course_info
 
-    def send_confirmation_emails(self, orderitems, is_order_type_business, csv_file, pdf_file, site_name, courses_info):
+    def send_confirmation_emails(self, orderitems, is_order_type_business, csv_file, pdf_file, site_name, courses_info, processor_reply_dump):
         """
         send confirmation e-mail
         """
@@ -383,8 +383,8 @@ class Order(models.Model):
                         'recipient_type': recipient[2],
                         'site_name': site_name,
                         'order_items': orderitems,
-                        'course_names': ", ".join([course_info[0] for course_info in courses_info]),
-                        'course_id': ", ".join([course_info[2] for course_info in courses_info]),
+                        'course_names': processor_reply_dump.course_id,
+                        'course_id': processor_reply_dump.course_id,
                         'dashboard_url': dashboard_url,
                         'currency_symbol': settings.PAID_COURSE_REGISTRATION_CURRENCY[1],
                         'order_placed_by': '{username} ({email})'.format(username=self.user.username, email=getattr(self.user, 'email')),  # pylint: disable=no-member
@@ -483,18 +483,10 @@ class Order(models.Model):
             log.exception('Exception at creating pdf file.')
             pdf_file = None
 
-        try:
-            self.send_confirmation_emails(
-                orderitems, self.order_type == OrderTypes.BUSINESS,
-                csv_file, pdf_file, site_name, courses_info
-            )
-        except Exception:  # pylint: disable=broad-except
-            # Catch all exceptions here, since the Django view implicitly
-            # wraps this in a transaction.  If the order completes successfully,
-            # we don't want to roll back just because we couldn't send
-            # the confirmation email.
-            log.exception('Error occurred while sending payment confirmation email')
-
+        self.send_confirmation_emails(
+            orderitems, self.order_type == OrderTypes.BUSINESS,
+            csv_file, pdf_file, site_name, courses_info, processor_reply_dump
+        )
         self._emit_order_event('Completed Order', orderitems)
 
     def refund(self):

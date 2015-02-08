@@ -32,6 +32,7 @@ from shoppingcart.processors.exceptions import *
 from shoppingcart.processors.helpers import get_processor_config
 from microsite_configuration import microsite
 import base64
+from courseware.courses import get_course_by_id
 
 log = logging.getLogger(__name__)
 
@@ -60,6 +61,7 @@ def render_purchase_form_html(cart, callback_url=None, extra_data=None):
 
 def data_hash(params):
     string = json.dumps(params)
+    log.info(data_unhash(base64.b64encode(string)))
     return base64.b64encode(string)
 
 
@@ -160,6 +162,8 @@ def get_purchase_params(cart, callback_url=None, extra_data=None):
     params['orderNumber'] = "OrderId: {0:d}".format(cart.id)
 
     params['signed_date_time'] = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+
+    params['course_id'] = extra_data[0]
 
     params['public_key'] = get_processor_config().get('PUBLIC_KEY', '')
     params['type'] = 'buy'

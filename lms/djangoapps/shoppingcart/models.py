@@ -336,7 +336,7 @@ class Order(models.Model):
             course_id = item.course_id
             course = get_course_by_id(getattr(item, 'course_id'), depth=0)
             registration_codes = CourseRegistrationCode.objects.filter(course_id=course_id, order=self)
-            course_info.append((course.display_name, ' (' + course.start_datetime_text() + '-' + course.end_datetime_text() + ')'))
+            course_info.append((course.display_name, ' (' + course.start_datetime_text() + '-' + course.end_datetime_text() + ')', course_id))
             for registration_code in registration_codes:
                 redemption_url = reverse('register_code_redemption', args=[registration_code.code])
                 url = '{base_url}{redemption_url}'.format(base_url=site_name, redemption_url=redemption_url)
@@ -384,6 +384,7 @@ class Order(models.Model):
                         'site_name': site_name,
                         'order_items': orderitems,
                         'course_names': ", ".join([course_info[0] for course_info in courses_info]),
+                        'course_id': ", ".join([course_info[2] for course_info in courses_info]),
                         'dashboard_url': dashboard_url,
                         'currency_symbol': settings.PAID_COURSE_REGISTRATION_CURRENCY[1],
                         'order_placed_by': '{username} ({email})'.format(username=self.user.username, email=getattr(self.user, 'email')),  # pylint: disable=no-member

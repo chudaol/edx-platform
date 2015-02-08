@@ -407,6 +407,8 @@ class Order(models.Model):
                     email.attach(u'RegistrationCodesRedemptionUrls.csv', csv_file.getvalue(), 'text/csv')
                 if settings.SEND_PDF_INVOICE and pdf_file is not None:
                     email.attach(u'Receipt.pdf', pdf_file.getvalue(), 'application/pdf')
+
+                email.content_subtype = "html"
                 email.send()
         except (smtplib.SMTPException, BotoServerError):  # sadly need to handle diff. mail backends individually
             log.error('Failed sending confirmation e-mail for order %d', self.id)  # pylint: disable=no-member

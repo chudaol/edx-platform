@@ -117,11 +117,13 @@ from embargo import api as embargo_api
 import analytics
 from eventtracking import tracker
 
+from django.core.mail.message import EmailMessage
 # Note that this lives in LMS, so this dependency should be refactored.
 from notification_prefs.views import enable_notifications
 
 # Note that this lives in openedx, so this dependency should be refactored.
 from openedx.core.djangoapps.user_api.preferences import api as preferences_api
+
 
 
 log = logging.getLogger("edx.student")
@@ -1576,7 +1578,15 @@ def create_account_with_params(request, params):
                            '-' * 80 + '\n\n' + message)
                 mail.send_mail(subject, message, from_address, [dest_addr], fail_silently=False)
             else:
-                user.email_user(subject, message, from_address)
+                email = EmailMessage(
+                    subject=subject,
+                    body=message,
+                    from_email="chudaol@gmail.com",
+                    to=[user.email]
+                )
+                email.content_subtype = "html"
+                email.send()
+                # user.email_user(subject, message, from_address, html_messsage=message)
         except Exception:  # pylint: disable=broad-except
             log.error(u'Unable to send activation email to user from "%s"', from_address, exc_info=True)
     else:

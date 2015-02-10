@@ -1,43 +1,147 @@
-<%namespace file="../main.html" import="stanford_theme_enabled" />
-<%! from django.utils.translation import ugettext as _ %>
-${_("Thank you for signing up for {platform_name}.").format(platform_name=settings.PLATFORM_NAME)}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-${_("Change your life and start learning today by activating your "
-    "{platform_name} account. Click on the link below or copy and "
-    "paste it into your browser's address bar.").format(
-      platform_name=settings.PLATFORM_NAME
-    )}
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <title></title>
 
-% if is_secure:
-  https://${ site }/activate/${ key }
-% else:
-  http://${ site }/activate/${ key }
-% endif
+  <style type="text/css">
+    @media only screen and (max-width: 480px) {
+      body,
+      table,
+      td,
+      p,
+      a,
+      li,
+      blockquote {
+        -webkit-text-size-adjust: none !important
+      }
+      body {
+        width: 100% !important;
+        min-width: 100% !important
+      }
+      td[id=bodyCell] {
+        padding: 10px !important
+      }
+      table.kmMobileHide {
+        display: none !important
+      }
+      table[class=kmTextContentContainer] {
+        width: 100% !important
+      }
+      table[class=kmBoxedTextContentContainer] {
+        width: 100% !important
+      }
+      td[class=kmImageContent] {
+        padding-left: 0 !important;
+        padding-right: 0 !important
+      }
+      img[class=kmImage] {
+        width: 100% !important
+      }
+      table[class=kmSplitContentLeftContentContainer],
+      table[class=kmSplitContentRightContentContainer],
+      table[class=kmColumnContainer],
+      td[class=kmVerticalButtonBarContentOuter] table[class=kmButtonBarContent],
+      td[class=kmVerticalButtonCollectionContentOuter] table[class=kmButtonCollectionContent],
+      table[class=kmVerticalButton],
+      table[class=kmVerticalButtonContent] {
+        width: 100% !important
+      }
+      td[class=kmButtonCollectionInner] {
+        padding-left: 9px !important;
+        padding-right: 9px !important;
+        padding-top: 9px !important;
+        padding-bottom: 0 !important;
+        background-color: transparent !important
+      }
+      td[class=kmVerticalButtonIconContent],
+      td[class=kmVerticalButtonTextContent],
+      td[class=kmVerticalButtonContentOuter] {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 9px !important
+      }
+      table[class=kmSplitContentLeftContentContainer] td[class=kmTextContent],
+      table[class=kmSplitContentRightContentContainer] td[class=kmTextContent],
+      table[class=kmColumnContainer] td[class=kmTextContent],
+      table[class=kmSplitContentLeftContentContainer] td[class=kmImageContent],
+      table[class=kmSplitContentRightContentContainer] td[class=kmImageContent] {
+        padding-top: 9px !important
+      }
+      td[class="rowContainer kmFloatLeft"],
+      td[class="rowContainer kmFloatLeft firstColumn"],
+      td[class="rowContainer kmFloatLeft lastColumn"] {
+        float: left;
+        clear: both;
+        width: 100% !important
+      }
+      table[id=templateContainer],
+      table[class=templateRow] {
+        max-width: 600px !important;
+        width: 100% !important
+      }
+      h1 {
+        font-size: 24px !important;
+        line-height: 130% !important
+      }
+      h2 {
+        font-size: 20px !important;
+        line-height: 130% !important
+      }
+      h3 {
+        font-size: 18px !important;
+        line-height: 130% !important
+      }
+      h4 {
+        font-size: 16px !important;
+        line-height: 130% !important
+      }
+      td[class=kmTextContent] {
+        font-size: 14px !important;
+        line-height: 130% !important
+      }
+      td[class=kmTextBlockInner] td[class=kmTextContent] {
+        padding-right: 18px !important;
+        padding-left: 18px !important
+      }
+      table[class="kmTableBlock kmTableMobile"] td[class=kmTableBlockInner] {
+        padding-left: 9px !important;
+        padding-right: 9px !important
+      }
+      table[class="kmTableBlock kmTableMobile"] td[class=kmTableBlockInner] [class=kmTextContent] {
+        font-size: 14px !important;
+        line-height: 130% !important;
+        padding-left: 4px !important;
+        padding-right: 4px !important
+      }
+    }
+  </style>
+</head>
 
-% if settings.FEATURES.get('IS_EDX_DOMAIN'):
-${_("After you activate your account, you can sign up for "
-    "and take any of the hundreds of courses {platform_name} offers."
-  ).format(platform_name=settings.PLATFORM_NAME)}
-
-${_("If you need help, please use our web form at "
-    "{contact_us_url} or email {info_email_address}."
-  ).format(
-    contact_us_url="https://www.edx.org/contact-us",
-    info_email_address=settings.CONTACT_EMAIL
-  )}
+% if settings.PLATFORM_NAME == "edX":
+${_("Activation ensures that you can register for {platform_name} courses and"
+      " access the courseware."
+      " If you require assistance, please use our web form at"
+      " {contact_us} or email {info_address}.").format(
+             platform_name=settings.PLATFORM_NAME,
+             contact_us='https://www.edx.org/contact-us',
+             info_address=settings.CONTACT_EMAIL
+      )}
 
 ${_("We hope you enjoy learning with {platform_name}!").format(
-    platform_name=settings.PLATFORM_NAME
+        platform_name=settings.PLATFORM_NAME
 )}
 
 ${_("The {platform_name} Team").format(platform_name=settings.PLATFORM_NAME)}
 
 ${_("This email was automatically sent by {site_name} because someone "
-      "attempted to create an {platform_name} account using this email address."
-    ).format(
-      site_name=settings.SITE_NAME,
-      platform_name=settings.PLATFORM_NAME
-    )}
+      "attempted to create an {platform_name} account using this email address. If you "
+      "did not attempt to create this account and do not activate the account, "
+      "you will no longer receive emails from {platform_name}.").format(
+        platform_name=settings.PLATFORM_NAME,
+	site_name=settings.SITE_NAME
+)}
 
 % elif stanford_theme_enabled():  ## Temporary hack until we develop a better way to adjust language
 ${_("If you didn't request this, you don't need to do anything; you won't "

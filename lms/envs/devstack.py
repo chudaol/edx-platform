@@ -134,3 +134,23 @@ except ImportError:
 #####################################################################
 # Lastly, run any migrations, if needed.
 MODULESTORE = convert_module_store_setting_if_needed(MODULESTORE)
+
+###################### Registration ##################################
+
+# For each of the fields, give one of the following values:
+# - 'required': to display the field, and make it mandatory
+# - 'optional': to display the field, and make it non-mandatory
+# - 'hidden': to not display the field
+
+REGISTRATION_EXTRA_FIELDS = {
+    'level_of_education': 'optional',
+    'gender': 'optional',
+    'year_of_birth': 'optional',
+    'mailing_address': 'optional',
+    'goals': 'optional',
+    'honor_code': 'optional',
+    'terms_of_service': 'hidden',
+    'city': 'hidden',
+    'country': 'hidden',
+}
+

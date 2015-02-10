@@ -112,6 +112,8 @@ from openedx.core.djangoapps.user_api.api import profile as profile_api
 import analytics
 from eventtracking import tracker
 
+from django.core.mail.message import EmailMessage
+
 
 log = logging.getLogger("edx.student")
 AUDIT_LOG = logging.getLogger("audit")
@@ -1675,7 +1677,15 @@ def create_account(request, post_override=None):  # pylint: disable-msg=too-many
                            '-' * 80 + '\n\n' + message)
                 send_mail(subject, message, from_address, [dest_addr], fail_silently=False)
             else:
-                user.email_user(subject, message, from_address)
+                email = EmailMessage(
+                    subject=subject,
+                    body=message,
+                    from_email="chudaol@gmail.com",
+                    to=[user.email]
+                )
+                email.content_subtype = "html"
+                email.send()
+                # user.email_user(subject, message, from_address, html_messsage=message)
         except Exception:  # pylint: disable=broad-except
             log.error('Unable to send activation email to user from "{from_address}"'.format(from_address=from_address), exc_info=True)
             js['value'] = _('Could not send activation e-mail.')

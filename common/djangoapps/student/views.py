@@ -1680,7 +1680,7 @@ def create_account(request, post_override=None):  # pylint: disable-msg=too-many
                 email = EmailMessage(
                     subject=subject,
                     body=message,
-                    from_email="chudaol@gmail.com",
+                    from_email=from_address,
                     to=[user.email]
                 )
                 email.content_subtype = "html"
@@ -2017,7 +2017,15 @@ def reactivation_email_for_user(user):
     message = render_to_string('emails/activation_email.txt', context)
 
     try:
-        user.email_user(subject, message, settings.DEFAULT_FROM_EMAIL)
+        email = EmailMessage(
+            subject=subject,
+            body=message,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            to=[user.email]
+        )
+        email.content_subtype = "html"
+        email.send()
+        # user.email_user(subject, message, settings.DEFAULT_FROM_EMAIL)
     except Exception:  # pylint: disable=broad-except
         log.error('Unable to send reactivation email from "{from_address}"'.format(from_address=settings.DEFAULT_FROM_EMAIL), exc_info=True)
         return JsonResponse({

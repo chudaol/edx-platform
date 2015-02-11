@@ -218,7 +218,7 @@ def process_postpay_callback(params):
     try:
         valid_params = verify_signatures(params)
         order_id_group = re.search('(?<=\[)\d+', valid_params['description'])
-        course_name_group = re.search('(?<=\")\w+', valid_params['description'])
+        course_name_group = re.search(r'\"(.+?)\"', valid_params['description'])
         order_id = order_id_group.group(0)
         course_name = course_name_group.group(0)
 

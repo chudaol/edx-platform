@@ -25,6 +25,9 @@
       _onClickPayButton: function () {
         this.submitToPaymentProcessing();
       },
+      /**
+       * Submits data to payment processing
+       */
       submitToPaymentProcessing: function() {
         var contribution, course_id;
 

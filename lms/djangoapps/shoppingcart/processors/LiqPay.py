@@ -32,6 +32,7 @@ from shoppingcart.processors.exceptions import *
 from shoppingcart.processors.helpers import get_processor_config
 from microsite_configuration import microsite
 import base64
+from opaque_keys.edx.locations import SlashSeparatedCourseKey
 from courseware.courses import get_course_by_id
 
 log = logging.getLogger(__name__)
@@ -61,7 +62,6 @@ def render_purchase_form_html(cart, callback_url=None, extra_data=None):
 
 def data_hash(params):
     string = json.dumps(params)
-    log.info(data_unhash(base64.b64encode(string)))
     return base64.b64encode(string)
 
 
@@ -148,11 +148,14 @@ def get_purchase_params(cart, callback_url=None, extra_data=None):
     params = OrderedDict()
 
     params['version'] = 3
+    course = get_course_by_id(SlashSeparatedCourseKey.from_deprecated_string(extra_data[0]))
+    course_name = course.display_name_with_default
 
     '{base_url}{dashboard}'.format(
         base_url=site_name,
         dashboard=reverse('dashboard'))
-    params['description'] = u'Запис на курс {course_num} | Номер заказу [{course_id}]'.format(
+    params['description'] = u'Запис на курс {course_name} ({course_num}) | Номер заказу [{course_id}]'.format(
+        course_name=course_name,
         course_num=extra_data[0],
         course_id=cart.id
     )
@@ -164,6 +167,8 @@ def get_purchase_params(cart, callback_url=None, extra_data=None):
     params['signed_date_time'] = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
 
     params['course_id'] = extra_data[0]
+
+    params['course_name'] = course_name
 
     params['public_key'] = get_processor_config().get('PUBLIC_KEY', '')
     params['type'] = 'buy'
@@ -178,7 +183,7 @@ def get_purchase_params(cart, callback_url=None, extra_data=None):
     params['result_url'] = '{base_url}{dashboard}'.format(
         base_url=site_name,
         dashboard=reverse('dashboard'))
-    if get_processor_config().get('SANDBOX'):
+    if get_processor_config().get('SANDBOX') or course_name == "sandbox":
         params['sandbox'] = 1
 
     if callback_url is not None:
@@ -282,6 +287,10 @@ def _record_purchase(params, order):
     else:
         ccnum = "####"
 
+    log.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    log.info(params)
+    log.info(json.dumps(json_data))
+    log.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     # Mark the order as purchased and store the billing information
     order.purchase(
         first=json_data.get('req_bill_to_forename', ''),

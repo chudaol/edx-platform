@@ -154,7 +154,7 @@ def get_purchase_params(cart, callback_url=None, extra_data=None):
     '{base_url}{dashboard}'.format(
         base_url=site_name,
         dashboard=reverse('dashboard'))
-    params['description'] = u'Запис на курс {course_name} ({course_num}) | Номер заказу [{course_id}]'.format(
+    params['description'] = u'Запис на курс "{course_name}" ({course_num}) | Номер заказу [{course_id}]'.format(
         course_name=course_name,
         course_num=extra_data[0],
         course_id=cart.id
@@ -218,7 +218,9 @@ def process_postpay_callback(params):
     try:
         valid_params = verify_signatures(params)
         order_id_group = re.search('(?<=\[)\d+', valid_params['description'])
+        course_name_group = re.search('(?<=\")\w+', valid_params['description'])
         order_id = order_id_group.group(0)
+        course_name = course_name_group.group(0)
 
         result = _payment_accepted(
             order_id,
@@ -227,7 +229,7 @@ def process_postpay_callback(params):
             valid_params['status']
         )
         if result['accepted']:
-            _record_purchase(params, result['order'])
+            _record_purchase(params, result['order'], course_name)
             return {
                 'success': True,
                 'order': result['order'],
@@ -266,7 +268,7 @@ def _record_payment_info(params, order):
     order.save()
 
 
-def _record_purchase(params, order):
+def _record_purchase(params, order, course_name):
     """
     Record the purchase and run purchased_callbacks
     Args:
@@ -287,10 +289,6 @@ def _record_purchase(params, order):
     else:
         ccnum = "####"
 
-    log.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-    log.info(params)
-    log.info(json.dumps(json_data))
-    log.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     # Mark the order as purchased and store the billing information
     order.purchase(
         first=json_data.get('req_bill_to_forename', ''),
@@ -303,7 +301,7 @@ def _record_purchase(params, order):
         postalcode=json_data.get('req_bill_to_address_postal_code', ''),
         ccnum=ccnum,
         cardtype=CARDTYPE_MAP[json_data.get('req_card_type', '')],
-        processor_reply_dump=json.dumps(json_data)
+        course_name=course_name
     )
 
 

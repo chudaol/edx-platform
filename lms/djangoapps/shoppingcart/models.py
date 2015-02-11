@@ -342,7 +342,7 @@ class Order(models.Model):
 
         return csv_file, course_info
 
-    def send_confirmation_emails(self, orderitems, is_order_type_business, csv_file, pdf_file, site_name, courses_info, processor_reply_dump):
+    def send_confirmation_emails(self, orderitems, is_order_type_business, csv_file, pdf_file, site_name, courses_info, course_name):
         """
         send confirmation e-mail
         """
@@ -381,8 +381,7 @@ class Order(models.Model):
                         'recipient_type': recipient[2],
                         'site_name': site_name,
                         'order_items': orderitems,
-                        'course_names': processor_reply_dump.course_id,
-                        'course_id': processor_reply_dump.course_id,
+                        'course_name': course_name,
                         'dashboard_url': dashboard_url,
                         'currency_symbol': settings.PAID_COURSE_REGISTRATION_CURRENCY[1],
                         'order_placed_by': '{username} ({email})'.format(username=self.user.username, email=getattr(self.user, 'email')),  # pylint: disable=no-member
@@ -414,7 +413,7 @@ class Order(models.Model):
             log.error('Failed sending confirmation e-mail for order %d', self.id)  # pylint: disable=no-member
 
     def purchase(self, first='', last='', street1='', street2='', city='', state='', postalcode='',
-                 country='', ccnum='', cardtype='', processor_reply_dump=''):
+                 country='', ccnum='', cardtype='', course_name=''):
         """
         Call to mark this order as purchased.  Iterates through its OrderItems and calls
         their purchased_callback
@@ -450,7 +449,7 @@ class Order(models.Model):
             self.bill_to_street2 = street2
             self.bill_to_ccnum = ccnum
             self.bill_to_cardtype = cardtype
-            self.processor_reply_dump = processor_reply_dump
+            self.processor_reply_dump = ''
 
         # save these changes on the order, then we can tell when we are in an
         # inconsistent state
@@ -483,7 +482,7 @@ class Order(models.Model):
 
         self.send_confirmation_emails(
             orderitems, self.order_type == OrderTypes.BUSINESS,
-            csv_file, pdf_file, site_name, courses_info, processor_reply_dump
+            csv_file, pdf_file, site_name, courses_info, course_name
         )
         self._emit_order_event('Completed Order', orderitems)
 

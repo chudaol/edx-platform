@@ -482,7 +482,8 @@ class Order(models.Model):
         except Exception:  # pylint: disable=broad-except
             log.exception('Exception at creating pdf file.')
             pdf_file = None
-
+        log.info(">>>>>>>>>>>>>>>>>>>>>")
+        log.info(orderitems)
         self.send_confirmation_emails(
             orderitems, self.order_type == OrderTypes.BUSINESS,
             csv_file, pdf_file, site_name, courses_info, processor_reply_dump

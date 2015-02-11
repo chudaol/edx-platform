@@ -15,6 +15,7 @@
     liqPay = '<form id="pay_form" method="post" action="<%=purchase_endpoint%>">' +
     '<input type="hidden" name="csrfmiddlewaretoken" value="<%=csrf_token %>">' +
     '<input type="hidden" name="course_id" value="<%=course_id%>" />' +
+    '<input type="hidden" name="course_name" value="<%=course_name%>" />' +
     '<input class="action-primary" type="button" id="pay_button" value="Оплатити зараз!" name="payment">' +
     '</form>';
 

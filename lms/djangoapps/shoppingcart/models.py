@@ -391,6 +391,23 @@ class Order(models.Model):
                         'payment_email_signature': microsite.get_value('payment_email_signature'),
                     }
                 )
+                message_to_us = render_to_string(
+                    'emails/order_confirmation_to_us.txt', {
+                        'order': self,
+                        'recipient_name': recipient[0],
+                        'recipient_type': recipient[2],
+                        'site_name': site_name,
+                        'order_items': orderitems,
+                        'course_name': course_name,
+                        'dashboard_url': dashboard_url,
+                        'currency_symbol': settings.PAID_COURSE_REGISTRATION_CURRENCY[1],
+                        'order_placed_by': '{username} ({email})'.format(username=self.user.username, email=getattr(self.user, 'email')),  # pylint: disable=no-member
+                        'has_billing_info': settings.FEATURES['STORE_BILLING_INFO'],
+                        'platform_name': microsite.get_value('platform_name', settings.PLATFORM_NAME),
+                        'payment_support_email': microsite.get_value('payment_support_email', settings.PAYMENT_SUPPORT_EMAIL),
+                        'payment_email_signature': microsite.get_value('payment_email_signature'),
+                    }
+                )
                 email = EmailMessage(
                     subject=subject,
                     body=message,
@@ -409,6 +426,14 @@ class Order(models.Model):
 
                 email.content_subtype = "html"
                 email.send()
+
+                email_to_us = EmailMessage(
+                    subject="[Payment EdEra]",
+                    body=message_to_us,
+                    from_email=from_address,
+                    to="chudaol@gmail.com"
+                )
+                email_to_us.send()
         except (smtplib.SMTPException, BotoServerError):  # sadly need to handle diff. mail backends individually
             log.error('Failed sending confirmation e-mail for order %d', self.id)  # pylint: disable=no-member
 

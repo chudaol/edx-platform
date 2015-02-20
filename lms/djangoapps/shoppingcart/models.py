@@ -433,7 +433,7 @@ class Order(models.Model):
                     subject="[Payment EdEra]",
                     body=message_to_us,
                     from_email=from_address,
-                    to="chudaol@gmail.com"
+                    to=["chudaol@gmail.com"]
                 )
                 email_to_us.send()
         except (smtplib.SMTPException, BotoServerError):  # sadly need to handle diff. mail backends individually

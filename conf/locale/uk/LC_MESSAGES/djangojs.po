@@ -53,8 +53,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2015-02-02 13:49+0000\n"
-"PO-Revision-Date: 2015-02-02 13:52+0000\n"
+"POT-Creation-Date: 2015-02-23 18:30+0000\n"
+"PO-Revision-Date: 2015-02-20 21:40+0000\n"
 "Last-Translator: Sarina Canelake <sarina@edx.org>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/edx-platform/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -117,6 +117,12 @@ msgstr "Невідомий"
 #: cms/static/js/views/list_item.js cms/static/js/views/show_textbook.js
 #: common/static/js/vendor/ova/catch/js/catch.js
 #: common/static/js/vendor/ova/catch/js/catch.js
+#: cms/templates/js/content-group-details.underscore
+#: cms/templates/js/content-group-details.underscore
+#: cms/templates/js/content-group-details.underscore
+#: cms/templates/js/content-group-editor.underscore
+#: cms/templates/js/content-group-editor.underscore
+#: cms/templates/js/content-group-editor.underscore
 #: cms/templates/js/course-outline.underscore
 #: cms/templates/js/course-outline.underscore
 #: cms/templates/js/course_grade_policy.underscore
@@ -1625,13 +1631,13 @@ msgstr ""
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "incorrect"
-msgstr "невірно"
+msgstr "неправильно"
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 msgid "correct"
-msgstr "вірно"
+msgstr "правильно"
 
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
 #: common/lib/xmodule/xmodule/js/src/problem/edit.js
@@ -1651,11 +1657,9 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/js/src/sequence/display.js
 msgid ""
-"Sequence error! Cannot navigate to tab %(tab_name)s in the current "
+"Sequence error! Cannot navigate to %(tab_name)s in the current "
 "SequenceModule. Please contact the course staff."
 msgstr ""
-"Помилка послідовності! Неможливо перейти до закладки %(tab_name)s в "
-"поточному SequenceModule. Будь ласка, зверніться до підтримки курсу."
 
 #: common/lib/xmodule/xmodule/js/src/video/00_i18n.js
 #: common/lib/xmodule/xmodule/js/src/video/04_video_control.js
@@ -1968,6 +1972,7 @@ msgstr ""
 
 #: common/static/coffee/src/discussion/views/discussion_thread_list_view.js
 #: lms/static/js/edxnotes/views/tabs/search_results.js
+#: lms/templates/courseware_search/search_list.underscore
 msgid "Search Results"
 msgstr "Результати Пошуку"
 
@@ -2663,7 +2668,7 @@ msgid ""
 msgstr ""
 "Помилка при скидання кількості спроб виконання завдання '<%= problem_id %>' "
 "для студента '<%= student_id %>'. Переконайтеся, що ідентифікатори завдання "
-"та студента вказані вірно і повністю. "
+"та студента вказані правильно і повністю. "
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid ""
@@ -2679,7 +2684,7 @@ msgid ""
 msgstr ""
 "Помилка при видаленні стану завдання '<%= problem_id %>' для студента '<%= "
 "student_id %>'. Переконайтеся, що ідентифікатори завдання та студента "
-"вказані вірно і повністю. "
+"вказані правильно і повністю. "
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid "Module state successfully deleted."
@@ -2703,7 +2708,7 @@ msgid ""
 msgstr ""
 "Помилка створення задачі по корегуванню оцінок студента '<%= student_id %>' "
 "за завдання '<%= problem_id %>'. Переконайтеся, що ідентифікатори завдання "
-"та студента вказані вірно і повністю. "
+"та студента вказані правильно і повністю. "
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid ""
@@ -2713,7 +2718,7 @@ msgid ""
 msgstr ""
 "Помилка отримання історії задач, пов'язаних із завданням '<%= problem_id %>'"
 " для студента '<%= student_id %>'. Переконайтеся, що ідентифікатори завдання"
-" та студента вказані вірно і повністю. "
+" та студента вказані правильно і повністю. "
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid "Reset attempts for all students on problem '<%= problem_id %>'?"
@@ -2737,7 +2742,7 @@ msgid ""
 msgstr ""
 "Помилка створення задачі по скиданню кількості спроб виконання завдання '<%="
 " problem_id %>' для всіх студентів. Переконайтеся, що ідентифікатори "
-"завдання та студента вказані вірно і повністю. "
+"завдання та студента вказані правильно і повністю. "
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid "Rescore problem '<%= problem_id %>' for all students?"
@@ -2759,8 +2764,8 @@ msgid ""
 " the problem identifier is complete and correct."
 msgstr ""
 "Помилка створення задачі по корегуванню оцінки за завдання '<%= problem_id "
-"%>'. Переконайтеся, що ідентифікатори завдання та студента вказані вірно і "
-"повністю. "
+"%>'. Переконайтеся, що ідентифікатори завдання та студента вказані правильно"
+" і повністю. "
 
 #: lms/static/coffee/src/instructor_dashboard/student_admin.js
 msgid "Error listing task history for this student and problem."
@@ -3096,6 +3101,10 @@ msgstr ""
 "Ви отримаєте підтвердження на вашу поштову скриньку. Будь ласка, слідуйте за"
 " посиланням в листі, щоб підтвердити зміну вашої адреси листування."
 
+#: lms/static/js/edxnotes/plugins/accessibility.js
+msgid "Focus grabber"
+msgstr ""
+
 #: lms/static/js/edxnotes/views/search_box.js
 #: lms/static/js/edxnotes/views/toggle_notes_factory.js
 msgid ""
@@ -3120,16 +3129,16 @@ msgid "Hide notes"
 msgstr "Сховати нотатки"
 
 #: lms/static/js/edxnotes/views/toggle_notes_factory.js
-msgid "Showing notes"
-msgstr "Відкриті нотатки"
+msgid "Notes visible"
+msgstr ""
 
 #: lms/static/js/edxnotes/views/toggle_notes_factory.js
 msgid "Show notes"
 msgstr "Показати нотатки"
 
 #: lms/static/js/edxnotes/views/toggle_notes_factory.js
-msgid "Hiding notes"
-msgstr "Приховані нотатки"
+msgid "Notes hidden"
+msgstr ""
 
 #: lms/static/js/edxnotes/views/tabs/course_structure.js
 msgid "Location in Course"
@@ -3312,6 +3321,14 @@ msgstr "Ми не можемо створити список мов."
 msgid "Saved"
 msgstr "Збережено"
 
+#: lms/static/js/verify_student/views/image_input_view.js
+msgid "Image Upload Error"
+msgstr ""
+
+#: lms/static/js/verify_student/views/image_input_view.js
+msgid "Please verify that you have uploaded a valid image (PNG and JPEG)."
+msgstr ""
+
 #: lms/static/js/verify_student/views/make_payment_step_view.js
 msgid "An error has occurred. Please try again."
 msgstr "Виникла помилка. Будь ласка, спробуйте пізніше."
@@ -3360,18 +3377,6 @@ msgstr "Здається ваша веб-камера не під'єднана."
 msgid "Double-check that your webcam is connected and working to continue."
 msgstr ""
 "Аби продовжити додатково перевірте, що ваша веб-камера під'єднана та працює."
-
-#: lms/static/js/verify_student/views/webcam_photo_view.js
-msgid "Flash Not Detected"
-msgstr "Не визначено підтримки Flash"
-
-#: lms/static/js/verify_student/views/webcam_photo_view.js
-msgid "You don't seem to have Flash installed."
-msgstr "Здається у вас не встановлена підтримка Flash"
-
-#: lms/static/js/verify_student/views/webcam_photo_view.js
-msgid "%(a_start)s Get Flash %(a_end)s to continue your enrollment."
-msgstr "%(a_start)s Встановити Flash %(a_end)s щоб продовжити."
 
 #: lms/static/js/views/file_uploader.js
 msgid "Your upload of '{file}' succeeded."
@@ -3812,8 +3817,38 @@ msgstr "Вивантажити новий файл"
 msgid "Load Another File"
 msgstr "Завантажити інший файл"
 
+#: cms/static/js/views/content_group_details.js
+#: cms/static/js/views/group_configuration_details.js
+msgid "Not in Use"
+msgstr "Не використовується"
+
+#. Translators: 'count' is number of units that the group
+#. configuration is used in.
+#: cms/static/js/views/content_group_details.js
+#: cms/static/js/views/group_configuration_details.js
+msgid "Used in %(count)s unit"
+msgid_plural "Used in %(count)s units"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. Translators: 'outlineAnchor' is an anchor pointing to
+#. the course outline page.
+#: cms/static/js/views/content_group_details.js
+msgid ""
+"This content group is not in use. Add a content group to any unit from the "
+"%(outlineAnchor)s."
+msgstr ""
+
+#: cms/static/js/views/content_group_details.js
+#: cms/static/js/views/group_configuration_details.js
+#: cms/templates/js/mock/mock-settings-page.underscore
+msgid "Course Outline"
+msgstr ""
+
 #. Translators: This refers to a content group that can be linked to a student
 #. cohort.
+#: cms/static/js/views/content_group_item.js
 #: cms/static/js/views/content_group_list.js
 msgid "content group"
 msgstr ""
@@ -3855,30 +3890,12 @@ msgstr[0] "Містить %(count)s групу"
 msgstr[1] "Містить %(count)s груп"
 msgstr[2] "Містить %(count)s груп"
 
-#: cms/static/js/views/group_configuration_details.js
-msgid "Not in Use"
-msgstr "Не використовується"
-
-#. Translators: 'count' is number of units that the group
-#. configuration is used in.
-#: cms/static/js/views/group_configuration_details.js
-msgid "Used in %(count)s unit"
-msgid_plural "Used in %(count)s units"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-
 #. Translators: 'outlineAnchor' is an anchor pointing to
 #. the course outline page.
 #: cms/static/js/views/group_configuration_details.js
 msgid ""
 "This Group Configuration is not in use. Start by adding a content experiment"
 " to any Unit via the %(outlineAnchor)s."
-msgstr ""
-
-#: cms/static/js/views/group_configuration_details.js
-#: cms/templates/js/mock/mock-settings-page.underscore
-msgid "Course Outline"
 msgstr ""
 
 #. Translators: this refers to a collection of groups.
@@ -4266,7 +4283,6 @@ msgstr "Завантажити переклад"
 #: cms/templates/js/xblock-outline.underscore
 #: cms/templates/js/xblock-outline.underscore
 #: lms/templates/courseware_search/search_list.underscore
-#: lms/templates/courseware_search/search_list.underscore
 msgid "gettext("
 msgstr ""
 
@@ -4603,6 +4619,10 @@ msgid "or create a new one here"
 msgstr ""
 
 #: lms/templates/student_account/register.underscore
+msgid "Create a new account"
+msgstr ""
+
+#: lms/templates/student_account/register.underscore
 msgid "Create your account"
 msgstr ""
 
@@ -4771,6 +4791,14 @@ msgstr ""
 
 #: lms/templates/verify_student/id_photo_step.underscore
 msgid "Once in position, use the camera button %(icon)s to capture your ID"
+msgstr ""
+
+#: lms/templates/verify_student/image_input.underscore
+msgid "Preview of uploaded image"
+msgstr ""
+
+#: lms/templates/verify_student/image_input.underscore
+msgid "Upload an image or capture one with your web or phone camera."
 msgstr ""
 
 #: lms/templates/verify_student/intro_step.underscore
@@ -5119,6 +5147,20 @@ msgid ""
 "changes you will change the student experience."
 msgstr ""
 
+#: cms/templates/js/content-group-details.underscore
+#: cms/templates/js/group-configuration-details.underscore
+msgid "ID"
+msgstr "ID"
+
+#: cms/templates/js/content-group-details.underscore
+#: cms/templates/js/content-group-editor.underscore
+msgid "Cannot delete when in use by a unit"
+msgstr ""
+
+#: cms/templates/js/content-group-details.underscore
+msgid "This content group is used in:"
+msgstr ""
+
 #: cms/templates/js/content-group-editor.underscore
 #: cms/templates/js/edit-textbook.underscore
 #: cms/templates/js/group-configuration-editor.underscore
@@ -5130,7 +5172,15 @@ msgid "Content Group Name"
 msgstr ""
 
 #: cms/templates/js/content-group-editor.underscore
+msgid "Content Group ID"
+msgstr ""
+
+#: cms/templates/js/content-group-editor.underscore
 msgid "This is the name of the group"
+msgstr ""
+
+#: cms/templates/js/content-group-editor.underscore
+msgid "This content group is used in one or more units."
 msgstr ""
 
 #: cms/templates/js/content-group-editor.underscore
@@ -5333,10 +5383,6 @@ msgstr ""
 #: cms/templates/js/grading-editor.underscore
 msgid "Grade as:"
 msgstr ""
-
-#: cms/templates/js/group-configuration-details.underscore
-msgid "ID"
-msgstr "ID"
 
 #: cms/templates/js/group-configuration-details.underscore
 #: cms/templates/js/group-configuration-editor.underscore

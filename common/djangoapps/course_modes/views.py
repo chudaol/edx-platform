@@ -76,7 +76,7 @@ class ChooseModeView(View):
         if CourseMode.has_professional_mode(modes) and not has_enrolled_professional:
             return redirect(
                 reverse(
-                    'verify_student_start_flow',
+                    'verify_student_show_requirements',
                     kwargs={'course_id': unicode(course_key)}
                 )
             )
@@ -197,7 +197,7 @@ class ChooseModeView(View):
 
             return redirect(
                 reverse(
-                    'verify_student_start_flow',
+                    'verify_student_show_requirements',
                     kwargs={'course_id': unicode(course_key)}
                 )
             )

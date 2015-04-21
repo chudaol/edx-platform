@@ -67,6 +67,7 @@ EVENT_NAME_USER_REVERIFICATION_REVIEWED_BY_SOFTWARESECURE = 'edx.course.enrollme
 EVENT_NAME_USER_ENTERED_INCOURSE_REVERIFY_VIEW = 'edx.bi.reverify.started'
 EVENT_NAME_USER_SUBMITTED_INCOURSE_REVERIFY = 'edx.bi.reverify.submitted'
 
+
 class VerifyView(View):
     
     @method_decorator(login_required)
@@ -764,7 +765,10 @@ def create_order(request):
 
     request.session['donation_for_course'] = amount
 
-    # Make sure this course has a paid mode
+    # prefer professional mode over verified_mode
+    current_mode = CourseMode.verified_mode_for_course(course_id)
+
+    # make sure this course has a verified mode
     if not current_mode:
         log.warn(u"Verification requested for course {course_id} without a verified mode.".format(course_id=course_id))
         return HttpResponseBadRequest(_("This course doesn't support verified certificates"))

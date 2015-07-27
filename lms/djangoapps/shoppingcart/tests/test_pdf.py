@@ -39,6 +39,8 @@ class TestPdfFile(unittest.TestCase):
     Unit test cases for pdf file generation
     """
     def setUp(self):
+        super(TestPdfFile, self).setUp()
+
         self.items_data = [self.get_item_data(1)]
         self.item_id = '1'
         self.date = datetime.now()
@@ -83,7 +85,7 @@ class TestPdfFile(unittest.TestCase):
         self.assertTrue(any(str(self.total_cost) in s for s in pdf_content))
         self.assertTrue(any(str(self.payment_received) in s for s in pdf_content))
         self.assertTrue(any(str(self.balance) in s for s in pdf_content))
-        self.assertTrue(any('edX Tax ID' in s for s in pdf_content))
+        self.assertFalse(any('edX Tax ID' in s for s in pdf_content))
 
         # PDF_RECEIPT_TERMS_AND_CONDITIONS not displayed in the receipt pdf
         self.assertFalse(any(

@@ -1,7 +1,7 @@
 // lms - elements - system feedback
 // ====================
 
-// messages
+// pre-pattern library messages
 
 // UI : message
 .wrapper-msg {
@@ -52,7 +52,8 @@
       width: flex-grid(10,12);
     }
 
-    .nav-actions {
+    .nav-actions,
+    .msg-actions {
       width: flex-grid(2,12);
       display: inline-block;
       vertical-align: middle;
@@ -110,6 +111,7 @@
 
   &.urgency-low {
     background: $notify-banner-bg-3;
+    box-shadow: 0 1px 2px $shadow;
 
     .msg {
       color: $black;
@@ -130,6 +132,16 @@
 
   &.success {
     border-top: 3px solid $success-color;
+  }
+
+
+  &.is-incontext {
+    margin: $baseline;
+
+    .msg {
+      max-width: unset;
+      min-width: auto;
+    }
   }
 }
 

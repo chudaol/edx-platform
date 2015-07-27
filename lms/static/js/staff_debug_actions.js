@@ -11,7 +11,12 @@ var StaffDebug = (function(){
     return url;
   }
 
+  sanitized_string = function(string) {
+    return string.replace(/[.*+?^:${}()|[\]\\]/g, "\\$&");
+  }
+
   get_user = function(locname){
+    locname = sanitized_string(locname);
     var uname = $('#sd_fu_' + locname).val();
     if (uname==""){
         uname =  $('#sd_fu_' + locname).attr('placeholder');
@@ -40,7 +45,7 @@ var StaffDebug = (function(){
                 {text: text},
                 {interpolate: /\{(.+?)\}/g}
             )
-            $("#result_"+action.locationName).html(html);
+            $("#result_"+sanitized_string(action.locationName)).html(html);
         },
         error: function(request, status, error) {
             var response_json;
@@ -62,7 +67,7 @@ var StaffDebug = (function(){
                 {text: text},
                 {interpolate: /\{(.+?)\}/g}
             )
-            $("#result_"+action.locationName).html(html);
+            $("#result_"+sanitized_string(action.locationName)).html(html);
         },
         dataType: 'json'
     });
@@ -108,7 +113,8 @@ var StaffDebug = (function(){
       do_idash_action: do_idash_action,
       get_current_url: get_current_url,
       get_url: get_url,
-      get_user: get_user
+      get_user: get_user,
+      sanitized_string:sanitized_string
   }
 })();
 

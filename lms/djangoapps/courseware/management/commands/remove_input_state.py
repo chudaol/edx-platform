@@ -11,7 +11,8 @@ from optparse import make_option
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 
-from courseware.models import StudentModule, StudentModuleHistory
+from courseware.models import StudentModule
+from courseware.user_state_client import DjangoXBlockUserStateClient
 
 LOG = logging.getLogger(__name__)
 
@@ -66,20 +67,25 @@ class Command(BaseCommand):
             if student_module_id == 'id':
                 continue
             try:
-                module = StudentModule.objects.get(id=student_module_id)
+                module = StudentModule.objects.select_related('student').get(id=student_module_id)
             except StudentModule.DoesNotExist:
-                LOG.error("Unable to find student module with id = {0}: skipping... ".format(student_module_id))
+                LOG.error(u"Unable to find student module with id = %s: skipping... ", student_module_id)
                 continue
             self.remove_studentmodule_input_state(module, save_changes)
 
-            hist_modules = StudentModuleHistory.objects.filter(student_module_id=student_module_id)
+            user_state_client = DjangoXBlockUserStateClient()
+            hist_modules = user_state_client.get_history(module.student.username, module.module_state_key)
+
             for hist_module in hist_modules:
                 self.remove_studentmodulehistory_input_state(hist_module, save_changes)
 
             if self.num_visited % 1000 == 0:
-                LOG.info(" Progress: updated {0} of {1} student modules".format(self.num_changed, self.num_visited))
-                LOG.info(" Progress: updated {0} of {1} student history modules".format(self.num_hist_changed,
-                                                                                        self.num_hist_visited))
+                LOG.info(" Progress: updated %s of %s student modules", self.num_changed, self.num_visited)
+                LOG.info(
+                    " Progress: updated %s of %s student history modules",
+                    self.num_hist_changed,
+                    self.num_hist_visited
+                )
 
     @transaction.autocommit
     def remove_studentmodule_input_state(self, module, save_changes):
@@ -87,9 +93,11 @@ class Command(BaseCommand):
         module_state = module.state
         if module_state is None:
             # not likely, since we filter on it.  But in general...
-            LOG.info("No state found for {type} module {id} for student {student} in course {course_id}"
-                     .format(type=module.module_type, id=module.module_state_key,
-                             student=module.student.username, course_id=module.course_id))
+            LOG.info(
+                "No state found for %s module %s for student %s in course %s",
+                module.module_type, module.module_state_key,
+                module.student.username, module.course_id
+            )
             return
 
         state_dict = json.loads(module_state)
@@ -113,9 +121,11 @@ class Command(BaseCommand):
         module_state = module.state
         if module_state is None:
             # not likely, since we filter on it.  But in general...
-            LOG.info("No state found for {type} module {id} for student {student} in course {course_id}"
-                     .format(type=module.module_type, id=module.module_state_key,
-                             student=module.student.username, course_id=module.course_id))
+            LOG.info(
+                "No state found for %s module %s for student %s in course %s",
+                module.module_type, module.module_state_key,
+                module.student.username, module.course_id
+            )
             return
 
         state_dict = json.loads(module_state)
@@ -139,10 +149,13 @@ class Command(BaseCommand):
             raise CommandError("missing idlist file")
         idlist_path = args[0]
         save_changes = options['save_changes']
-        LOG.info("Starting run:  reading from idlist file {0}; save_changes = {1}".format(idlist_path, save_changes))
+        LOG.info("Starting run:  reading from idlist file %s; save_changes = %s", idlist_path, save_changes)
 
         self.fix_studentmodules_in_list(save_changes, idlist_path)
 
-        LOG.info("Finished run:  updating {0} of {1} student modules".format(self.num_changed, self.num_visited))
-        LOG.info("Finished run:  updating {0} of {1} student history modules".format(self.num_hist_changed,
-                                                                                     self.num_hist_visited))
+        LOG.info("Finished run:  updating %s of %s student modules", self.num_changed, self.num_visited)
+        LOG.info(
+            "Finished run:  updating %s of %s student history modules",
+            self.num_hist_changed,
+            self.num_hist_visited
+        )

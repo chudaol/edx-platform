@@ -36,27 +36,62 @@ class SequenceFields(object):
         help=_("Enter the date by which problems are due."),
         scope=Scope.settings,
     )
-    extended_due = Date(
-        help="Date that this problem is due by for a particular student. This "
-             "can be set by an instructor, and will override the global due "
-             "date if it is set to a date that is later than the global due "
-             "date.",
-        default=None,
-        scope=Scope.user_state,
-    )
 
     # Entrance Exam flag -- see cms/contentstore/views/entrance_exam.py for usage
     is_entrance_exam = Boolean(
         display_name=_("Is Entrance Exam"),
         help=_(
-            "Tag this course module as an Entrance Exam.  " +
+            "Tag this course module as an Entrance Exam. "
             "Note, you must enable Entrance Exams for this course setting to take effect."
         ),
+        default=False,
+        scope=Scope.content,
+    )
+
+
+class ProctoringFields(object):
+    """
+    Fields that are specific to Proctored or Timed Exams
+    """
+    is_time_limited = Boolean(
+        display_name=_("Is Time Limited"),
+        help=_(
+            "This setting indicates whether students have a limited time"
+            " to view or interact with this courseware component."
+        ),
+        default=False,
+        scope=Scope.settings,
+    )
+
+    default_time_limit_minutes = Integer(
+        display_name=_("Time Limit in Minutes"),
+        help=_(
+            "The number of minutes available to students for viewing or interacting with this courseware component."
+        ),
+        default=None,
+        scope=Scope.settings,
+    )
+
+    is_proctored_enabled = Boolean(
+        display_name=_("Is Proctoring Enabled"),
+        help=_(
+            "This setting indicates whether this exam is a proctored exam."
+        ),
+        default=False,
+        scope=Scope.settings,
+    )
+
+    is_practice_exam = Boolean(
+        display_name=_("Is Practice Exam"),
+        help=_(
+            "This setting indicates whether this exam is for testing purposes only. Practice exams are not verified."
+        ),
+        default=False,
         scope=Scope.settings,
     )
 
 
-class SequenceModule(SequenceFields, XModule):
+class SequenceModule(SequenceFields, ProctoringFields, XModule):  # pylint: disable=abstract-method
     ''' Layout module which lays out content in a temporal sequence
     '''
     js = {
@@ -160,9 +195,14 @@ class SequenceModule(SequenceFields, XModule):
         return new_class
 
 
-class SequenceDescriptor(SequenceFields, MakoModuleDescriptor, XmlDescriptor):
+class SequenceDescriptor(SequenceFields, ProctoringFields, MakoModuleDescriptor, XmlDescriptor):
+    """
+    A Sequences Descriptor object
+    """
     mako_template = 'widgets/sequence-edit.html'
     module_class = SequenceModule
+
+    show_in_read_only_mode = True
 
     js = {
         'coffee': [resource_string(__name__, 'js/src/sequence/edit.coffee')],
@@ -188,3 +228,31 @@ class SequenceDescriptor(SequenceFields, MakoModuleDescriptor, XmlDescriptor):
         for child in self.get_children():
             self.runtime.add_block_as_child_node(child, xml_object)
         return xml_object
+
+    @property
+    def non_editable_metadata_fields(self):
+        """
+        `is_entrance_exam` should not be editable in the Studio settings editor.
+        """
+        non_editable_fields = super(SequenceDescriptor, self).non_editable_metadata_fields
+        non_editable_fields.append(self.fields['is_entrance_exam'])
+        return non_editable_fields
+
+    def index_dictionary(self):
+        """
+        Return dictionary prepared with module content and type for indexing.
+        """
+        # return key/value fields in a Python dict object
+        # values may be numeric / string or dict
+        # default implementation is an empty dict
+        xblock_body = super(SequenceDescriptor, self).index_dictionary()
+        html_body = {
+            "display_name": self.display_name,
+        }
+        if "content" in xblock_body:
+            xblock_body["content"].update(html_body)
+        else:
+            xblock_body["content"] = html_body
+        xblock_body["content_type"] = "Sequence"
+
+        return xblock_body

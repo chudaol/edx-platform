@@ -79,7 +79,7 @@ def send_request(user, course_id, path="", query_string=None):
     """
     Sends a request with appropriate parameters and headers.
     """
-    url = get_endpoint(path)
+    url = get_internal_endpoint(path)
     params = {
         "user": anonymous_id_for_user(user, None),
         "course_id": unicode(course_id).encode("utf-8"),
@@ -107,46 +107,15 @@ def send_request(user, course_id, path="", query_string=None):
     return response
 
 
-def get_parent_xblock(xblock):
-    """
-    Returns the xblock that is the parent of the specified xblock, or None if it has no parent.
-    """
-    # TODO: replace with xblock.get_parent() when it lands
-    store = modulestore()
-    if store.request_cache is not None:
-        parent_cache = store.request_cache.data.setdefault('edxnotes-parent-cache', {})
-    else:
-        parent_cache = None
-
-    locator = xblock.location
-    if parent_cache and unicode(locator) in parent_cache:
-        return parent_cache[unicode(locator)]
-
-    parent_location = store.get_parent_location(locator)
-
-    if parent_location is None:
-        return None
-    xblock = store.get_item(parent_location)
-    # .get_parent_location(locator) returns locators w/o branch and version
-    # and for uniformity we remove them from children locators
-    xblock.children = [child.for_branch(None) for child in xblock.children]
-
-    if parent_cache is not None:
-        for child in xblock.children:
-            parent_cache[unicode(child)] = xblock
-
-    return xblock
-
-
 def get_parent_unit(xblock):
     """
     Find vertical that is a unit, not just some container.
     """
     while xblock:
-        xblock = get_parent_xblock(xblock)
+        xblock = xblock.get_parent()
         if xblock is None:
             return None
-        parent = get_parent_xblock(xblock)
+        parent = xblock.get_parent()
         if parent is None:
             return None
         if parent.category == 'sequential':
@@ -170,11 +139,14 @@ def preprocess_collection(user, course, collection):
     cache = {}
     with store.bulk_operations(course.id):
         for model in collection:
-            model.update({
+            update = {
                 u"text": sanitize_html(model["text"]),
                 u"quote": sanitize_html(model["quote"]),
                 u"updated": dateutil_parse(model["updated"]),
-            })
+            }
+            if "tags" in model:
+                update[u"tags"] = [sanitize_html(tag) for tag in model["tags"]]
+            model.update(update)
             usage_id = model["usage_id"]
             if usage_id in cache:
                 model.update(cache[usage_id])
@@ -200,7 +172,7 @@ def preprocess_collection(user, course, collection):
                 log.debug("Unit not found: %s", usage_key)
                 continue
 
-            section = get_parent_xblock(unit)
+            section = unit.get_parent()
             if not section:
                 log.debug("Section not found: %s", usage_key)
                 continue
@@ -214,7 +186,7 @@ def preprocess_collection(user, course, collection):
                 filtered_collection.append(model)
                 continue
 
-            chapter = get_parent_xblock(section)
+            chapter = section.get_parent()
             if not chapter:
                 log.debug("Chapter not found: %s", usage_key)
                 continue
@@ -249,11 +221,14 @@ def get_module_context(course, item):
         'location': unicode(item.location),
         'display_name': item.display_name_with_default,
     }
-    if item.category == 'chapter':
+    if item.category == 'chapter' and item.get_parent():
+        # course is a locator w/o branch and version
+        # so for uniformity we replace it with one that has them
+        course = item.get_parent()
         item_dict['index'] = get_index(item_dict['location'], course.children)
     elif item.category == 'vertical':
-        section = get_parent_xblock(item)
-        chapter = get_parent_xblock(section)
+        section = item.get_parent()
+        chapter = section.get_parent()
         # Position starts from 1, that's why we add 1.
         position = get_index(unicode(item.location), section.children) + 1
         item_dict['url'] = reverse('courseware_position', kwargs={
@@ -311,14 +286,19 @@ def get_notes(user, course):
     return json.dumps(preprocess_collection(user, course, collection), cls=NoteJSONEncoder)
 
 
-def get_endpoint(path=""):
+def get_endpoint(api_url, path=""):
     """
     Returns edx-notes-api endpoint.
+
+    Arguments:
+        api_url (str): base url to the notes api
+        path (str): path to the resource
+    Returns:
+        str: full endpoint to the notes api
     """
     try:
-        url = settings.EDXNOTES_INTERFACE['url']
-        if not url.endswith("/"):
-            url += "/"
+        if not api_url.endswith("/"):
+            api_url += "/"
 
         if path:
             if path.startswith("/"):
@@ -326,9 +306,19 @@ def get_endpoint(path=""):
             if not path.endswith("/"):
                 path += "/"
 
-        return url + path
+        return api_url + path
     except (AttributeError, KeyError):
         raise ImproperlyConfigured(_("No endpoint was provided for EdxNotes."))
+
+
+def get_public_endpoint(path=""):
+    """Get the full path to a resource on the public notes API."""
+    return get_endpoint(settings.EDXNOTES_PUBLIC_API, path)
+
+
+def get_internal_endpoint(path=""):
+    """Get the full path to a resource on the private notes API."""
+    return get_endpoint(settings.EDXNOTES_INTERNAL_API, path)
 
 
 def get_course_position(course_module):
